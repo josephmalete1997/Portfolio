@@ -1,5 +1,5 @@
 # This is the readme file for my Instant Lotto project
-## <font color="blue">What is the app all about?.</font>
+> What is the app all about?
 ### Instant lotto app is based on random generation of lotto numbers for any requested draw.
 ### Below are the added features:
 | Feature          | Description                                                                                                         |
