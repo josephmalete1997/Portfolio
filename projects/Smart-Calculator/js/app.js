@@ -5,14 +5,7 @@ const main = document.querySelector(".main");
 
 let numArray = [];
 let ans = [];
-const signs = [
-  `<i class="fa-solid fa-delete-left"></i>`,
-  `<i class="fa-solid fa-divide"></i>`,
-  `<i class="fa-solid fa-xmark"></i>`,
-  `<i class="fa-solid fa-minus"></i>`,
-  `<i class="fa-solid fa-plus"></i>`,
-  `<i class="fa-solid fa-equals"></i>`,
-];
+const signs = [`del`, `÷`, `×`, `-`, `+`, `=`, "√", "x<sup>2</sup>"];
 
 const buttonsMap = {
   16: 1,
@@ -28,6 +21,8 @@ const buttonsMap = {
   9: 8,
   10: 9,
   2: "CE",
+  0: signs[6],
+  1: signs[7],
 };
 const addButtons = () => {
   for (let i = 0; i < 24; i++) {
@@ -49,16 +44,14 @@ const addButtons = () => {
           input.innerHTML = 0;
         }
         numArray.pop();
-      } else if (!signs.includes(button.innerHTML)) {
+      } else if (!signs.includes(button.innerHTML) && button.innerHTML !== "√") {
         numArray.push(button.innerHTML);
       }
+      if (button.innerHTML === signs[6]) answer.innerHTML = Math.sqrt(input.innerHTML);
+      if (button.innerHTML === signs[7]) answer.innerHTML = Math.pow(input.innerHTML, 2);
 
       const operations = ["/", "*", "+"];
-      const operationsSigns = [
-        `<i class="fa-solid fa-divide"></i>`,
-        `<i class="fa-solid fa-xmark"></i>`,
-        `<i class="fa-solid fa-plus"></i>`,
-      ];
+      const operationsSigns = [`${signs[1]}`, `${signs[2]}`, `${signs[4]}`];
 
       for (let i = 0; i < operations.length; i++)
         if (
