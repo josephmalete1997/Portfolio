@@ -1,0 +1,51 @@
+.fa-js {
+  /* color: rgb(255, 217, 0); */
+}
+
+.skillsPanel .fa,
+.skillsPanel .fa-regular,
+.skillsPanel .fa-solid,
+.skillsPanel .fa-brands {
+  color: rgb(90, 125, 170);
+  font-size: 32px;
+  margin-right: 20px;
+  padding: 10px;
+  width: 40px;
+}
+
+
+.fa-gear {}
+
+.left {
+  font-size: 60px;
+  position: relative;
+  margin-left: 0px;
+  animation: gear1 4s linear infinite;
+}
+
+.right {
+  font-size: 40px;
+  position: relative;
+  margin-left: 0px;
+  animation: gear2 3s linear infinite;
+}
+
+@keyframes gear1 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gear2 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}

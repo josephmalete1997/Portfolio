@@ -1,0 +1,101 @@
+.projects-panel {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project {
+    width: 44%;
+    margin: 2.5%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-inner {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-inner span:nth-child(1) {
+    background: none;
+    color: white;
+    margin: 10px 0px;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.project-inner span {
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    font-size: 16px;
+    padding: 5px;
+    margin-left: 30px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -100px;
+}
+
+.project-inner:hover .project-details {
+    display: block;
+}
+
+.project-inner:hover img {
+    display: block;
+    transform: scale(1.5) rotate(-10deg);
+}
+
+.project-details {
+    position: absolute;
+    filter: blur(90%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 150px 100px;
+    top: 0px;
+    display: none;
+}
+
+.project-details .buttons {
+    display: flex;
+    position: relative;
+    top: -100px;
+}
+
+.project-details .buttons a {
+    text-decoration: none;
+}
+
+.project-details button:nth-child(1),
+.project-details button:nth-child(2) {
+    background: rgb(0, 0, 0);
+    color: white;
+    font-size: 20px;
+    border: 1px solid;
+    padding: 5px 10px;
+    margin: 5px;
+    display: flex;
+
+}
+
+.project-details button:nth-child(1) .fa-solid,
+.project-details button:nth-child(2) .fa-brands {
+    padding-right: 10px;
+}
+
+.project-details button:nth-child(1):hover,
+.project-details button:nth-child(2):hover {
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.project-inner img {
+    max-width: 100%;
+    height: auto;
+    transition: 1s;
+}

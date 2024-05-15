@@ -1,0 +1,176 @@
+.header {
+  top: 0%;
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  /* border-radius: 0px 0px 200px 200px; */
+}
+
+/* header icons */
+#top-icons {
+  background: rgb(204, 204, 204);
+  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  top: -20px;
+  left: 0px;
+  position: relative;
+}
+
+.side-nav {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 50px;
+  z-index: 120;
+  align-items: center;
+  justify-content: center;
+  top: -100px;
+  padding-top: 20px;
+  background: rgb(0, 0, 0);
+  transition: .5s;
+}
+
+.side-nav a {
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  font-size: 26px;
+  text-align: center;
+  position: relative;
+}
+
+.link {
+  color: white;
+  position: relative;
+}
+
+.link:hover .below-border {
+  width: 100%;
+}
+
+.below-border {
+  width: 0%;
+  height: 5px;
+  margin-top: 6px;
+  background: rgb(255, 255, 255);
+  position: absolute;
+  transition: 1s;
+}
+
+.section {
+  position: relative;
+  /* transform: scale(0); */
+}
+
+.visible {
+  transition: 0.5s;
+  transform: scale(1);
+}
+
+.bg-color {
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+}
+
+/* Welcome */
+.about-me {
+  position: absolute;
+  font-size: 36px;
+  top: -70px;
+  left: 60px;
+  z-index: 2;
+}
+
+.text-image {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-column-gap: 20px;
+  position: relative;
+  height: 250px;
+  margin-bottom: 20px;
+  background: white;
+  padding: 20px;
+}
+
+.text-image div p {
+  width: 90%;
+  position: relative;
+  text-align: justify;
+  font-size: 20px;
+  font-weight: lighter;
+  top: -50px;
+}
+
+.welcome {
+  position: relative;
+  z-index: 1;
+  transition: 0.5s;
+  background-position-x: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../sub.jpg);
+}
+
+.photo {
+  width: 100%;
+  height: 90%;
+  background-size: 60%;
+}
+
+.over-layer {
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  left: 0px;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  bottom: 0%;
+  background: white;
+  font-size: 24px;
+  color: black;
+}
+
+.over-layer img {
+  min-width: 10%;
+  height: auto;
+  margin-right: 10px;
+}
+
+.hobbies {
+  padding: 10px;
+}
+
+.hobbies:nth-child(1) {
+  background-image: url(../images/a2.jpg);
+}
+
+.hobbies:nth-child(2) {
+  background-image: url(../images/a4.webp);
+}
+
+.hobbies:nth-child(3) {
+  background-image: url(../images/music.jpeg);
+}
+
+.hobbies:nth-child(4) {
+  background-image: url(../images/art.jpg);
+  background-size: cover;
+}
+
+#details {
+  background: rgb(255, 255, 255);
+  width: 100vw;
+  height: 100vh;
+  position: sticky;
+  z-index: 310;
+  margin-top: 0px;
+  display: none;
+}
