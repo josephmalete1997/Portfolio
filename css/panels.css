@@ -106,7 +106,7 @@ td {
 td:nth-child(1) {}
 
 .download-section {
-  width: 70%;
+  width: 90%;
   display: grid;
   grid-template-columns: 40% 40%;
   column-gap: 5%;
