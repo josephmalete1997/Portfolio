@@ -67,7 +67,7 @@ document.getElementById("download").addEventListener("click", () => {
 });
 
 function download() {
-  const pdfUrl = "Joseph_malete(Updated_CV).pdf";
+  const pdfUrl = "CV _ Joseph_Malete.pdf";
   const anchor = document.createElement("a");
 
   anchor.href = pdfUrl;
@@ -86,6 +86,6 @@ document.getElementById("view").addEventListener("click", () => {
 });
 
 function view() {
-  const pdfUrl = "Joseph_malete(Updated_CV).pdf";
+  const pdfUrl = "projects/CV/index.html";
   window.open(pdfUrl, "_blank");
 }

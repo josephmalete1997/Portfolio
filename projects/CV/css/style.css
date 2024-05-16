@@ -1,0 +1,182 @@
+body {
+    margin: 0px;
+}
+
+* {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+
+.content {
+    display: flex;
+}
+
+.header {
+    border-bottom: 2px solid;
+    width: 100%;
+    padding-bottom: 4px;
+    margin-top: 0px;
+}
+
+.header h1 {
+    font-size: 46px;
+    width: 100%;
+    padding-bottom: 4px;
+    margin-top: 0px;
+}
+
+.header p {
+    color: rgb(228, 228, 228);
+}
+
+.fa-solid,
+.fa-brands {
+    font-size: 24px;
+    padding-right: 10px;
+}
+
+
+.left {
+    flex: 1;
+    background: rgb(33, 34, 37);
+    color: white;
+    padding: 20px;
+}
+
+.right {
+    flex: 1;
+    padding: 10px;
+}
+
+.education {
+    border-left: 2px dotted rgb(255, 254, 255);
+    padding: 10px;
+    position: relative;
+    margin-top: 30px;
+}
+
+.education span {
+    border-left: 1px dotted;
+    padding-left: 20px;
+    margin-left: 10px;
+    color: rgb(255, 255, 86);
+}
+
+
+.education::after {
+    content: "2018-2018";
+    color: rgb(0, 255, 242);
+    font-size: 14px;
+    display: block;
+    position: absolute;
+    left: -5px;
+    top: -20px;
+}
+
+.skills-main {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.panel-skills {
+    position: relative;
+    padding: 20px;
+    margin: 0px;
+    background: rgb(255, 255, 255, .8);
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.panel-skills .skillsPanel img {
+    width: 40px;
+    height: 40px;
+}
+
+.panel-skills .skillsPanel div {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.skillsPanel {
+    height: 50px;
+    padding-top: 10px;
+    left: 0px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+    color: rgb(0, 0, 0);
+    margin: 5px;
+}
+
+.skillsPanel:hover .fa-brands,
+.skillsPanel:hover .fa-solid {
+    color: #b8b8b8;
+    transition: 1s;
+}
+
+.skillsPanel div {
+    font-size: 24px;
+    padding-left: 10px;
+}
+
+/* skillsPanel */
+
+
+.sub-title {
+    font-size: 32px;
+    text-align: left;
+    padding: 0px 0px;
+    position: relative;
+    margin: 15px 0px;
+}
+
+.right .sub-title p {
+    text-decoration: underline;
+    font-size: 26px;
+    margin: 0px;
+}
+
+.right .main-title {
+    font-size: 36px;
+    margin: 0px;
+}
+
+
+.schools-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* background: rgb(255, 255, 255); */
+    color: rgb(255, 255, 255);
+}
+
+li {
+    list-style: circle;
+}
+
+table th {
+    padding: 10px;
+    /* border-collapse: collapse; */
+    font-size: 18px;
+    text-align: start;
+    background: rgb(223, 223, 223);
+    border: 1px solid rgb(146, 146, 146);
+    color: rgb(29, 29, 29);
+}
+
+td {
+    border: 1px solid rgb(146, 146, 146);
+    border-collapse: collapse;
+    font-size: 14px;
+    padding: 10px;
+    /* border: 1px solid; */
+}
+
+td:nth-child(1) {}
