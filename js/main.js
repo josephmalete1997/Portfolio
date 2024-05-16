@@ -10,7 +10,6 @@ const content = document.querySelector(".content");
 const textImage = document.querySelector(".text-image");
 const body = document.querySelector("body");
 const hobbies = document.querySelectorAll(".welcome");
-const details = document.querySelector("#details");
 
 const linkNames = [
   ` <div class="socials-icons" id="top-icons">
@@ -48,13 +47,6 @@ for (let i = 0; i < linkNames.length; i++) {
 }
 
 //Hobbies
-hobbies.forEach((hobby) => {
-  hobby.addEventListener("click", () => {
-    location.href = "#details";
-    details.style.display = "block";
-    details.innerHTML = `<h1>bg= ${hobby.style.backgroundImage.toString()}</h1>` + hobby.innerHTML;
-  });
-});
 
 const loadDownload = document.querySelectorAll(".btn-load");
 
