@@ -90,3 +90,13 @@ const addButtons = () => {
 };
 
 addButtons();
+
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener("keydown", function (e) {
+  if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.keyCode === 73)) {
+    e.preventDefault();
+  }
+});
