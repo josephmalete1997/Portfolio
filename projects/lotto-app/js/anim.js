@@ -1,0 +1,15 @@
+const domElements = {
+  numPanel: document.querySelector(".select-nums"),
+  options: document.querySelector("#select-options"),
+  count: document.querySelector("#count"),
+  viewSlip: document.querySelector(".view-slip"),
+  emptySlip: document.querySelector(".empty"),
+  cancel: document.querySelector(".cancel"),
+  randomPick: document.querySelector("#shuffle"),
+  selectedOption: document.querySelector("#select-options").value,
+  results: document.querySelector(".results"),
+  resultsNumbers: document.querySelectorAll(".pop"),
+  add: document.querySelector("#add"),
+  playButton: document.querySelector("#play"),
+  slip: document.querySelector(".slip"),
+};
