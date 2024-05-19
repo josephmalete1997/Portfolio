@@ -99,6 +99,7 @@
   justify-content: center;
   position: fixed;
   top: 0px;
+  z-index: 100;
 }
 
 .feedback-inner {
