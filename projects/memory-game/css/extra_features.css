@@ -111,6 +111,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
+  padding: 50px;
 }
 
 .feedback h1 {
