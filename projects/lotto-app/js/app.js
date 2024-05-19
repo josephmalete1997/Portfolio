@@ -94,11 +94,29 @@ domElements.options.addEventListener("change", () => {
   domElements.selectedOption = domElements.options.value;
 });
 
-const colorGenerator = () => {
-  const r = Math.floor(Math.random() * 250);
-  const g = Math.floor(Math.random() * 250);
-  const b = Math.floor(Math.random() * 200);
-  return `rgb(${r},${g},${b})`;
+const colorGenerator = (column) => {
+  switch (column) {
+    case 1:
+      return "red";
+    case 2:
+      return "purple";
+    case 3:
+      return "blue";
+    case 4:
+      return "green";
+    case 5:
+      return "yellow";
+    case 6:
+      return "orange";
+    case 7:
+      return "pink";
+    default:
+      // Default random color generator (if needed)
+      const r = Math.floor(Math.random() * 250);
+      const g = Math.floor(Math.random() * 250);
+      const b = Math.floor(Math.random() * 200);
+      return `rgb(${r},${g},${b})`;
+  }
 };
 
 const randomizeNumbers = () => {
@@ -124,16 +142,29 @@ const createBall = (textArray) => {
     domElements.playButton.disabled = false;
     return;
   }
+
   const ball = document.createElement("div");
   ball.classList.add("ball");
-  ball.style.background = colorGenerator();
+
+  // Determine the column number
+  const columnNumber = (globals.numBalls % 7) + 1; // Cycle through 1 to 7 for columns
+
+  // Apply color based on the column
+  ball.style.background = colorGenerator(columnNumber);
+
   const ballInner = document.createElement("div");
   ballInner.classList.add("ball-inner");
   ballInner.innerHTML = textArray[globals.numBalls];
 
+  ball.appendChild(ballInner);
+
+  document.querySelector(".row-content").appendChild(ball); // Assuming balls are appended to a container with the class .row-content
+
   setTimeout(() => {
     document.querySelectorAll(".row-content").forEach((content) => {
-      if (content.innerHTML === ballInner.innerHTML) content.style.border = "4px solid green";
+      if (content.innerHTML === ballInner.innerHTML) {
+        content.style.border = "4px solid green";
+      }
     });
   });
 

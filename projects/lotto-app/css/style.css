@@ -1,13 +1,12 @@
 body {
   margin: 0px;
-  background: rgb(60, 67, 78);
-  user-select: none;
+  background: rgb(88, 88, 88);
+  /* user-select: none; */
 }
 
 .select-nums {
   width: 350px;
   height: 350px;
-  border: 5px solid white;
   display: flex;
   flex-wrap: wrap;
   position: absolute;
@@ -23,18 +22,19 @@ body {
   width: 40px;
   height: 40px;
   font-size: 20px;
-  background-color: rgb(36, 50, 70);
+  background-color: rgb(32, 32, 32);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: default;
   margin: 5px;
+  border-radius: 10px;
 }
 
 .selected {
   background: rgb(255, 255, 255);
-  color: rgb(32, 32, 129);
+  color: rgb(61, 61, 61);
   transition: .4s;
 }
 
