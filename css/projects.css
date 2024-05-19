@@ -44,19 +44,20 @@
 }
 
 .project-inner:hover .project-details {
-    display: block;
+    display: flex;
+    flex-direction: column;
 }
 
-
-
 .project-details {
+    width: 100%;
     position: absolute;
-    filter: blur(90%);
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.9);
     color: white;
     padding: 150px 100px;
     top: 0px;
     display: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-details .buttons {

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/notes_style.css" />
+    <title>Semitone Difference -A Simple GUI</title>
+  </head>
+  <body>
+    <h1 class="title">Jam Buddy</h1>
+    <h3>Find the semi-tone Difference between 2 notes</h3>
+    <div class="main-panel">
+      <div class="main">
+        <div class="notes-display">
+          <div class="note"></div>
+          <div class="note"></div>
+        </div>
+        <h2 class="click-restart">
+          Click restart to<br />
+          play again!
+        </h2>
+
+        <button class="randomize"><img src="assets/shuffle.svg" width="10%" alt="shuffle icon" />Randomize</button>
+        <div class="input-panel">
+          <input type="number" id="answer-input" placeholder="Enter answer" />
+          <button class="answer">
+            <img src="assets/check2-square.svg" width="10%" alt="check icon" />Check answer
+          </button>
+          <button class="give-up"><img src="assets/flag.svg" width="10%" alt="flag icon" />Give Up</button>
+          <button class="restart"><img src="assets/restart.svg" width="10%" alt="restart icon" />Restart</button>
+        </div>
+      </div>
+      <div class="details">
+        <div class="block"></div>
+        <h1>Streak: <span id="streak">0</span></h1>
+        <div class="details-inner">
+          <div class="notes-list"></div>
+          <div class="success-message">
+            <p>Correct</p>
+            <p>Well done!</p>
+            <p><span class="alternative-answer"></span> is also an answer</p>
+          </div>
+          <h2 class="final-answer">
+            Final answer <br />
+            <span id="final-answer">0</span>
+          </h2>
+        </div>
+        <div class="messages"></div>
+      </div>
+    </div>
+    <script src="dist/bundle.js"></script>
+  </body>
+</html>
