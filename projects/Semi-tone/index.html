@@ -49,6 +49,12 @@
         <div class="messages"></div>
       </div>
     </div>
+    <footer>Copyright &copy;<span id="year"></span> Joseph Malete</footer>
+    <script>
+      const newYear = document.getElementById("year");
+      newYear.innerHTML = new Date().getFullYear();
+      newYear.style.margin = "0px 20px 0px 5px";
+    </script>
     <script src="dist/bundle.js"></script>
   </body>
 </html>
