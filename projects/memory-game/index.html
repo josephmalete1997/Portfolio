@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/extra_features.css" />
+    <title>Memory game web app</title>
+  </head>
+  <body>
+    <h1>Memory game</h1>
+    <div class="size-panel">
+      <p>Set grid</p>
+      <div class="grid-size">
+        <div value="0">Default</div>
+        <div value="4">2 x 2</div>
+        <div value="6">2 x 3</div>
+        <div value="8">2 x 4</div>
+        <div value="12">3 x 4</div>
+        <div value="16">4 x 4</div>
+      </div>
+    </div>
+    <div class="details">
+      <div class="moves">Moves: <span id="moves">0</span></div>
+      <div class="timer">Time: <span id="timer">0 : 00</span></div>
+    </div>
+    <div class="left"></div>
+    <div class="canvas"></div>
+    <button id="restart-btn">Restart</button>
+
+    <div class="feedback">
+      <div class="feedback-inner">
+        <h1>Well done!</h1>
+        <div>
+          It took you <span id="minutes"></span><span id="seconds"></span> seconds to successfully complete the game!
+        </div>
+        <br />
+        <div>You have made <span id="total-moves"></span> moves!</div>
+        <button id="replay-btn">Play again</button>
+      </div>
+    </div>
+    <footer>Copyright &copy;<span id="year"></span> Joseph Malete</footer>
+    <script>
+      const newYear = document.getElementById("year");
+      newYear.innerHTML = new Date().getFullYear();
+      newYear.style.margin = "0px 20px 0px 5px";
+    </script>
+    <script src="dist/bundle.js"></script>
+  </body>
+</html>

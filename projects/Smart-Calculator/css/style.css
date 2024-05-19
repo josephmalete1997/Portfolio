@@ -102,7 +102,7 @@ footer {
   position: absolute;
   bottom: 50px;
   font-size: 16px;
-  color: #ffffff;
+  color: #000000;
   padding: 0px 20px;
 }
 
@@ -160,6 +160,7 @@ option {
   transform: skew(60deg);
   transition: 1s;
 }
+
 .computer .keyboard.shadow::before {
   content: "";
   width: 100%;
@@ -187,9 +188,11 @@ option {
   0% {
     visibility: visible;
   }
+
   50% {
     visibility: hidden;
   }
+
   100% {
     visibility: hidden;
   }
@@ -212,10 +215,12 @@ option {
   align-items: center;
   justify-content: center;
 }
+
 .gear-scroll .fa-solid {
   font-size: 60px;
   color: #5c5c5c;
 }
+
 .gear-scroll .fa-solid:nth-child(2) {
   font-size: 40px;
   color: #5c5c5c;
