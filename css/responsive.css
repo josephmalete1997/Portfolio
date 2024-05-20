@@ -9,6 +9,13 @@
   display: block;
 }
 
+.profile {
+  border-radius: 50%;
+  width: 20%;
+  display: none;
+  position: absolute;
+}
+
 /* Skills new */
 
 .skills-main {
@@ -183,11 +190,11 @@
   }
 
   .download-section {
-    width: 40%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10%;
+    margin-top: 5%;
     position: relative;
   }
 
@@ -302,7 +309,9 @@
   }
 }
 
-@media screen and (min-width: 350px) and (max-width: 800px), (max-width: 98%) {
+@media screen and (min-width: 350px) and (max-width: 800px),
+(max-width: 98%) {
+
   /* Head and nav */
   body {
     overflow-y: auto;
@@ -343,8 +352,7 @@
     color: #0ca8f0;
   }
 
-  .mobile-about-text p {
-  }
+  .mobile-about-text p {}
 
   .mobile-about img {
     max-width: 60%;
@@ -457,11 +465,11 @@
   }
 
   .download-section {
-    width: 95%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 2.5%;
+    margin-left: 5%;
     margin-top: 20%;
     position: relative;
   }
@@ -581,7 +589,9 @@
   }
 }
 
-@media screen and (min-width: 300px) and (max-width: 349px), (max-width: 98%) {
+@media screen and (min-width: 300px) and (max-width: 349px),
+(max-width: 98%) {
+
   /* Head and nav */
   body {
     overflow-y: auto;
@@ -733,11 +743,11 @@
   }
 
   .download-section {
-    width: 95%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 2.5%;
+    margin-left: 5%;
     margin-top: 50%;
     position: relative;
   }
@@ -858,19 +868,149 @@
   }
 }
 
+/* Phone */
+
 @media screen and (min-width: 450px) and (max-width: 700px) {
-  .download-section {
-    width: 80%;
-    margin-top: 0%;
-    margin-left: 10%;
+  body {
+    /* background: red; */
   }
+
+  .computer {
+    display: none;
+  }
+
+  .profile {
+    border-radius: 50%;
+    width: 50%;
+    display: block;
+    position: absolute;
+    z-index: 300px;
+  }
+
+  #home {
+    width: 90vw;
+    height: 100vh;
+    position: relative;
+    background: rgb(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 4vb;
+    background: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+  }
+
+  #home-inner {
+    background: white;
+    width: 0px;
+  }
+
+  #home-text {
+    position: absolute;
+    text-align: left;
+    background: rgb(255, 255, 255);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 5vw;
+    right: 0px;
+  }
+
+  #home-text::before {
+    content: "";
+    display: none;
+  }
+
+  #home-text p {
+    font-size: 20px;
+    text-align: left;
+    margin-top: 0px;
+  }
+
+  #home-text p:nth-child(1) {
+    font-size: 50px;
+    left: 0px;
+    margin-top: -200px;
+  }
+
+  #home-text p:nth-child(2) {
+    padding: 5px;
+    margin-top: -40px;
+    position: relative;
+  }
+
+  #home-text p:nth-child(3) {
+    width: 500px;
+    padding: 5px;
+    margin-top: -20px;
+    position: relative;
+  }
+
+  #home-text p:nth-child(4) {
+    padding: 5px;
+    margin-top: -15px;
+    position: relative;
+  }
+
+  #home-text p:nth-child(5) {
+    padding-left: 70px;
+    margin-top: 400px;
+    left: 0px;
+    position: absolute;
+    font-size: 45px;
+    color: rgb(49, 45, 45);
+    filter: grayscale(0);
+  }
+
+  .socials-icons img {
+    width: 30px;
+    margin: 10px;
+  }
+
+  .socials-inner {
+    position: relative;
+  }
+
+  .socials-inner:hover .tool-tip {
+    display: block;
+  }
+
+  .tool-tip {
+    background: rgb(0, 0, 0);
+    padding: 5px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    display: none;
+    border-radius: 5px;
+    left: -20%;
+    top: 95%;
+    animation: tip;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  .tool-tip::before {
+    content: "";
+    position: absolute;
+    width: 5;
+    height: 10;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid rgb(0, 0, 0);
+    top: -10px;
+    margin: auto 30%;
+    transform: rotate(0deg);
+  }
+
 }
 
 @media screen and (min-width: 450px) and (max-width: 700px) {
   .download-section {
-    width: 80%;
-    margin-top: 0%;
-    margin-left: 10%;
+    width: 90%;
+    margin-top: 10%;
+    margin-left: 5%;
   }
 }
 
@@ -884,25 +1024,25 @@
 
 @media screen and (min-width: 891px) and (max-width: 990px) {
   .download-section {
-    width: 50%;
+    width: 90%;
     margin-top: 5%;
-    margin-left: 45%;
+    margin-left: 5%;
   }
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1024px) {
   .download-section {
-    width: 50%;
+    width: 90%;
     margin-top: -2%;
-    margin-left: 45%;
+    margin-left: 5%;
   }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1080px) {
   .download-section {
-    width: 50%;
+    width: 90%;
     margin-top: 10%;
-    margin-left: 55%;
+    margin-left: 5%;
   }
 
   .schools img {
@@ -947,9 +1087,9 @@
 
 @media screen and (min-width: 1081px) and (max-width: 1250px) {
   .download-section {
-    width: 50%;
+    width: 90%;
     margin-top: 5%;
-    margin-left: 55%;
+    margin-left: 0%;
   }
 
   .schools img {

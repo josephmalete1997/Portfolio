@@ -1,0 +1,10 @@
+.history {
+    position: absolute;
+    right: 50px;
+    width: 400px;
+    top: 200px;
+}
+
+.history h1 {
+    color: white;
+}

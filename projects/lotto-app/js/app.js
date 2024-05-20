@@ -12,6 +12,7 @@ const domElements = {
   add: document.querySelector("#add"),
   playButton: document.querySelector("#play"),
   slip: document.querySelector(".slip"),
+  history: document.querySelector(".history"),
 };
 
 const globals = {
@@ -22,6 +23,7 @@ const globals = {
   interval: null,
   numBalls: -1,
   numberCounter: 0,
+  historyArray: [],
 };
 
 const stringsObject = {
@@ -29,6 +31,7 @@ const stringsObject = {
 };
 
 let finalArray = [];
+let history;
 
 domElements.add.disabled = true;
 domElements.playButton.disabled = true;
@@ -132,6 +135,7 @@ const randomizeNumbers = () => {
   setTimeout(() => {
     createBall(globals.textArray);
   }, 100);
+  const history = localStorage.setItem("results", [].push(globals.textArray));
   return globals.textArray;
 };
 

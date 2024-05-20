@@ -298,13 +298,6 @@ body {
   padding: 50px 50px 200px 50px;
 }
 
-.profile {
-  border-radius: 50%;
-  text-align: center;
-  margin-left: 35%;
-  width: 30%;
-}
-
 .socials {
   width: 80%;
   display: flex;
