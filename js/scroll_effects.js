@@ -1,5 +1,7 @@
 const title = document.querySelectorAll(".section");
 const links = document.querySelectorAll(".link");
+const bars = document.querySelector(".fa-bars");
+const sideNavigation = document.querySelector(".side-nav");
 
 links[0].classList.add("active");
 title[0].style.transform = "scale(1)";
@@ -8,6 +10,11 @@ links.forEach((link, i) => {
   link.addEventListener("click", () => {
     setActiveLink(i);
   });
+});
+
+bars.addEventListener("click", () => {
+  sideNavigation.classList.toggle("show");
+  bars.classList.toggle("times");
 });
 
 let rotateIndexOne = 0;
@@ -25,9 +32,11 @@ function showAlert() {
     hobby.style.transition = ".5s";
 
     if (home.top > 0) {
-      document.querySelector(".side-nav").style.top = "-100px";
+      sideNavigation.style.top = "-200px";
+      bars.style.top = "-100px";
     } else {
-      document.querySelector(".side-nav").style.top = "0px";
+      sideNavigation.style.top = "0px";
+      bars.style.top = "0px";
     }
   });
 }

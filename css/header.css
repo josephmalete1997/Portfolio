@@ -8,6 +8,11 @@
   /* border-radius: 0px 0px 200px 200px; */
 }
 
+.fa-bars {
+  left: 0px;
+  display: none;
+}
+
 /* header icons */
 #top-icons {
   background: rgb(204, 204, 204);
