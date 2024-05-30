@@ -4,10 +4,21 @@
   body {
     /* background: red; */
     margin: 0;
+    width: 100vw;
+  }
+
+  /* Menu */
+  .fa-bars {
+    background: black;
+    font-size: 36px;
+    color: white;
+    width: 90%;
+    text-align: center;
+    padding: 5%;
   }
 
   .content {
-    width: 98%;
+    width: 100%;
     position: relative;
     z-index: 1;
     transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -22,7 +33,6 @@
   .title {
     z-index: 10;
     font-size: 60px;
-    right: 0px;
     font-weight: 300;
     color: hsla(0, 0%, 0%, 0.76);
     text-align: center;
@@ -32,7 +42,6 @@
   .sub-title {
     font-size: 36px;
     text-align: center;
-    position: relative;
   }
 
   /* Navigation */
@@ -89,12 +98,12 @@
   }
 
   #home {
-    width: 90vw;
+    width: 100vw;
     height: 100vh;
     position: relative;
     background: rgb(0, 0, 0, 0.2);
     overflow: hidden;
-    padding: 5vb;
+    /* padding: 5vb; */
     background: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
