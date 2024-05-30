@@ -19,6 +19,16 @@
     margin: 1%;
   }
 
+  .title {
+    z-index: 10;
+    font-size: 60px;
+    right: 0px;
+    font-weight: 300;
+    color: hsla(0, 0%, 0%, 0.76);
+    text-align: center;
+    font-family: cursive;
+  }
+
   .sub-title {
     font-size: 36px;
     text-align: center;
