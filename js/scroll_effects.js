@@ -14,8 +14,17 @@ links.forEach((link, i) => {
 
 bars.addEventListener("click", () => {
   sideNavigation.classList.toggle("show");
-  bars.classList.toggle("times");
+  bars.classList.toggle("fa-times");
 });
+
+if (window.innerWidth >= 298 && window.innerWidth <= 600) {
+  document.querySelectorAll(".link").forEach((link) => {
+    link.addEventListener("click", () => {
+      sideNavigation.classList.toggle("show");
+      bars.classList.toggle("fa-times");
+    });
+  });
+}
 
 let rotateIndexOne = 0;
 let rotateIndexTwo = 0;
@@ -31,7 +40,7 @@ function showAlert() {
 
     hobby.style.transition = ".5s";
 
-    if (home.top > 0) {
+    if (home.top >= 0) {
       sideNavigation.style.top = "-200px";
       bars.style.top = "-100px";
     } else {

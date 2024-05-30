@@ -13,6 +13,10 @@
   display: none;
 }
 
+.mobi-nav {
+  display: none;
+}
+
 /* header icons */
 #top-icons {
   background: rgb(204, 204, 204);

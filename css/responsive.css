@@ -25,6 +25,10 @@
     transition: .5s;
   }
 
+  .mobi-nav {
+    display: block;
+  }
+
   .content {
     width: 100%;
     position: relative;
