@@ -8,7 +8,7 @@
 
 /* Phone */
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 298px) and (max-width: 600px) {
   body {
     /* background: red; */
     margin: 0;
@@ -354,6 +354,19 @@
     font-size: 36px;
     color: white;
     cursor: pointer;
+  }
+
+  /* Hobbies */
+  .welcome {
+    display: inline-block;
+  }
+
+  .panel-one {
+    height: 400px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 1%;
   }
 
 }
