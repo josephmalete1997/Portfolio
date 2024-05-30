@@ -123,8 +123,12 @@
 
   #home-text p {
     font-size: 20px;
-    text-align: left;
+    text-align: center;
     margin-top: 0px;
+  }
+
+  #home-text p:nth-child(1) {
+    font-family: cursive;
   }
 
 
