@@ -40,9 +40,11 @@ for (let i = 0; i < linkNames.length; i++) {
   link.innerHTML = linkNames[i];
   link.classList.add("link");
   link.href = linkArray[i - 1];
-  const belowBorder = document.createElement("div");
-  belowBorder.classList.add("below-border");
-  link.appendChild(belowBorder);
+  if (i > 0) {
+    const belowBorder = document.createElement("div");
+    belowBorder.classList.add("below-border");
+    link.appendChild(belowBorder);
+  }
   sideNav.appendChild(link);
 }
 

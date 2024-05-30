@@ -30,8 +30,6 @@ function showAlert() {
       document.querySelector(".side-nav").style.top = "0px";
     }
   });
-
-  setActiveLink(activeIndex);
 }
 
 window.addEventListener("scroll", showAlert);
