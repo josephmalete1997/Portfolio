@@ -331,4 +331,14 @@
     background: white;
   }
 
+  .send-button {
+    width: 100%;
+    margin-top: 20px;
+    background: rgb(0, 0, 0);
+    border: none;
+    font-size: 36px;
+    color: white;
+    cursor: pointer;
+  }
+
 }
