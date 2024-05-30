@@ -24,7 +24,7 @@ function showAlert() {
 
     hobby.style.transition = ".5s";
 
-    if (home.top === 0) {
+    if (home.top > 0) {
       document.querySelector(".side-nav").style.top = "-100px";
     } else {
       document.querySelector(".side-nav").style.top = "0px";
