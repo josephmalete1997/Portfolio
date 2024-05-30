@@ -322,4 +322,13 @@
     transition: 1s;
   }
 
+  /* Contact */
+  form {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    padding: 50px;
+    background: white;
+  }
+
 }
