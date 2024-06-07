@@ -104,3 +104,11 @@
     height: auto;
     transition: 1s;
 }
+
+.fruity {
+    background: rgb(78, 78, 78);
+}
+
+.fruity img {
+    opacity: .8;
+}

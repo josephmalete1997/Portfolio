@@ -1,0 +1,25 @@
+.user-profile {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+}
+
+.profile {
+    display: flex;
+    position: absolute;
+    right: 100px;
+    color: white;
+    font-size: 22px;
+}
+
+.img,
+.name,
+.id,
+.balance {
+    margin: 10px;
+}
+
+.balance {
+    background: rgb(0, 0, 0);
+    padding: 0px 10px;
+}

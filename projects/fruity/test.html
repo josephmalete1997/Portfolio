@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate Towards Cursor</title>
+    <style>
+      #container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+      }
+
+      #object {
+        width: 150px;
+        height: 40px;
+        background: linear-gradient(rgb(112, 112, 112), rgb(221, 221, 221), rgb(156, 156, 156));
+        position: absolute;
+        left: 50%;
+        bottom: 0%;
+        transform-origin: left center;
+        transform: rotate(270deg);
+        border-right: 5px solid;
+        display: flex;
+        align-items: center;
+      }
+
+      .bullet {
+        width: 20px;
+        height: 20px;
+        background: black;
+        position: absolute;
+        border-right: 5px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="object"></div>
+    </div>
+    <script>
+      // Get the object
+      let object = document.getElementById('object');
+
+      // Function to update object rotation
+      const posArray = []
+      function updateObjectRotation(event) {
+        // Calculate the difference between the object's position and the mouse cursor's position
+        let deltaX = event.clientX - object.offsetLeft - (object.offsetWidth / 2);
+        let deltaY = event.clientY - object.offsetTop - (object.offsetHeight / 2);
+
+        // Calculate the angle between the object and the mouse cursor
+        const angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
+        posArray.push(angle)
+        // Set the rotation angle
+        object.style.transform = 'rotate(' + posArray[posArray.length - 1] + 'deg)';
+      }
+
+      // Add event listener to track mouse movement on the container
+      document.getElementById('container').addEventListener('mousemove', updateObjectRotation);
+      document.getElementById('container').addEventListener('mousedown', () => {
+        shoot()
+      });
+      let y = 0
+      let bInt
+      function shoot() {
+        if (bInt) {
+          clearInterval(bInt)
+        }
+        const bullet = document.createElement('div')
+        bullet.classList.add('bullet')
+        object.appendChild(bullet)
+        setTimeout(() => {
+          bInt = setInterval(moveUp, 1)
+        }, 10)
+
+        function moveUp() {
+          y += 5
+          bullet.style.position = 'relative'
+          bullet.style.left = `${y}px`
+        }
+      }
+    </script>
+  </body>
+</html>

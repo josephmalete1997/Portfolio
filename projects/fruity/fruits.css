@@ -1,0 +1,220 @@
+.fruit {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  bottom: 0px;
+  transform-origin: center center;
+}
+
+/* Melon */
+.top {
+  width: 100px;
+  height: 50px;
+  background: rgb(255, 208, 0);
+  border-radius: 80px 80px 0px 0px;
+  position: absolute;
+  top: 0%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 2px solid white;
+  z-index: 2;
+}
+
+
+.bottom {
+  width: 100px;
+  height: 50px;
+  background: rgb(255, 208, 0);
+  border-radius: 0px 0px 80px 80px;
+  position: absolute;
+  top: 50%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+
+.bottom::before {
+  content: '';
+  visibility: hidden;
+  width: 95px;
+  border: 4px solid wheat;
+  height: 0px;
+  background: transparent;
+  border-radius: 100%;
+  position: absolute;
+  top: -5px;
+  z-index: 1;
+}
+
+.bottom.inner::before {
+  content: '';
+  visibility: visible;
+  width: 95px;
+  border: 4px solid white;
+  height: 30px;
+  background: rgb(255, 51, 0);
+  border-radius: 100%;
+  position: absolute;
+  top: -20px;
+  z-index: 2;
+}
+
+.top::before {
+  content: '';
+  visibility: hidden;
+  width: 95px;
+  height: 0px;
+  background: transparent;
+  border: none;
+  border-radius: 100%;
+  border: 4px solid white;
+  position: absolute;
+  top: 40px;
+  z-index: 1;
+}
+
+.top.inner::before {
+  content: '';
+  visibility: visible;
+  width: 95px;
+  height: 30px;
+  background: rgb(255, 51, 0);
+  border: 4px solid white;
+  border-radius: 100%;
+  position: absolute;
+  top: 30px;
+  z-index: 2;
+}
+
+/* Banana */
+.banana {
+  width: 100px;
+  height: 200px;
+  background: yellow;
+  border-radius: 50%/100% 100% 0% 0;
+}
+
+/* Pine */
+
+.pine-parent {
+  position: absolute;
+  z-index: 10;
+  display: none;
+}
+
+.pine {
+  width: 100px;
+  height: 70px;
+  background: rgb(175, 146, 0);
+  border-radius: 60px 60px 0px 0px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  border-bottom: none;
+  z-index: 0;
+  transition: 1s;
+}
+
+.pine-bottom {
+  width: 100px;
+  height: 30px;
+  background: rgb(175, 146, 0);
+  border-radius: 60px 60px 0px 0px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  transform: rotate(180deg);
+  border-bottom: none;
+  padding-bottom: 30px;
+}
+
+.pine-bottom.inner::before {
+  content: '';
+  width: 100px;
+  height: 20px;
+  background: rgb(255, 247, 0);
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  z-index: 2;
+  left: 0px;
+}
+
+.pine.inner::before {
+  content: '';
+  width: 100px;
+  height: 20px;
+  background: rgb(255, 247, 0);
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -10px;
+  z-index: 2;
+  left: 0px;
+}
+
+.spot-pine {
+  background: yellow;
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  transform: rotate(45deg);
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+.leaf {
+  background: green;
+  width: 20px;
+  height: 30px;
+  border-radius: 30px 0px 30px 0px;
+  position: absolute;
+  z-index: 1;
+  box-shadow: inset 2px 5px 10px rgba(9, 255, 0, 0.5);
+}
+
+.leaf:nth-child(1) {
+  left: 50px;
+  top: -30px;
+  transform: rotate(30deg);
+}
+
+.leaf:nth-child(2) {
+  left: 30px;
+  top: -30px;
+  transform: rotate(-90deg);
+}
+
+.leaf:nth-child(3) {
+  left: 30px;
+  top: -50px;
+  transform: rotate(-60deg);
+}
+
+.leaf:nth-child(4) {
+  left: 50px;
+  top: -50px;
+  transform: rotate(210deg);
+}
+
+.leaf:nth-child(5) {
+  left: 40px;
+  top: -70px;
+  transform: rotate(-30deg);
+}
+
+.leaves {
+  position: absolute;
+  top: 10px;
+}

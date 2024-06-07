@@ -190,3 +190,10 @@ a:hover {
     color: rgb(0, 255, 242);
     text-decoration: underline;
 }
+
+@media only screen and (min-width: 298px) and (max-width: 600px) {
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+}

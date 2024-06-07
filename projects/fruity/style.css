@@ -1,0 +1,173 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  background: rgb(85, 85, 85);
+  position: relative;
+}
+
+.juice {
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  z-index: 0;
+  display: flex;
+  top: 40%;
+}
+
+.spit {
+  background: red;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  opacity: .7;
+  position: absolute;
+  transition: 1s;
+}
+
+.spit:nth-child(1) {
+  left: 20px;
+}
+
+.spit:nth-child(2) {
+  left: 40px;
+}
+
+.spit:nth-child(3) {
+  left: 60px;
+}
+
+.spit:nth-child(4) {
+  left: 80px;
+}
+
+.spit::before {
+  content: '';
+  background: rgb(255, 255, 255);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  opacity: .3;
+}
+
+.tree {
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-top: 250px solid rgb(22, 22, 22);
+  border-right: 150px solid transparent;
+  position: absolute;
+  bottom: 0px;
+  transform: rotate(180deg);
+  opacity: 0.2;
+}
+
+.t2 {
+  left: 300px;
+  transform: rotate(180deg) scale(.6);
+  bottom: -100px;
+}
+
+.t3 {
+  left: 1200px;
+}
+
+/* .sun {
+  width: 500px;
+  height: 500px;
+  background: linear-gradient(to bottom, rgb(255, 170, 13), rgb(255, 198, 133));
+  position: absolute;
+  border-radius: 50%;
+  left: -15%;
+  top: -15%;
+} */
+
+
+.score {
+  position: relative;
+  width: 100px;
+  height: 40px;
+  z-index: 2;
+  margin: auto;
+  top: 10px;
+  display: flex;
+  overflow: hidden;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  box-shadow: inset 1;
+}
+
+
+
+#tenth,
+#units {
+  width: 50px;
+  height: 500px;
+  position: absolute;
+  transition: 1s;
+
+}
+
+.number {
+  width: 50px;
+  height: 40px;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#units {
+  left: 30px;
+}
+
+.win {
+  width: 400px;
+  height: 150px;
+  background: rgb(0, 0, 0, .5);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  font-size: 56px;
+  border: 5px solid;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 30px;
+  display: none;
+}
+
+.pause {
+  width: 100px;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+
+.pause::before {
+  font-size: 26px;
+
+  padding: 5px 20px;
+  border-radius: 10px;
+  background: black;
+  content: "Pause";
+  display: block;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.pause.true::before {
+  content: "Play";
+  display: block;
+  background: white;
+  color: black;
+}

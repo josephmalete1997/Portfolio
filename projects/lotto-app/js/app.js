@@ -4,7 +4,9 @@ const domElements = {
   count: document.querySelector("#count"),
   viewSlip: document.querySelector(".view-slip"),
   emptySlip: document.querySelector(".empty"),
-  cancel: document.querySelector(".cancel"),
+  deleted: document.querySelector(".deleted"),
+  added: document.querySelector(".added"),
+  // cancel: document.querySelector(".cancel"),
   randomPick: document.querySelector("#shuffle"),
   selectedOption: document.querySelector("#select-options").value,
   results: document.querySelector(".results"),
@@ -13,7 +15,17 @@ const domElements = {
   playButton: document.querySelector("#play"),
   slip: document.querySelector(".slip"),
   history: document.querySelector(".history"),
+  timeLeft: document.querySelector("#seconds"),
 };
+
+const colors = ["purple", "red", "orange", "blue", "green", "lightblue", "darkblue"];
+
+const userObject = {
+  balance: 50,
+  balancePanel: document.querySelector("#balance"),
+};
+
+userObject.balancePanel.innerHTML = `${userObject.balance.toFixed(2)}`;
 
 const globals = {
   numArray: [],
@@ -24,6 +36,8 @@ const globals = {
   numBalls: -1,
   numberCounter: 0,
   historyArray: [],
+  randomPicked: [],
+  randomPickedFinal: [],
 };
 
 const stringsObject = {
@@ -37,12 +51,12 @@ domElements.add.disabled = true;
 domElements.playButton.disabled = true;
 
 domElements.viewSlip.addEventListener("click", () => {
-  domElements.slip.style.display = "block";
+  domElements.slip.classList.toggle("display");
 });
 
-domElements.cancel.addEventListener("click", () => {
-  domElements.slip.style.display = "none";
-});
+// domElements.cancel.addEventListener("click", () => {
+//   domElements.slip.classList.toggle("display");
+// });
 
 const addNumbers = () => {
   for (let i = 1; i <= 49; i++) {
@@ -57,6 +71,13 @@ const addNumbers = () => {
     addToSlip();
     globals.numberCounter++;
     domElements.count.innerHTML = globals.numberCounter;
+    userObject.balance--;
+    userObject.balancePanel.innerHTML = `${userObject.balance.toFixed(2)}`;
+
+    domElements.added.classList.toggle("display");
+    setTimeout(() => {
+      domElements.added.classList.toggle("display");
+    }, 700);
   });
 
   const addToSlip = () => {
@@ -65,15 +86,52 @@ const addNumbers = () => {
     winOrLose.classList.add("win-or-lose");
     row.classList.add("row");
 
-    for (let i = 0; i < globals.currentNumbers.length; i++) {
-      const rowContent = document.createElement("div");
-      rowContent.innerHTML = globals.currentNumbers[i];
-      rowContent.classList.add("row-content");
-      row.appendChild(rowContent);
+    const newArray = globals.currentNumbers.sort((a, b) => {
+      return a - b;
+    });
+
+    const newRandomPicked = globals.randomPickedFinal.sort((a, b) => {
+      return a - b;
+    });
+
+    if (newRandomPicked.length > 0) {
+      for (let i = 0; i < newRandomPicked.length; i++) {
+        const rowContent = document.createElement("div");
+        rowContent.innerHTML = parseInt(newRandomPicked[i]) + 1;
+        rowContent.classList.add("row-content");
+        row.appendChild(rowContent);
+      }
+    } else {
+      for (let i = 0; i < globals.currentNumbers.length; i++) {
+        const rowContent = document.createElement("div");
+        rowContent.innerHTML = newArray[i];
+        rowContent.classList.add("row-content");
+        row.appendChild(rowContent);
+      }
     }
+
+    const deleteItem = document.createElement("i");
+    deleteItem.classList.add("fa-solid");
+    deleteItem.classList.add("fa-trash");
+    row.appendChild(deleteItem);
 
     row.appendChild(winOrLose);
     domElements.slip.appendChild(row);
+
+    deleteItem.addEventListener("click", () => {
+      domElements.slip.removeChild(row);
+      globals.numberCounter--;
+      domElements.count.innerHTML = globals.numberCounter;
+
+      userObject.balance++;
+      userObject.balancePanel.innerHTML = `${userObject.balance.toFixed(2)}`;
+
+      domElements.deleted.classList.toggle("display");
+      setTimeout(() => {
+        domElements.deleted.classList.toggle("display");
+      }, 700);
+    });
+
     globals.currentNumbers = [];
     const numbers = document.querySelectorAll(".nums");
     numbers.forEach((num) => {
@@ -96,31 +154,6 @@ domElements.options.addEventListener("change", () => {
   globals.min = 0;
   domElements.selectedOption = domElements.options.value;
 });
-
-const colorGenerator = (column) => {
-  switch (column) {
-    case 1:
-      return "red";
-    case 2:
-      return "purple";
-    case 3:
-      return "blue";
-    case 4:
-      return "green";
-    case 5:
-      return "yellow";
-    case 6:
-      return "orange";
-    case 7:
-      return "pink";
-    default:
-      // Default random color generator (if needed)
-      const r = Math.floor(Math.random() * 250);
-      const g = Math.floor(Math.random() * 250);
-      const b = Math.floor(Math.random() * 200);
-      return `rgb(${r},${g},${b})`;
-  }
-};
 
 const randomizeNumbers = () => {
   let count = 0;
@@ -150,11 +183,29 @@ const createBall = (textArray) => {
   const ball = document.createElement("div");
   ball.classList.add("ball");
 
-  // Determine the column number
-  const columnNumber = (globals.numBalls % 7) + 1; // Cycle through 1 to 7 for columns
-
-  // Apply color based on the column
-  ball.style.background = colorGenerator(columnNumber);
+  for (let i = 1; i <= 49; i++) {
+    if (i % 7 === 1) {
+      if (textArray[globals.numBalls] == i) ball.style.background = colors[0];
+    }
+    if (i % 7 === 2) {
+      if (textArray[globals.numBalls] == i) ball.style.background = colors[1];
+    }
+    if (i % 7 === 3) {
+      if (textArray[globals.numBalls] == i) ball.style.background = colors[2];
+    }
+    if (i % 7 === 4) {
+      if (textArray[globals.numBalls] == i) ball.style.background = colors[3];
+    }
+    if (i % 7 === 5) {
+      if (textArray[globals.numBalls] == i) ball.style.background = colors[4];
+    }
+    if (i % 7 === 6) {
+      if (textArray[globals.numBalls] == i) ball.style.background = colors[5];
+    }
+    if (i % 7 === 7) {
+      if (textArray[globals.numBalls] == i) ball.style.background = colors[6];
+    }
+  }
 
   const ballInner = document.createElement("div");
   ballInner.classList.add("ball-inner");
@@ -162,15 +213,17 @@ const createBall = (textArray) => {
 
   ball.appendChild(ballInner);
 
-  document.querySelector(".row-content").appendChild(ball); // Assuming balls are appended to a container with the class .row-content
-
-  setTimeout(() => {
-    document.querySelectorAll(".row-content").forEach((content) => {
-      if (content.innerHTML === ballInner.innerHTML) {
-        content.style.border = "4px solid green";
-      }
-    });
-  });
+  if (ball) {
+    document.querySelector(".row-content").appendChild(ball);
+    setTimeout(() => {
+      document.querySelectorAll(".row-content").forEach((content) => {
+        if (content.innerHTML === ballInner.innerHTML) {
+          content.style.background = "green";
+          content.style.color = "white";
+        }
+      });
+    }, 2000);
+  }
 
   ball.appendChild(ballInner);
   domElements.results.appendChild(ball);
@@ -293,9 +346,34 @@ const finalResults = () => {
 const numbers = document.querySelectorAll(".nums");
 
 domElements.randomPick.addEventListener("click", () => {
-  for (let i = 0; i < numbers.length; i++) {
-    numbers[i].classList.toggle(stringsObject.selected);
+  globals.randomPicked = [];
+  globals.randomPickedFinal = [];
+  let randomCount = 0;
+
+  numbers.forEach((number) => {
+    number.classList.remove(stringsObject.selected);
+  });
+
+  while (randomCount < 6) {
+    const text = globals.numArray[Math.floor(Math.random() * globals.numArray.length)];
+    if (!globals.randomPicked.includes(text)) {
+      globals.randomPicked.push(text);
+      randomCount++;
+    }
   }
+
+  for (let i = 0; i < domElements.selectedOption; i++) {
+    const numbersPicked = globals.randomPicked[i];
+    globals.randomPickedFinal.push(numbersPicked);
+    numbers[numbersPicked].classList.add(stringsObject.selected);
+  }
+  console.log(globals.randomPickedFinal);
+
+  globals.min = parseInt(domElements.selectedOption);
+
+  globals.min === parseInt(domElements.selectedOption)
+    ? (domElements.add.disabled = false)
+    : (domElements.add.disabled = true);
 });
 numbers.forEach((num) => {
   num.addEventListener("click", () => {
@@ -328,3 +406,58 @@ setInterval(() => {
     ? (domElements.emptySlip.style.display = "block")
     : (domElements.emptySlip.style.display = "none");
 }, 200);
+
+// Play after every 2 minutes
+// Real time
+
+setInterval(() => {
+  let time = ` ${new Date().getMinutes() % 2}:${new Date().getSeconds()}`;
+  domElements.timeLeft.innerHTML = time;
+  if (time.trim() === "0:18") randomizeNumbers();
+  if (time.trim() === "1:0") {
+    domElements.results.innerHTML = "";
+    globals.textArray = [];
+    globals.numBalls = -1;
+    let newArray = [];
+
+    domElements.resultsNumbers.forEach((item) => {
+      item.style.transform = "scale(0)";
+      newArray.push(item.innerHTML);
+    });
+
+    const historicResults = document.createElement("div");
+    historicResults.classList.add("historic-results");
+
+    newArray.forEach((item) => {
+      const ball = document.createElement("div");
+      ball.classList.add("ball-history");
+      ball.innerHTML = item;
+      for (let i = 1; i <= 49; i++) {
+        if (i % 7 === 1) {
+          if (item == i) ball.style.background = colors[0];
+        }
+        if (i % 7 === 2) {
+          if (item == i) ball.style.background = colors[1];
+        }
+        if (i % 7 === 3) {
+          if (item == i) ball.style.background = colors[2];
+        }
+        if (i % 7 === 4) {
+          if (item == i) ball.style.background = colors[3];
+        }
+        if (i % 7 === 5) {
+          if (item == i) ball.style.background = colors[4];
+        }
+        if (i % 7 === 6) {
+          if (item == i) ball.style.background = colors[5];
+        }
+        if (i % 7 === 7) {
+          if (item == i) ball.style.background = colors[6];
+        }
+      }
+      historicResults.append(ball);
+    });
+    newArray = [];
+    domElements.history.append(historicResults);
+  }
+}, 1000);

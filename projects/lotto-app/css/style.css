@@ -1,17 +1,30 @@
 body {
   margin: 0px;
   background: rgb(88, 88, 88);
-  /* user-select: none; */
+  background: rgb(71, 71, 71);
+  user-select: none;
+}
+
+
+
+main {
+  position: relative;
+  top: 50px;
+}
+
+.blur {
+  filter: blur(10px);
 }
 
 .select-nums {
   width: 350px;
-  height: 350px;
+  height: 350;
   display: flex;
   flex-wrap: wrap;
   position: absolute;
-  left: 30px;
-  top: 30px;
+  left: 20px;
+  top: 20px;
+  padding: 2px;
 }
 
 * {
@@ -22,13 +35,13 @@ body {
   width: 40px;
   height: 40px;
   font-size: 20px;
-  background-color: rgb(32, 32, 32);
+  background-color: rgb(31, 31, 31);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: default;
-  margin: 5px;
+  margin: 2px;
   border-radius: 10px;
 }
 
@@ -86,7 +99,8 @@ body {
 .buttons {
   position: absolute;
   left: 30px;
-  top: 450px;
+  top: 320px;
+  width: 270px;
 }
 
 .buttons #play,
@@ -95,45 +109,32 @@ body {
   padding: 2px 10px;
   font-size: 16px;
   font-weight: 600;
+  margin-top: 10px;
+  border: none;
 }
 
-#shuffle {
-  background: rgb(10, 156, 131);
-  color: white
+.buttons #shuffle,
+.buttons #add {
+  width: 49%;
 }
 
-#shuffle .fa-solid {
-  padding-right: 5px;
-}
-
-
-select {
-  font-size: 16px;
-  padding: 2px;
+.buttons #play {
+  width: 100%;
 }
 
 .slip {
-  width: 320px;
+  width: 325px;
+  height: 75vh;
   background: rgb(255, 255, 255);
-  border: 2px solid white;
   position: absolute;
-  left: 450px;
-  top: 75px;
+  left: 400px;
+  top: 10px;
   z-index: 1;
-  display: none;
+  /* display: none; */
   padding-top: 10px;
-}
-
-.slip::before {
-  content: "";
-  display: block;
-  height: 15px;
-  width: 14px;
-  background: rgb(255, 255, 255);
-  transform: rotate(45deg);
-  position: absolute;
-  left: 20px;
-  top: -9px;
+  padding-top: 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .view-slip {
@@ -141,12 +142,29 @@ select {
   font-size: 20px;
   background: white;
   width: 300px;
-  top: 15px;
-  left: 450px;
+  top: -40px;
+  left: 400px;
   box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.18);
   border-left: 5px solid rgb(111, 176, 255);
   position: absolute;
   z-index: 2;
+}
+
+.added,
+.deleted {
+  font-size: 18px;
+  background: rgb(197, 255, 197);
+  color: green;
+  display: none;
+  top: 0px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+.deleted {
+  background: rgb(255, 205, 205);
+  color: red;
 }
 
 .cancel {
@@ -157,15 +175,13 @@ select {
   top: 0px;
   right: 0px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: .2s ease-in-out;
   z-index: 10;
 }
 
 .cancel .fa-solid {
   font-size: 20px;
+  text-align: center;
 }
 
 .cancel:hover {
@@ -174,7 +190,11 @@ select {
 
 .empty {
   font-size: 24px;
-  margin-left: 50px;
+  text-align: center;
+}
+
+.display {
+  display: block;
 }
 
 #count {
@@ -208,20 +228,35 @@ select {
   display: flex;
   height: auto;
   margin-bottom: 5px;
+  align-items: center;
+}
+
+.fa-trash {
+  position: absolute;
+  right: 10px;
+  color: #252525;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.fa-trash:hover {
+  color: #838383;
 }
 
 .row-content {
   width: 30px;
   height: 30px;
-  color: #ccc;
-  border: 4px solid;
+  color: #929292;
+  border: 2px solid;
   font-size: 20px;
   margin-left: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Arial Narrow', Arial, sans-serif;
   position: relative;
+  border-radius: 50%;
+  padding: 2px;
 }
 
 .win-or-lose {
@@ -233,8 +268,10 @@ select {
 
 footer {
   color: white;
+  background: black;
   position: absolute;
   bottom: 10px;
-  left: 50px;
-  font-size: 20px;
+  right: 50px;
+  font-size: 16px;
+  padding: 2px 5px;
 }

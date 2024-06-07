@@ -1,3 +1,20 @@
+/* Active */
+
+.present {
+    background: rgb(255, 255, 255);
+    color: black;
+}
+
+#select-options {
+    display: none;
+}
+
+.options-button {
+    background: black;
+    color: white;
+    font-size: 20px;
+}
+
 .history {
     position: absolute;
     right: 50px;
@@ -8,3 +25,76 @@
 .history h1 {
     color: white;
 }
+
+.panels p {
+    color: white;
+    font-size: 26px;
+    margin-left: 30px;
+    margin-top: -30px;
+    position: absolute;
+}
+
+.bet-options {
+    width: 270px;
+    height: 100px;
+    position: relative;
+    z-index: 210;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    top: 10px;
+}
+
+.bet-options p {
+    font-size: 22px;
+    color: white;
+    position: absolute;
+    top: 5px;
+    margin: 0;
+}
+
+.options {
+    display: flex;
+    bottom: 10px;
+    position: absolute;
+}
+
+
+
+
+.options .option-value {
+    width: 36px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    color: white;
+    padding: 2px;
+    margin: 3px;
+}
+
+/* Stake panel */
+
+.stake-panel {
+    display: flex;
+    width: 270px;
+}
+
+.stake-panel label {
+    color: white;
+    font-size: 24px;
+    width: 100px;
+
+}
+
+.stake-panel input {
+    font-size: 18px;
+    width: 158px;
+    margin-left: 5px;
+}
+
