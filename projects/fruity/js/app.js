@@ -17,6 +17,7 @@ const pause = document.querySelector(".pause");
 const fruitsArray = ["pine", "melon"];
 
 pause.addEventListener("click", () => {
+  pause.style.display = "none";
   if (!pause.classList.contains("true")) {
     pause.classList.toggle("true");
     pauseGame();

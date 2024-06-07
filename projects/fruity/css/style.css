@@ -104,6 +104,7 @@ body {
   overflow: hidden;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   box-shadow: inset 1;
+  color: white
 }
 
 
@@ -159,7 +160,7 @@ body {
   padding: 5px 20px;
   border-radius: 10px;
   background: black;
-  content: "Pause";
+  content: "Play";
   display: block;
   color: white;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
