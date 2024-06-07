@@ -1,5 +1,11 @@
 body {
     margin: 0px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
 }
 
 * {
@@ -8,6 +14,7 @@ body {
 
 .content {
     display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -25,7 +32,20 @@ body {
 }
 
 .header p {
-    color: rgb(228, 228, 228);
+    color: rgb(41, 41, 41);
+    font-size: 16px;
+}
+
+.header-items {
+    display: flex;
+}
+
+.item:nth-child(1) {
+    flex: 3;
+}
+
+.item:nth-child(2) {
+    flex: 2;
 }
 
 .fa-solid,
@@ -37,8 +57,7 @@ body {
 
 .left {
     flex: 1;
-    background: rgb(33, 34, 37);
-    color: white;
+    color: rgb(22, 22, 22);
     padding: 20px;
 }
 
@@ -82,10 +101,10 @@ body {
     position: relative;
     padding: 20px;
     margin: 0px;
-    background: rgb(255, 255, 255, .8);
     display: flex;
     flex-wrap: wrap;
-
+    justify-content: center;
+    border-bottom: 1px solid #ccc;
 }
 
 .panel-skills .skillsPanel img {
@@ -94,7 +113,7 @@ body {
 }
 
 .panel-skills .skillsPanel div {
-    font-size: 20px;
+    font-size: 16px;
     text-decoration: none;
 }
 
@@ -117,7 +136,7 @@ body {
 }
 
 .skillsPanel div {
-    font-size: 24px;
+    font-size: 20px;
     padding-left: 10px;
 }
 
@@ -133,9 +152,9 @@ body {
 }
 
 .right .sub-title p {
-    text-decoration: underline;
-    font-size: 26px;
+    font-size: 20px;
     margin: 0px;
+    font-weight: 700;
 }
 
 .right .main-title {
@@ -153,12 +172,11 @@ body {
 table {
     width: 100%;
     border-collapse: collapse;
-    /* background: rgb(255, 255, 255); */
-    color: rgb(255, 255, 255);
 }
 
 li {
     list-style: circle;
+    font-size: 16px;
 }
 
 table th {
@@ -182,12 +200,17 @@ td {
 td:nth-child(1) {}
 
 a {
-    color: white;
+    color: rgb(37, 37, 37);
     text-decoration: none;
 }
 
+.sub-heading {
+    font-size: 20px;
+    font-weight: 700;
+}
+
 a:hover {
-    color: rgb(0, 255, 242);
+    color: rgb(25, 0, 255);
     text-decoration: underline;
 }
 
