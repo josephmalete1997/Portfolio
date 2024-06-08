@@ -61,11 +61,11 @@ document.getElementById("download").addEventListener("click", () => {
 });
 
 function download() {
-  const pdfUrl = "CV _ Joseph_Malete.pdf";
+  const pdfUrl = "Joseph_malete(Updated_CV).pdf";
   const anchor = document.createElement("a");
 
   anchor.href = pdfUrl;
-  anchor.download = "Joseph Malete Updated CV.pdf";
+  anchor.download = "CV Joseph Malete.pdf";
   document.body.appendChild(anchor);
   anchor.click();
   document.body.removeChild(anchor);
