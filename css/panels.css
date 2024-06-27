@@ -31,7 +31,7 @@
   margin: 5px;
 }
 
-.skillsPanel:hover .fa-brands,
+.skillsPanel:hover .fa-brands,z
 .skillsPanel:hover .fa-solid {
   color: #b8b8b8;
   transition: 1s;

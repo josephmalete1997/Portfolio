@@ -7,54 +7,18 @@
     <link rel="stylesheet" href="css/balls.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/user.css" />
+    <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="../../fontAwesome/css/all.min.css" />
     <script src="https://kit.fontawesome.com/062d0051ac.js" crossorigin="anonymous"></script>
     <title>Instant lotto</title>
   </head>
   <body>
-    <div class="user-profile">
-      <div class="profile">
-        <div class="img"><i class="fa-solid fa-user"></i></div>
-        <div class="name">Jozi</div>
-        <div class="id">@6769008765</div>
-        <div class="balance">Balance : R<span id="balance"></span></div>
-      </div>
-    </div>
-    <main>
-      <div class="panels">
-        <p>Pick <span class="pick-numbers">2</span> numbers below:</p>
-        <div class="select-nums"></div>
-        <div class="results"></div>
-        <div class="pops-results">
-          <div class="pop"></div>
-          <div class="pop"></div>
-          <div class="pop"></div>
-          <div class="pop"></div>
-          <div class="pop"></div>
-          <div class="pop"></div>
+    <div class="container">
+      <div class="left panel">
+        <div class="pick-number-heading">
+          <p>Pick <span class="pick-numbers">2</span> numbers below:</p>
         </div>
-      </div>
-
-      <h1 class="view-slip">
-        <i class="fa-solid fa-receipt"></i> View Bet slip
-        <span id="count">0</span>
-      </h1>
-      <div class="slip">
-        <!-- <div class="cancel"><i class="fa-solid fa-times"></i></div> -->
-        <p class="empty">Your slip is empty</p>
-        <span class="added">Added successfully!</span>
-        <span class="deleted">Deleted successfully!</span>
-      </div>
-      <div class="buttons">
-        <select id="select-options">
-          <option value="2">Bet options</option>
-          <option value="1">Bet 1 number</option>
-          <option value="2">Bet 2 numbers</option>
-          <option value="3">Bet 3 numbers</option>
-          <option value="4">Bet 4 numbers</option>
-          <option value="5">Bet 5 numbers</option>
-          <option value="6">Bet 6 numbers</option>
-        </select>
+        <div class="select-nums"></div>
 
         <div class="bet-options">
           <p>How many numbers?</p>
@@ -67,27 +31,78 @@
             <div class="option-value" value="6">6</div>
           </div>
         </div>
-        <div class="stake-panel">
-          <label for="stake">Stake: R</label>
-          <input type="number" id="stake" min="1" />
+
+        <div class="buttons">
+          <select id="select-options">
+            <option value="2">Bet options</option>
+            <option value="1">Bet 1 number</option>
+            <option value="2">Bet 2 numbers</option>
+            <option value="3">Bet 3 numbers</option>
+            <option value="4">Bet 4 numbers</option>
+            <option value="5">Bet 5 numbers</option>
+            <option value="6">Bet 6 numbers</option>
+          </select>
+
+          <div class="stake-panel">
+            <label for="stake">Stake: R</label>
+            <input type="number" id="stake" min="1" />
+          </div>
+          <span class="added">Added successfully!</span>
+          <button id="shuffle">Quick pick</button>
+          <button id="add">Add to slip</button>
+          <button id="play">Play</button>
         </div>
-        <button id="shuffle">Quick pick</button>
-        <button id="add">Add to slip</button>
-        <button id="play">Play</button>
       </div>
-      <div class="history">
-        <h2>Time left:<span id="seconds"></span></h2>
-        <h1>Results history</h1>
+      <div class="middle panel">
+        <div class="middle-top panel">
+          <div class="user-profile">
+            <div class="profile">
+              <div class="img"><i class="fa-solid fa-user"></i></div>
+              <div class="name">Jozi</div>
+              <div class="id">@6769008765</div>
+              <div class="balance">Balance : R<span id="balance"></span></div>
+            </div>
+          </div>
+          <div class="panels">
+            <div class="results"></div>
+            <div class="pops-results">
+              <div class="pop"></div>
+              <div class="pop"></div>
+              <div class="pop"></div>
+              <div class="pop"></div>
+              <div class="pop"></div>
+              <div class="pop"></div>
+            </div>
+          </div>
+        </div>
+        <div class="middle-bottom panel"></div>
       </div>
-    </main>
+      <div class="right panel">
+        <h1 class="view-slip">
+          <i class="fa-solid fa-receipt"></i> View Bet slip
+          <span id="count">0</span>
+        </h1>
+        <div class="slip">
+          <!-- <div class="cancel"><i class="fa-solid fa-times"></i></div> -->
+          <p class="empty">Your slip is empty</p>
+          <span class="deleted">Deleted successfully!</span>
+        </div>
+        <div class="history none">
+          <h2>Time left:<span id="seconds"></span></h2>
+          <h1>Results history</h1>
+        </div>
+      </div>
+    </div>
+
+    <main class="none"></main>
     <div class="over-layer"></div>
 
-    <footer>Copyright &copy;<span id="year"></span> Joseph Malete</footer>
+    <!-- <footer>Copyright &copy;<span id="year"></span> Joseph Malete</footer>
     <script>
       const newYear = document.getElementById("year");
       newYear.innerHTML = new Date().getFullYear();
       newYear.style.margin = "0px 20px 0px 5px";
-    </script>
+    </script> -->
     <script src="js/app.js"></script>
     <script src="js/anim.js"></script>
     <script src="js/options.js"></script>

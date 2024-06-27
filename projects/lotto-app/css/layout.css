@@ -1,0 +1,49 @@
+.none {
+  display: none;
+}
+
+.panel {
+  background: rgb(13, 27, 65);
+  margin: 5px;
+  position: relative;
+  overflow: auto;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.left {
+  flex: 3;
+}
+
+.middle {
+  flex: 5;
+  margin: 5px 0px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.middle-top {
+  flex: 1;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.middle-bottom {
+  flex: 2;
+  margin: 5px 0px 0px 0px;
+}
+
+.right {
+  flex: 3;
+}

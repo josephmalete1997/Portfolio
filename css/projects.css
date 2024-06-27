@@ -84,7 +84,7 @@
     justify-content: center;
 }
 
-.project-details button:nth-child(1) .fa-solid,
+.project-details button:nth-child(1) .fa-solid,z
 .project-details button:nth-child(2) .fa-brands {
     padding-right: 10px;
 }
