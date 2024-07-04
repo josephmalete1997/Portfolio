@@ -47,7 +47,7 @@
             <label for="stake">Stake: R</label>
             <input type="number" id="stake" min="1" />
           </div>
-          <span class="added">Added successfully!</span>
+          <!-- <span class="added">Added successfully!</span> -->
           <button id="shuffle">Quick pick</button>
           <button id="add">Add to slip</button>
           <button id="play">Play</button>
@@ -75,21 +75,27 @@
             </div>
           </div>
         </div>
-        <div class="middle-bottom panel"></div>
+        <div class="middle-bottom panel">
+          <div class="history">
+            <h2>Time left:<span id="seconds"></span></h2>
+            <h1>Results history</h1>
+          </div>
+        </div>
       </div>
       <div class="right panel">
-        <h1 class="view-slip">
+        <!-- <h1 class="view-slip">
           <i class="fa-solid fa-receipt"></i> View Bet slip
           <span id="count">0</span>
-        </h1>
+        </h1> -->
+
+        <div class="pick-number-heading view-slip">
+          <i class="fa-solid fa-receipt"></i> Bet slip
+          <span id="count">0</span>
+        </div>
         <div class="slip">
           <!-- <div class="cancel"><i class="fa-solid fa-times"></i></div> -->
           <p class="empty">Your slip is empty</p>
-          <span class="deleted">Deleted successfully!</span>
-        </div>
-        <div class="history none">
-          <h2>Time left:<span id="seconds"></span></h2>
-          <h1>Results history</h1>
+          <!-- <span class="deleted">Deleted successfully!</span> -->
         </div>
       </div>
     </div>

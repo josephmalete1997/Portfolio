@@ -18,7 +18,7 @@ const domElements = {
   timeLeft: document.querySelector("#seconds"),
 };
 
-const colors = ["purple", "red", "orange", "blue", "green", "lightblue", "darkblue"];
+const colors = ["purple", "red", "orange", "blue", "green", "lime", "yellow"];
 
 const userObject = {
   balance: 50,
@@ -411,54 +411,57 @@ setInterval(() => {
 // Play after every 2 minutes
 // Real time
 
-// setInterval(() => {
-//   let time = ` ${new Date().getMinutes() % 2}:${new Date().getSeconds()}`;
-//   domElements.timeLeft.innerHTML = time;
-//   if (time.trim() === "0:18") randomizeNumbers();
-//   if (time.trim() === "1:0") {
-//     domElements.results.innerHTML = "";
-//     globals.textArray = [];
-//     globals.numBalls = -1;
-//     let newArray = [];
+setInterval(() => {
+  let time = ` ${new Date().getMinutes() % 2}:${new Date().getSeconds()}`;
+  domElements.timeLeft.innerHTML = time;
+  if (time.trim() === "0:18") randomizeNumbers();
+  if (time.trim() === "1:0") {
+    domElements.results.innerHTML = "";
+    globals.textArray = [];
+    globals.numBalls = -1;
+    let newArray = [];
 
-//     domElements.resultsNumbers.forEach((item) => {
-//       item.style.transform = "scale(0)";
-//       newArray.push(item.innerHTML);
-//     });
+    domElements.resultsNumbers.forEach((item) => {
+      item.style.transform = "scale(0)";
+      newArray.push(item.innerHTML);
+    });
 
-//     const historicResults = document.createElement("div");
-//     historicResults.classList.add("historic-results");
+    const historicResults = document.createElement("div");
+    historicResults.classList.add("historic-results");
 
-//     newArray.forEach((item) => {
-//       const ball = document.createElement("div");
-//       ball.classList.add("ball-history");
-//       ball.innerHTML = item;
-//       for (let i = 1; i <= 49; i++) {
-//         if (i % 7 === 1) {
-//           if (item == i) ball.style.background = colors[0];
-//         }
-//         if (i % 7 === 2) {
-//           if (item == i) ball.style.background = colors[1];
-//         }
-//         if (i % 7 === 3) {
-//           if (item == i) ball.style.background = colors[2];
-//         }
-//         if (i % 7 === 4) {
-//           if (item == i) ball.style.background = colors[3];
-//         }
-//         if (i % 7 === 5) {
-//           if (item == i) ball.style.background = colors[4];
-//         }
-//         if (i % 7 === 6) {
-//           if (item == i) ball.style.background = colors[5];
-//         }
-//         if (i % 7 === 7) {
-//           if (item == i) ball.style.background = colors[6];
-//         }
-//       }
-//       historicResults.append(ball);
-//     });
-//     newArray = [];
-//     domElements.history.append(historicResults);
-//   }
-// }, 1000);
+    newArray.forEach((item) => {
+      const ball = document.createElement("div");
+      ball.classList.add("ball-history");
+      ball.innerHTML = item;
+      for (let i = 1; i <= 49; i++) {
+        if (i % 7 === 1) {
+          if (item == i) ball.style.background = colors[0];
+        }
+        if (i % 7 === 2) {
+          if (item == i) ball.style.background = colors[1];
+        }
+        if (i % 7 === 3) {
+          if (item == i) ball.style.background = colors[2];
+        }
+        if (i % 7 === 4) {
+          if (item == i) ball.style.background = colors[3];
+        }
+        if (i % 7 === 5) {
+          if (item == i) ball.style.background = colors[4];
+        }
+        if (i % 7 === 6) {
+          if (item == i) ball.style.background = colors[5];
+        }
+        if (i % 7 === 7) {
+          if (item == i) ball.style.background = colors[6];
+        }
+      }
+      historicResults.append(ball);
+    });
+    newArray = [];
+    domElements.history.append(
+      `<p class="time-stamp">${new Date().getHours()}:${new Date().getMinutes()}</p>`,
+      historicResults
+    );
+  }
+}, 1000);

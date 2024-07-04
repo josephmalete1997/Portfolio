@@ -1,8 +1,9 @@
 /* Variables */
 
 :root {
-  --gradient-blue: linear-gradient(rgb(49, 49, 173), rgb(45, 45, 163), rgb(61, 61, 206));
+  --gradient-blue: linear-gradient(rgb(49, 49, 173), rgb(45, 45, 163), rgb(89, 89, 247));
   --gradient-green: linear-gradient(#60dfff, #8bfff9, #00a2ff);
+  --gradient-yellow: linear-gradient(#ffcf69, #ffc548, #ffae00);
 }
 
 .present {
@@ -21,10 +22,7 @@
 }
 
 .history {
-  position: absolute;
-  right: 50px;
-  width: 400px;
-  top: 200px;
+  margin-left: 20px;
 }
 
 .history h1 {
@@ -89,6 +87,12 @@
   padding: 2px;
   margin: 2%;
   border-radius: 5px;
+}
+
+.sel {
+  background: rgb(217, 245, 255);
+  color: rgb(46, 81, 175);
+  border: 1px solid rgb(217, 245, 255);
 }
 
 /* Stake panel */
