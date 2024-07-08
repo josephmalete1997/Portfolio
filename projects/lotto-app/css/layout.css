@@ -40,10 +40,21 @@
 }
 
 .middle-bottom {
+  width: 100%;
   flex: 2;
   margin: 5px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  /* justify-content: center; */
 }
 
 .right {
-  flex: 3;
+  flex: 4;
+  overflow: hidden;
+}
+
+.fa-receipt {
+  margin-right: 5%;
 }

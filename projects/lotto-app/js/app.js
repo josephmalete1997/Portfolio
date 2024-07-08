@@ -1,51 +1,5 @@
-const domElements = {
-  numPanel: document.querySelector(".select-nums"),
-  options: document.querySelector("#select-options"),
-  count: document.querySelector("#count"),
-  viewSlip: document.querySelector(".view-slip"),
-  emptySlip: document.querySelector(".empty"),
-  deleted: document.querySelector(".deleted"),
-  added: document.querySelector(".added"),
-  // cancel: document.querySelector(".cancel"),
-  randomPick: document.querySelector("#shuffle"),
-  selectedOption: document.querySelector("#select-options").value,
-  results: document.querySelector(".results"),
-  resultsNumbers: document.querySelectorAll(".pop"),
-  add: document.querySelector("#add"),
-  playButton: document.querySelector("#play"),
-  slip: document.querySelector(".slip"),
-  history: document.querySelector(".history"),
-  timeLeft: document.querySelector("#seconds"),
-};
-
-const colors = ["purple", "red", "orange", "blue", "green", "lime", "yellow"];
-
-const userObject = {
-  balance: 50,
-  balancePanel: document.querySelector("#balance"),
-};
-
-userObject.balancePanel.innerHTML = `${userObject.balance.toFixed(2)}`;
-
-const globals = {
-  numArray: [],
-  textArray: [],
-  currentNumbers: [],
-  min: 0,
-  interval: null,
-  numBalls: -1,
-  numberCounter: 0,
-  historyArray: [],
-  randomPicked: [],
-  randomPickedFinal: [],
-};
-
-const stringsObject = {
-  selected: "selected",
-};
-
-let finalArray = [];
-let history;
+userObject.balancePanel.innerHTML = userObject.balance.toFixed(2);
+userObject.namePanel.innerHTML = userObject.name;
 
 domElements.add.disabled = true;
 domElements.playButton.disabled = true;
@@ -68,23 +22,29 @@ const addNumbers = () => {
   }
 
   domElements.add.addEventListener("click", () => {
-    addToSlip();
-    globals.numberCounter++;
-    domElements.count.innerHTML = globals.numberCounter;
-    userObject.balance--;
-    userObject.balancePanel.innerHTML = `${userObject.balance.toFixed(2)}`;
-
-    domElements.added.classList.toggle("display");
-    setTimeout(() => {
-      domElements.added.classList.toggle("display");
-    }, 700);
+    if (domElements.stake.value === "" || parseInt(domElements.stake.value) === 0) {
+      alert("Your minimum stake should be at least R1 per bet!");
+    } else {
+      if (userObject.balance < domElements.stake.value) {
+        alert("You don't have enough money to place a bet!");
+      } else {
+        addToSlip();
+        globals.numberCounter++;
+        domElements.count.innerHTML = globals.numberCounter;
+        userObject.balance -= domElements.stake.value;
+        userObject.balancePanel.innerHTML = `${userObject.balance.toFixed(2)}`;
+        domElements.added.classList.toggle("display");
+        setTimeout(() => {
+          domElements.added.classList.toggle("display");
+        }, 700);
+      }
+    }
   });
 
   const addToSlip = () => {
+    domElements.emptySlip.style.display = "none";
     const row = document.createElement("div");
     row.classList.add("slip-item");
-    const winOrLose = document.createElement("div");
-    winOrLose.classList.add("win-or-lose");
     row.classList.add("row");
 
     const newArray = globals.currentNumbers.sort((a, b) => {
@@ -95,18 +55,33 @@ const addNumbers = () => {
       return a - b;
     });
 
+    betObject.numbers = newRandomPicked;
+    betObject.stake = parseInt(domElements.stake.value);
+
+    if (betObject.numbers.length === 1) betObject.payout = betObject.stake * 5;
+    if (betObject.numbers.length === 2) betObject.payout = betObject.stake * 55;
+    if (betObject.numbers.length === 3) betObject.payout = betObject.stake * 550;
+    if (betObject.numbers.length === 4) betObject.payout = betObject.stake * 5500;
+    if (betObject.numbers.length === 5) betObject.payout = betObject.stake * 55000;
+    if (betObject.numbers.length === 6) betObject.payout = betObject.stake * 550000;
+
     const deleteItem = document.createElement("i");
+    const stakePayout = document.createElement("span");
+    stakePayout.classList.add("stake-payout");
+    stakePayout.innerHTML = `R${betObject.stake} = R${betObject.payout}`;
     deleteItem.classList.add("fa-solid");
     deleteItem.classList.add("fa-trash");
+    deleteItem.classList.add("deleteItem");
     row.appendChild(deleteItem);
 
-    if (newRandomPicked.length > 0) {
-      for (let i = 0; i < newRandomPicked.length; i++) {
+    if (betObject.numbers.length > 0) {
+      for (let i = 0; i < betObject.numbers.length; i++) {
         const rowContent = document.createElement("div");
-        rowContent.innerHTML = parseInt(newRandomPicked[i]) + 1;
+        rowContent.innerHTML = parseInt(betObject.numbers[i]) + 1;
         rowContent.classList.add("row-content");
         row.appendChild(rowContent);
       }
+      row.appendChild(stakePayout);
     } else {
       for (let i = 0; i < globals.currentNumbers.length; i++) {
         const rowContent = document.createElement("div");
@@ -114,17 +89,24 @@ const addNumbers = () => {
         rowContent.classList.add("row-content");
         row.appendChild(rowContent);
       }
+      row.appendChild(stakePayout);
     }
 
-    row.appendChild(winOrLose);
-    domElements.slip.appendChild(row);
+    console.log(betObject);
+
+    domElements.slip.insertBefore(row, domElements.slip.children[0]);
 
     deleteItem.addEventListener("click", () => {
       domElements.slip.removeChild(row);
+
+      const returnedStake = parseInt(
+        row.children[row.children.length - 1].innerHTML.toString().split("|")[0].replace("R", "")
+      );
+
       globals.numberCounter--;
       domElements.count.innerHTML = globals.numberCounter;
 
-      userObject.balance++;
+      userObject.balance += returnedStake;
       userObject.balancePanel.innerHTML = `${userObject.balance.toFixed(2)}`;
 
       domElements.deleted.classList.toggle("display");
@@ -169,7 +151,6 @@ const randomizeNumbers = () => {
   setTimeout(() => {
     createBall(globals.textArray);
   }, 100);
-  const history = localStorage.setItem("results", [].push(globals.textArray));
   return globals.textArray;
 };
 
@@ -203,7 +184,7 @@ const createBall = (textArray) => {
     if (i % 7 === 6) {
       if (textArray[globals.numBalls] == i) ball.style.background = colors[5];
     }
-    if (i % 7 === 7) {
+    if (i % 7 === 0) {
       if (textArray[globals.numBalls] == i) ball.style.background = colors[6];
     }
   }
@@ -214,24 +195,24 @@ const createBall = (textArray) => {
 
   ball.appendChild(ballInner);
 
-  if (ball) {
-    document.querySelector(".row-content").appendChild(ball);
-    setTimeout(() => {
-      document.querySelectorAll(".row-content").forEach((content) => {
-        if (content.innerHTML === ballInner.innerHTML) {
-          content.style.background = "green";
-          content.style.color = "white";
-        }
-      });
-    }, 2000);
-  }
+  // if (ball) {
+  //   document.querySelector(".row-content").appendChild(ball);
+  //   setTimeout(() => {
+  //     document.querySelectorAll(".row-content").forEach((content) => {
+  //       if (content.innerHTML === ballInner.innerHTML) {
+  //         content.style.background = "lime";
+  //         content.style.color = "green";
+  //       }
+  //     });
+  //   }, 2000);
+  // }
 
   ball.appendChild(ballInner);
   domElements.results.appendChild(ball);
 
   setTimeout(() => {
     domElements.resultsNumbers[globals.numBalls].innerHTML = textArray[globals.numBalls];
-    domElements.resultsNumbers[globals.numBalls].style.transform = "scale(1)";
+    domElements.resultsNumbers[globals.numBalls].style.transform = "scale(0)";
     domElements.resultsNumbers[globals.numBalls].style.borderRadius = "0%";
   }, 1200);
 
@@ -249,63 +230,6 @@ const createBall = (textArray) => {
       if (globals.numBalls === 4) {
         if (globals.interval !== null) {
           const newArray = [];
-          setTimeout(() => {
-            setTimeout(() => {
-              finalArray = newArray.sort((a, b) => {
-                return a - b;
-              });
-            }, 1300);
-            setTimeout(() => {
-              domElements.resultsNumbers[0].style.transform = "scale(0)";
-              newArray.push(domElements.resultsNumbers[0].innerHTML);
-            }, 1200);
-            setTimeout(() => {
-              domElements.resultsNumbers[1].style.transform = "scale(0)";
-              newArray.push(domElements.resultsNumbers[1].innerHTML);
-            }, 1000);
-            setTimeout(() => {
-              domElements.resultsNumbers[2].style.transform = "scale(0)";
-              newArray.push(domElements.resultsNumbers[2].innerHTML);
-            }, 800);
-            setTimeout(() => {
-              domElements.resultsNumbers[3].style.transform = "scale(0)";
-              newArray.push(domElements.resultsNumbers[3].innerHTML);
-            }, 600);
-            setTimeout(() => {
-              domElements.resultsNumbers[4].style.transform = "scale(0)";
-              newArray.push(domElements.resultsNumbers[4].innerHTML);
-            }, 400);
-            setTimeout(() => {
-              domElements.resultsNumbers[5].style.transform = "scale(0)";
-              newArray.push(domElements.resultsNumbers[5].innerHTML);
-            }, 200);
-          }, 4000);
-          setTimeout(() => {
-            setTimeout(() => {
-              domElements.resultsNumbers[0].style.transform = "scale(1)";
-              domElements.resultsNumbers[0].innerHTML = finalArray[0];
-            }, 200);
-            setTimeout(() => {
-              domElements.resultsNumbers[1].style.transform = "scale(1)";
-              domElements.resultsNumbers[1].innerHTML = finalArray[1];
-            }, 400);
-            setTimeout(() => {
-              domElements.resultsNumbers[2].style.transform = "scale(1)";
-              domElements.resultsNumbers[2].innerHTML = finalArray[2];
-            }, 600);
-            setTimeout(() => {
-              domElements.resultsNumbers[3].style.transform = "scale(1)";
-              domElements.resultsNumbers[3].innerHTML = finalArray[3];
-            }, 800);
-            setTimeout(() => {
-              domElements.resultsNumbers[4].style.transform = "scale(1)";
-              domElements.resultsNumbers[4].innerHTML = finalArray[4];
-            }, 1000);
-            setTimeout(() => {
-              domElements.resultsNumbers[5].style.transform = "scale(1)";
-              domElements.resultsNumbers[5].innerHTML = finalArray[5];
-            }, 1200);
-          }, 7000);
         }
       }
       if (rollCount === thresholds[i] && globals.numBalls === i) {
@@ -343,6 +267,8 @@ const finalResults = () => {
     }
   });
 };
+
+//Auto play
 
 const numbers = document.querySelectorAll(".nums");
 
@@ -402,29 +328,82 @@ numbers.forEach((num) => {
   });
 });
 
-setInterval(() => {
-  globals.numberCounter === 0
-    ? (domElements.emptySlip.style.display = "block")
-    : (domElements.emptySlip.style.display = "none");
-}, 200);
-
 // Play after every 2 minutes
 // Real time
 
+//Restore history
+function restoreHistory() {
+  globals.resultsArray.forEach((item) => {
+    const historicResults = document.createElement("div");
+    historicResults.classList.add("historic-results");
+
+    item.numbers.forEach((item) => {
+      const ball = document.createElement("div");
+      ball.classList.add("ball-history");
+      ball.innerHTML = item;
+      historicResults.append(ball);
+    });
+    newArray = [];
+    const timeStamp = document.createElement("span");
+    timeStamp.classList.add("time-stamp");
+    timeStamp.innerHTML = item.time;
+    historicResults.append(timeStamp);
+    domElements.history.insertBefore(historicResults, domElements.history.children[0]);
+  });
+}
+
+restoreHistory();
+
+// Local storage
+const saveToHistory = (newArray, time) => {
+  const drawId = Math.floor(Math.random() * 1000000);
+  const saveBet = {
+    id: drawId,
+    numbers: newArray,
+    time: time,
+  };
+
+  // console.log(globals.resultsArray);
+
+  globals.resultsArray.push(saveBet);
+  localStorage.setItem("results", JSON.stringify(globals.resultsArray));
+};
+
 setInterval(() => {
-  let time = ` ${new Date().getMinutes() % 2}:${new Date().getSeconds()}`;
+  const trash = document.querySelectorAll(".deleteItem");
+  console.log(trash.length);
+  let time = `${new Date().getSeconds()}`;
   domElements.timeLeft.innerHTML = time;
-  if (time.trim() === "0:18") randomizeNumbers();
-  if (time.trim() === "1:0") {
+  let newArray = [];
+  if (time.trim() === "20") {
+    randomizeNumbers();
+    domElements.trash.forEach((item) => {
+      item.style.display = "none";
+    });
+  }
+  if (time.trim() === "40") {
+    domElements.trash.forEach((item) => {
+      item.style.display = "block";
+    });
+    document.querySelector(".slip").innerHTML = `
+    <p class="empty">Your slip is empty</p>
+    <span class="deleted">Deleted successfully!</span>`;
     domElements.results.innerHTML = "";
     globals.textArray = [];
     globals.numBalls = -1;
-    let newArray = [];
+    globals.numberCounter = 0;
+    domElements.count.innerHTML = globals.numberCounter;
 
     domElements.resultsNumbers.forEach((item) => {
       item.style.transform = "scale(0)";
       newArray.push(item.innerHTML);
     });
+
+    const timeStamp = document.createElement("span");
+    timeStamp.classList.add("time-stamp");
+    timeStamp.innerHTML = new Date().toLocaleTimeString();
+
+    saveToHistory(newArray, timeStamp.innerHTML);
 
     const historicResults = document.createElement("div");
     historicResults.classList.add("historic-results");
@@ -433,35 +412,18 @@ setInterval(() => {
       const ball = document.createElement("div");
       ball.classList.add("ball-history");
       ball.innerHTML = item;
-      for (let i = 1; i <= 49; i++) {
-        if (i % 7 === 1) {
-          if (item == i) ball.style.background = colors[0];
-        }
-        if (i % 7 === 2) {
-          if (item == i) ball.style.background = colors[1];
-        }
-        if (i % 7 === 3) {
-          if (item == i) ball.style.background = colors[2];
-        }
-        if (i % 7 === 4) {
-          if (item == i) ball.style.background = colors[3];
-        }
-        if (i % 7 === 5) {
-          if (item == i) ball.style.background = colors[4];
-        }
-        if (i % 7 === 6) {
-          if (item == i) ball.style.background = colors[5];
-        }
-        if (i % 7 === 7) {
-          if (item == i) ball.style.background = colors[6];
-        }
-      }
       historicResults.append(ball);
     });
     newArray = [];
-    domElements.history.append(
-      `<p class="time-stamp">${new Date().getHours()}:${new Date().getMinutes()}</p>`,
-      historicResults
-    );
+    historicResults.append(timeStamp);
+    domElements.history.insertBefore(historicResults, domElements.history.children[0]);
   }
 }, 1000);
+
+// clear
+
+setInterval(() => {
+  globals.numberCounter === 0
+    ? (domElements.emptySlip.style.display = "block")
+    : (domElements.emptySlip.style.display = "none");
+}, 200);
