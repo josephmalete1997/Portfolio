@@ -1,4 +1,4 @@
-userObject.balancePanel.innerHTML = userObject.balance.toFixed(2);
+userObject.balancePanel.innerHTML = userObject.balance;
 userObject.namePanel.innerHTML = userObject.name;
 
 domElements.add.disabled = true;
@@ -32,6 +32,7 @@ const addNumbers = () => {
         globals.numberCounter++;
         domElements.count.innerHTML = globals.numberCounter;
         userObject.balance -= domElements.stake.value;
+        localStorage.setItem("balance", userObject.balance);
         userObject.balancePanel.innerHTML = `${userObject.balance.toFixed(2)}`;
         domElements.added.classList.toggle("display");
         setTimeout(() => {
@@ -92,7 +93,7 @@ const addNumbers = () => {
       row.appendChild(stakePayout);
     }
 
-    console.log(betObject);
+    // console.log(betObject);
 
     domElements.slip.insertBefore(row, domElements.slip.children[0]);
 
@@ -107,6 +108,7 @@ const addNumbers = () => {
       domElements.count.innerHTML = globals.numberCounter;
 
       userObject.balance += returnedStake;
+      localStorage.setItem("balance", userObject.balance);
       userObject.balancePanel.innerHTML = `${userObject.balance.toFixed(2)}`;
 
       domElements.deleted.classList.toggle("display");
@@ -294,7 +296,7 @@ domElements.randomPick.addEventListener("click", () => {
     globals.randomPickedFinal.push(numbersPicked);
     numbers[numbersPicked].classList.add(stringsObject.selected);
   }
-  console.log(globals.randomPickedFinal);
+  // console.log(globals.randomPickedFinal);
 
   globals.min = parseInt(domElements.selectedOption);
 
@@ -324,7 +326,7 @@ numbers.forEach((num) => {
     globals.min === parseInt(domElements.selectedOption)
       ? (domElements.add.disabled = false)
       : (domElements.add.disabled = true);
-    console.log(globals.currentNumbers);
+    // console.log(globals.currentNumbers);
   });
 });
 
@@ -371,7 +373,7 @@ const saveToHistory = (newArray, time) => {
 
 setInterval(() => {
   const trash = document.querySelectorAll(".deleteItem");
-  console.log(trash.length);
+  // console.log(trash.length);
   let time = `${new Date().getSeconds()}`;
   domElements.timeLeft.innerHTML = time;
   let newArray = [];

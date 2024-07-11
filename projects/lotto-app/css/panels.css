@@ -164,7 +164,7 @@
   width: 86%;
   margin: 2% 5%;
   padding: 2%;
-  z-index: 210;
+  z-index: 0;
   display: flex;
   flex-direction: column;
   position: relative;

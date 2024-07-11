@@ -20,10 +20,66 @@
 .balance {
   background: var(--gradient-blue);
   color: rgb(183, 183, 255);
-  padding: 0px 10px;
+  padding: 0.5% 5%;
   border-radius: 5px;
   border: 1px solid;
   position: absolute;
   right: 2%;
   cursor: pointer;
+}
+
+/* Deposit panel */
+
+.deposit-panel {
+  background: white;
+  padding: 5%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  z-index: 100;
+  width: 30%;
+  border-radius: 10px;
+  top: 10%;
+}
+
+.deposit-panel button {
+  padding: 2%;
+  margin: 1%;
+  font-size: 24px;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  width: 50%;
+  cursor: pointer;
+}
+
+.deposit-panel div:nth-child(1) {
+  font-size: 24px;
+  position: absolute;
+  right: 3%;
+  top: 5%;
+  cursor: pointer;
+}
+
+.deposit-panel div:nth-child(1):hover {
+  color: red;
+}
+
+.deposit-panel button:nth-child(2) {
+  background: var(--gradient-blue);
+}
+
+.deposit-panel button:nth-child(3) {
+  border: 2px solid;
+  color: rgb(0, 44, 241);
+  background: white;
+}
+
+.over-layer {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.9);
+  filter: blur(10px);
+  z-index: 10;
 }

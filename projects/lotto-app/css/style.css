@@ -3,6 +3,9 @@ body {
   background: rgb(88, 88, 88);
   background: rgb(0, 0, 0);
   user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 main {
@@ -161,7 +164,7 @@ main {
 .added,
 .deleted {
   font-size: 22px;
-  background: rgb(0, 255, 42);
+  background: rgb(151, 255, 169);
   color: green;
   display: none;
   top: 0px;

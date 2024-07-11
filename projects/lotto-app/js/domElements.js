@@ -36,10 +36,13 @@ const colors = [
 
 const userObject = {
   name: "Joseph",
-  balance: 50,
+  balance: null,
   namePanel: document.querySelector(".name"),
   balancePanel: document.querySelector("#balance"),
 };
+
+const getBalance = Math.round((localStorage.getItem("balance") * 100) / 100.0);
+getBalance ? (userObject.balance = getBalance) : localStorage.setItem("balance", 50);
 
 const betObject = {
   stake: null,
