@@ -1,0 +1,19 @@
+@media screen and (max-width: 600px) {
+  .content-grid {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .left-items {
+    flex: 1;
+    width: 100%;
+  }
+
+  .right-items {
+    flex: 1;
+    margin-top: 0rem;
+    position: sticky;
+    width: 100%;
+  }
+}
