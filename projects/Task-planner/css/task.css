@@ -1,0 +1,154 @@
+.title-day,
+.addNew {
+  background: rgb(0, 0, 0);
+  color: #ffffff;
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.5rem;
+  padding: 0.2rem;
+  font-size: 1.2rem;
+  margin: 1rem;
+  border: none;
+}
+
+.title-day {
+  background: rgb(235, 235, 235);
+  color: black;
+}
+
+.addNew {
+  cursor: pointer;
+}
+
+.time-line {
+  background: white;
+  width: 95%;
+  height: 75vh;
+  overflow-y: auto;
+  padding: 50px 0rem;
+  position: relative;
+}
+
+.hours {
+  height: 29px;
+  border-top: 1px solid #9b9b9b;
+  margin-left: 8vw;
+  position: relative;
+}
+
+.text {
+  position: absolute;
+  margin: 0px;
+  left: -70px;
+  top: -10px;
+  user-select: none;
+  font-size: 14px;
+}
+
+.line {
+  background: rgb(255, 76, 76);
+  width: 88%;
+  height: 2px;
+  position: absolute;
+  z-index: 20;
+  left: 12.5%;
+}
+
+.line::before {
+  content: "";
+  background: rgb(255, 76, 76);
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  z-index: 200;
+  top: -1.5px;
+  left: -2px;
+  border-radius: 50%;
+}
+
+.line:hover {
+  background: red;
+}
+
+.task-on-timeline {
+  background: rgb(132, 132, 255);
+  color: white;
+  width: auto;
+  padding: 0px 2%;
+  position: absolute;
+  z-index: 10;
+  top: 50px;
+  left: 120px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  /* border: 1px solid rgb(34, 34, 34); */
+}
+
+.importance {
+  display: flex;
+  left: 10rem;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  z-index: 100;
+}
+
+.importance span {
+  margin: 0rem;
+  margin-left: 2rem;
+  position: relative;
+  cursor: default;
+}
+
+.importance span:nth-child(2)::before {
+  content: "";
+  background: grey;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: -1rem;
+  top: 0.2rem;
+  border-radius: 50%;
+}
+
+.importance span:nth-child(3)::before {
+  content: "";
+  background: orange;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: -1rem;
+  top: 0.2rem;
+  border-radius: 50%;
+}
+
+.importance span:nth-child(4)::before {
+  content: "";
+  background: red;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: -1rem;
+  top: 0.2rem;
+  border-radius: 50%;
+}
+
+.importance span:hover .desc-imp {
+  display: block;
+}
+
+.desc-imp {
+  width: 150px;
+  background: rgb(65, 65, 65);
+  color: white;
+  position: absolute;
+  top: 1rem;
+  font-size: 0.8rem;
+  border-radius: 0.1rem;
+  padding: 0.2rem;
+  display: none;
+}

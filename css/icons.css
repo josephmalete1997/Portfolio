@@ -7,15 +7,14 @@
 .skillsPanel .fa-solid,
 .skillsPanel .fa-brands {
   color: rgb(90, 125, 170);
-  font-size: 32px;
-  margin-right: 20px;
+  font-size: 30px;
+  margin-right: 5px;
   padding: 10px;
   width: 40px;
 }
 
-
-
-.fa-gear {}
+.fa-gear {
+}
 
 .left {
   font-size: 60px;
@@ -49,4 +48,8 @@
   100% {
     transform: rotate(-360deg);
   }
+}
+
+.gif {
+  mix-blend-mode: color-dodge;
 }

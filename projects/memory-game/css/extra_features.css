@@ -117,3 +117,124 @@
 .feedback h1 {
   color: black;
 }
+
+@media screen and (max-width: 600px) {
+  .size-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+
+  .size-panel p {
+    font-size: 20px;
+    width: 70px;
+    left: 10px;
+    top: 0px;
+  }
+
+  .details {
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    padding: 5px 0px;
+    font-size: 16px;
+  }
+
+  .grid-size {
+    font-size: 20px;
+    background: white;
+    color: black;
+    width: 270px;
+    display: none;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 0px 10px;
+    position: absolute;
+    left: 10px;
+    top: 105px;
+    z-index: 20;
+    border-radius: 10px;
+  }
+
+  .hide {
+    display: flex;
+  }
+
+  .grid-size::before {
+    height: 20px;
+    width: 20px;
+    display: bloc;
+    content: "";
+    background: rgb(255, 255, 255);
+    position: absolute;
+    left: 20px;
+    top: -10px;
+    transform: rotate(45deg);
+    z-index: 10;
+  }
+
+  .grid-size div {
+    background: black;
+    color: white;
+    width: 120px;
+    padding: 2px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  .grid-size div:hover {
+    background: rgb(48, 48, 48);
+  }
+
+  .timer,
+  .moves {
+    font-size: 20px;
+    border: 2px solid;
+    margin: 0px;
+    margin-top: 15px;
+    padding: 5px;
+  }
+
+  .timer {
+    margin-left: 10px;
+  }
+
+  .moves {
+    margin-left: 60px;
+  }
+
+  .feedback {
+    background: rgb(39, 39, 39);
+    height: 100vh;
+    width: 100vw;
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+  }
+
+  .feedback-inner {
+    background: white;
+    height: 400px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 50px;
+  }
+
+  .feedback h1 {
+    color: black;
+  }
+}

@@ -40,7 +40,7 @@
   top: -100px;
   padding-top: 20px;
   background: rgb(0, 0, 0);
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .side-nav a {
@@ -96,29 +96,27 @@
 
 .text-image {
   width: 100%;
-  display: grid;
-  grid-template-columns: 30% 70%;
-  grid-column-gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   height: 250px;
   margin-bottom: 20px;
-  background: white;
+  background: linear-gradient(80deg, white, white, rgb(255, 255, 255));
   padding: 20px;
+  border-radius: 20px;
 }
 
 .text-image div p {
-  width: 90%;
   position: relative;
   text-align: justify;
   font-size: 20px;
   font-weight: lighter;
-  top: -50px;
+  padding: 20px;
 }
 
 .welcome {
   position: relative;
-  z-index: 1;
-  transition: 0.5s;
   background-position-x: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -126,9 +124,10 @@
 }
 
 .photo {
-  width: 100%;
+  width: 90%;
   height: 90%;
-  background-size: 60%;
+  position: relative;
+  border-radius: 50%;
 }
 
 .over-layer {

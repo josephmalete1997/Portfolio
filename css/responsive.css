@@ -22,7 +22,7 @@
     padding: 5%;
     position: fixed;
     z-index: 500;
-    transition: .5s;
+    transition: 0.5s;
   }
 
   .mobi-nav {
@@ -52,7 +52,7 @@
   }
 
   .sub-title {
-    font-size: 36px;
+    font-size: 26px;
     text-align: center;
   }
 
@@ -99,7 +99,6 @@
     display: grid;
     grid-template-columns: 50% 50%;
   }
-
 
   .computer {
     display: none;
@@ -156,7 +155,6 @@
     font-family: cursive;
   }
 
-
   .socials-icons img {
     width: 30px;
     margin: 10px;
@@ -203,7 +201,6 @@
     flex-direction: column;
   }
 
-
   .schools-items {
     width: 100%;
     display: flex;
@@ -217,14 +214,13 @@
     color: rgb(24, 24, 24);
   }
 
-
   .schools-items table th {
     padding: 0px;
     /* border-collapse: collapse; */
     font-size: 18px;
     text-align: start;
     background: rgb(223, 223, 223);
-    border: 1px solid rgb(146, 146, 146)
+    border: 1px solid rgb(146, 146, 146);
   }
 
   td {
@@ -233,7 +229,6 @@
     padding: 2%;
     /* border: 1px solid; */
   }
-
 
   /* Projects */
 
@@ -375,5 +370,4 @@
     grid-template-columns: 50% 50%;
     grid-column-gap: 1%;
   }
-
 }

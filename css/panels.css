@@ -17,33 +17,36 @@
   position: relative;
   padding: 20px;
   margin: 10px;
+  background: white;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .skillsPanel {
   height: 50px;
-  padding-top: 10px;
   left: 0px;
   position: relative;
   display: flex;
   align-items: center;
   transition: 0.5s;
   color: rgb(0, 0, 0);
-  margin: 5px;
+  margin: 1%;
 }
 
-.skillsPanel:hover .fa-brands,z
-.skillsPanel:hover .fa-solid {
+.skillsPanel:hover .fa-brands,
+z .skillsPanel:hover .fa-solid {
   color: #b8b8b8;
   transition: 1s;
 }
 
 .skillsPanel div {
-  font-size: 24px;
-  padding-left: 10px;
+  font-size: 18px;
+  padding-left: 5px;
 }
 
 /* skillsPanel */
-
 
 .sub-title {
   font-size: 36px;
@@ -91,7 +94,7 @@ li {
   font-size: 24px;
   text-align: start;
   background: rgb(223, 223, 223);
-  border: 1px solid rgb(146, 146, 146)
+  border: 1px solid rgb(146, 146, 146);
 }
 
 td {
@@ -102,7 +105,8 @@ td {
   /* border: 1px solid; */
 }
 
-td:nth-child(1) {}
+td:nth-child(1) {
+}
 
 .download-section {
   width: 90%;
@@ -128,6 +132,7 @@ td:nth-child(1) {}
   justify-content: center;
   height: 35px;
   font-size: 16px;
+  border-radius: 10px;
 }
 
 .d {

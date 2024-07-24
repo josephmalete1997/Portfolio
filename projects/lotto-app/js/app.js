@@ -348,7 +348,7 @@ function restoreHistory() {
     newArray = [];
     const timeStamp = document.createElement("span");
     timeStamp.classList.add("time-stamp");
-    timeStamp.innerHTML = item.time;
+    timeStamp.innerHTML = `${item.time}`;
     historicResults.append(timeStamp);
     domElements.history.insertBefore(historicResults, domElements.history.children[0]);
   });
@@ -387,13 +387,13 @@ setInterval(() => {
     domElements.trash.forEach((item) => {
       item.style.display = "block";
     });
+    globals.numberCounter = 0;
     document.querySelector(".slip").innerHTML = `
-    <p class="empty">Your slip is empty</p>
+    <p id="empty">Your slip is empty</p>
     <span class="deleted">Deleted successfully!</span>`;
     domElements.results.innerHTML = "";
     globals.textArray = [];
     globals.numBalls = -1;
-    globals.numberCounter = 0;
     domElements.count.innerHTML = globals.numberCounter;
 
     domElements.resultsNumbers.forEach((item) => {
@@ -403,7 +403,7 @@ setInterval(() => {
 
     const timeStamp = document.createElement("span");
     timeStamp.classList.add("time-stamp");
-    timeStamp.innerHTML = new Date().toLocaleTimeString();
+    timeStamp.innerHTML = `<i class="fa-solid fa-clock"></i> ${new Date().toLocaleTimeString()}`;
 
     saveToHistory(newArray, timeStamp.innerHTML);
 

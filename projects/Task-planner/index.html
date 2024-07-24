@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/task.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="assets/fontAwesome/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/062d0051ac.js" crossorigin="anonymous"></script>
+    <title>Task Manager</title>
+  </head>
+  <body>
+    <div class="over-layer"></div>
+    <div class="header">
+      <p class="title-day">Today</p>
+      <button class="addNew">Add new</button>
+      <div class="importance">
+        <h4>Importance:</h4>
+        <span>Low<i class="desc-imp">This task is of low importance</i></span>
+        <span>Medium <i class="desc-imp">This task is of medium importance</i></span>
+        <span>Priority <i class="desc-imp">This task is a priority</i></span>
+      </div>
+      <i class="fa-solid fa-bell"></i>
+    </div>
+    <div class="content-grid">
+      <div class="left-items">
+        <div class="time-line"></div>
+
+        <!-- <i class="fa-solid fa-zoom"></i> -->
+
+        <form>
+          <span id="cancel"><i class="fa-solid fa-times"></i></span>
+          <label>Task name:</label>
+          <input type="text" class="name" />
+          <label>Date:</label>
+          <input type="date" class="date" />
+          <label>From:</label>
+          <input type="time" class="start" />
+          <label>To:</label>
+          <input type="time" class="end" />
+          <label>Importance</label>
+          <select id="importance">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">Priority</option>
+          </select>
+          <!-- <button class="add-task">Add Note</button> -->
+          <button class="add-task">Add Task</button>
+        </form>
+      </div>
+      <div class="right-items">
+        <p class="title-h1">Your tasks</p>
+        <div class="task-panel"></div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/elements_and_objects.js"></script>
+    <script src="js/tasks.js"></script>
+  </body>
+</html>
