@@ -132,7 +132,8 @@ option {
   border-radius: 1rem;
 }
 
-.add-task {
+.add-task,
+.update-task {
   background: rgb(0, 0, 0);
   color: white;
   width: 40%;
@@ -140,6 +141,7 @@ option {
   padding: 0.2rem;
   margin: 0.2rem 0rem;
   cursor: pointer;
+  font-size: 1rem;
 }
 
 .content-grid {

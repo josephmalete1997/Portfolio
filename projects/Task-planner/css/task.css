@@ -7,15 +7,21 @@
   align-items: center;
   justify-content: center;
   border-radius: 1.5rem;
-  padding: 0.2rem;
-  font-size: 1.2rem;
+  padding: 0.5rem;
+  font-size: 1rem;
   margin: 1rem;
   border: none;
 }
 
 .title-day {
-  background: rgb(235, 235, 235);
-  color: black;
+  background: rgb(241, 241, 241);
+  color: rgb(77, 77, 77);
+  cursor: pointer;
+}
+
+.title-day:hover {
+  background: rgb(80, 135, 255);
+  color: white;
 }
 
 .addNew {

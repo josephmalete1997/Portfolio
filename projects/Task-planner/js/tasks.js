@@ -54,6 +54,7 @@ addToTimeline(taskObject);
 function addNewTask() {
   for (let i = 0; i < taskObject.length; i++) {
     const newTask = document.createElement("div");
+    newTask.id = taskObject[i].id;
     newTask.classList.add("task");
 
     const timeNow = new Date().getHours();
@@ -94,6 +95,7 @@ addNewTask();
 
 function createTask() {
   const task = {
+    id: Math.floor(Math.random() * 100000),
     name: formElements.name.value,
     date: formElements.date.value,
     from: formElements.start.value,
@@ -103,6 +105,7 @@ function createTask() {
 
   const newTask = document.createElement("div");
   newTask.classList.add("task");
+  newTask.id = task.id;
   newTask.innerHTML = `
     
       <p>${
@@ -110,7 +113,7 @@ function createTask() {
           ? formElements.name.value.slice(0, 25) + `...`
           : formElements.name.value
       }</p>
-      <p>${formElements.start.value} - ${formElements.end.value}</p>
+      <p> ${formElements.start.value} - ${formElements.end.value}</p>
       <span>${
         new Date().getHours - formElements.start.value.slice(0, 2)
       } hours and 28 minutes to go</span>
@@ -121,7 +124,9 @@ function createTask() {
   }
   rightItem.append(newTask);
   taskObject.push(task);
+
   localStorage.setItem("task", JSON.stringify(taskObject));
+
   setTimeout(() => {
     addToTimeline(taskObject);
   }, 100);
@@ -153,10 +158,13 @@ function makeInvisible(...item) {
 
 addNewItem.addEventListener("click", () => {
   makeVisible(form, overLayer);
+  form.children[form.children.length - 2].style.display = "block";
+  form.children[form.children.length - 1].style.display = "none";
 });
 
 cancel.addEventListener("click", () => {
   makeInvisible(form, overLayer);
+  form.reset();
 });
 
 const tasks = document.querySelectorAll(".task");
@@ -168,5 +176,8 @@ deleteIcon.forEach((item, index) => {
     taskObject.splice(index, 1);
     localStorage.setItem("task", JSON.stringify(taskObject));
     timeline.removeChild(document.querySelectorAll(".task-on-timeline")[index]);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   });
 });

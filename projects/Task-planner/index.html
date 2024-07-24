@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/task.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/calendar.css" />
     <link rel="stylesheet" href="assets/fontAwesome/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/062d0051ac.js" crossorigin="anonymous"></script>
@@ -15,7 +16,7 @@
     <div class="over-layer"></div>
     <div class="header">
       <p class="title-day">Today</p>
-      <button class="addNew">Add new</button>
+      <button class="addNew">Add new task</button>
       <div class="importance">
         <h4>Importance:</h4>
         <span>Low<i class="desc-imp">This task is of low importance</i></span>
@@ -48,15 +49,19 @@
           </select>
           <!-- <button class="add-task">Add Note</button> -->
           <button class="add-task">Add Task</button>
+          <button class="update-task">Update Task</button>
         </form>
+        <div class="calendar"></div>
       </div>
       <div class="right-items">
-        <p class="title-h1">Your tasks</p>
+        <p class="title-h1">Your tasks (<span id="tasks-number"></span>) :</p>
         <div class="task-panel"></div>
       </div>
     </div>
     <script src="js/main.js"></script>
     <script src="js/elements_and_objects.js"></script>
     <script src="js/tasks.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/update_task.js"></script>
   </body>
 </html>
