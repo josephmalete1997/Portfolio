@@ -8,6 +8,7 @@ body {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   margin: 0px;
   user-select: none;
+  overflow-x: hidden;
 }
 
 /* Scroll */
