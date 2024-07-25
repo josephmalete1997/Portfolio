@@ -2,7 +2,7 @@
 .addNew {
   background: rgb(0, 0, 0);
   color: #ffffff;
-  width: 10%;
+  width: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,6 +11,9 @@
   font-size: 1rem;
   margin: 1rem;
   border: none;
+}
+.addNew {
+  width: 10%;
 }
 
 .title-day {

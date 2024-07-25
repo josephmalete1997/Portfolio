@@ -1,7 +1,8 @@
 .calendar {
-  width: 400px;
+  width: 450px;
   height: 400px;
   background: #ffffff;
+  display: flex;
   flex-direction: column;
   border-radius: 2rem;
   position: absolute;
@@ -43,7 +44,7 @@
 .days-of-the-week {
   /* background: #f3f3f3; */
   padding: 0.4rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   cursor: pointer;
   height: 2rem;
   width: 2.5rem;
