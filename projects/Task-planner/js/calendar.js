@@ -28,11 +28,11 @@ function generateArrows() {
   arrowPanel.classList.add("arrow-panel");
 
   const leftArrow = document.createElement("div");
-  leftArrow.innerHTML = `<i class="fa-solid fa-arrow-left"></i>`;
+  leftArrow.innerHTML = `<i class="fa-solid fa-angle-left"></i>`;
   leftArrow.classList.add("left-arrow");
 
   const rightArrow = document.createElement("div");
-  rightArrow.innerHTML = `<i class="fa-solid fa-arrow-right"></i>`;
+  rightArrow.innerHTML = `<i class="fa-solid fa-angle-right"></i>`;
   rightArrow.classList.add("right-arrow");
 
   leftArrow.addEventListener("click", () => {
