@@ -106,3 +106,15 @@ z .project-details button:nth-child(2) .fa-brands {
 .fruity img {
   opacity: 0.8;
 }
+
+#services {
+  width: 100%;
+}
+
+#services ul {
+  font-size: 1.5rem;
+}
+
+#services ul li {
+ list-style:inside;
+}

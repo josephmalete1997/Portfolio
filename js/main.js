@@ -30,10 +30,11 @@ const linkNames = [
   "Home",
   "About",
   "Skills",
-  "Portfolio",
+  "Projects",
+  "Services",
   "Contact",
 ];
-const linkArray = ["#home", "#about", "#skills", "#portfolio", "#contact"];
+const linkArray = ["#home", "#about", "#skills", "#portfolio", "#services", "#contact"];
 
 for (let i = 0; i < linkNames.length; i++) {
   const link = document.createElement("a");
