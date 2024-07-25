@@ -3,9 +3,9 @@ function timeLine() {
     const hours = document.createElement("div");
     const text = document.createElement("p");
     let p;
-    i > 12 ? (p = "P.M") : (p = "A.M");
+    i >= 12 ? (p = "PM") : (p = "AM");
     text.classList.add("text");
-    text.innerHTML = `${i}:00 ${p}`;
+    text.innerHTML = `${i} ${p}`;
     hours.classList.add("hours");
     hours.append(text);
     timeline.append(hours);
@@ -40,7 +40,7 @@ function addToTimeline(taskObject) {
     newTask.style.top = `${heightFrom * 30 + 50}px`;
     newTask.style.height = `${height * 30}px`;
     newTask.style.background = taskObject[i].color;
-    newTask.innerHTML = taskObject[i].name;
+    newTask.innerHTML = `${taskObject[i].name} <i class='text-time'>(${taskObject[i].from}-${taskObject[i].to})</i>`;
 
     for (let color in colorObject) {
       if (color === taskObject[i].importance) newTask.style.background = `${colorObject[color]}`;
