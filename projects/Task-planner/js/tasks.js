@@ -40,7 +40,7 @@ function addToTimeline(taskObject) {
     newTask.style.top = `${heightFrom * 30 + 50}px`;
     newTask.style.height = `${height * 30}px`;
     newTask.style.background = taskObject[i].color;
-    newTask.innerHTML = `${taskObject[i].name} <i class='text-time'>(${taskObject[i].from}-${taskObject[i].to})</i>`;
+    newTask.innerHTML = `${taskObject[i].name} <i class='text-time'> ( ${taskObject[i].from}-${taskObject[i].to} )</i>`;
 
     for (let color in colorObject) {
       if (color === taskObject[i].importance) newTask.style.background = `${colorObject[color]}`;
@@ -101,6 +101,7 @@ function createTask() {
     from: formElements.start.value,
     to: formElements.end.value,
     importance: formElements.importance.value,
+    note: formElements.note.value,
   };
 
   const newTask = document.createElement("div");
@@ -160,11 +161,13 @@ addNewItem.addEventListener("click", () => {
   makeVisible(form, overLayer);
   form.children[form.children.length - 2].style.display = "block";
   form.children[form.children.length - 1].style.display = "none";
+  addNote.innerHTML = `<i class="fa-solid fa-file-lines"></i> Add Note`;
 });
 
 cancel.addEventListener("click", () => {
-  makeInvisible(form, overLayer);
+  makeInvisible(form, overLayer, notes);
   form.reset();
+  formElements.note.value = "";
 });
 
 const tasks = document.querySelectorAll(".task");

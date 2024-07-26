@@ -5,6 +5,19 @@ const addNewItem = document.querySelector(".addNew");
 const form = document.querySelector("form");
 const overLayer = document.querySelector(".over-layer");
 const cancel = document.querySelector("#cancel");
+const backToForm = document.querySelector(".back-to-form");
+const notes = document.querySelector(".notes");
+const addNote = document.querySelector(".add-note");
+
+backToForm.addEventListener("click", () => {
+  notes.style.display = "none";
+  form.style.display = "flex";
+});
+
+addNote.addEventListener("click", () => {
+  notes.style.display = "flex";
+  form.style.display = "none";
+});
 
 const formElements = {
   submit: document.querySelector(".add-task"),
@@ -14,6 +27,7 @@ const formElements = {
   start: document.querySelector(".start"),
   end: document.querySelector(".end"),
   importance: document.querySelector("#importance"),
+  note: document.querySelector(".note-text"),
 };
 
 const taskObject = JSON.parse(localStorage.getItem("task")) || [];

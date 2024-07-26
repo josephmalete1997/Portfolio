@@ -32,7 +32,7 @@
 }
 
 .time-line {
-  background: white;
+  background: var(--bg-color);
   width: 96%;
   height: 75vh;
   overflow-y: auto;
@@ -166,4 +166,8 @@
   border-radius: 0.1rem;
   padding: 0.2rem;
   display: none;
+}
+
+.tasks-number {
+  font-size: 1.3rem;
 }

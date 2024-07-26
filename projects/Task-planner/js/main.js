@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (storedPosition) {
       dragTask.style.left = storedPosition.left + "px";
     } else {
-      dragTask.style.left = "100px";
+      dragTask.style.left = "150px";
     }
 
     // Function to handle dragging

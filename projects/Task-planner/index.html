@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="css/task.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/calendar.css" />
+    <link rel="stylesheet" href="css/task_header_panel.css" />
     <link rel="stylesheet" href="assets/fontAwesome/css/all.min.css" />
+    <link rel="shortcut icon" href="calendar.svg" />
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/062d0051ac.js" crossorigin="anonymous"></script>
     <title>Task Manager</title>
@@ -24,6 +26,8 @@
         <span>Priority <i class="desc-imp">This task is a priority</i></span>
       </div>
       <i class="fa-solid fa-bell"></i>
+      <i class="fa-regular fa-lightbulb"></i>
+      <i class="fa-solid fa-bars"></i>
     </div>
     <div class="content-grid">
       <div class="left-items">
@@ -32,6 +36,7 @@
         <!-- <i class="fa-solid fa-zoom"></i> -->
 
         <form>
+          <div class="add-note"><i class="fa-solid fa-file-lines"></i> Add Note</div>
           <span id="cancel"><i class="fa-solid fa-times"></i></span>
           <label>Task name:</label>
           <input type="text" class="name" />
@@ -51,10 +56,22 @@
           <button class="add-task">Add Task</button>
           <button class="update-task">Update Task</button>
         </form>
+
         <div class="calendar"></div>
+        <div class="notes">
+          <div class="back-to-form"><i class="fa-solid fa-arrow-left"></i></div>
+          <textarea class="note-text"></textarea>
+        </div>
       </div>
       <div class="right-items">
-        <p class="title-h1">Your tasks (<span id="tasks-number">0</span>) :</p>
+        <p class="title-h1">
+          Your tasks <i class="tasks-number">(<span id="tasks-number">0</span>) :</i>
+        </p>
+        <div class="task-panel-header">
+          <div class="list-item">All</div>
+          <div class="list-item">today</div>
+          <div class="list-item">List by importance</div>
+        </div>
         <div class="task-panel"></div>
       </div>
     </div>
@@ -63,5 +80,7 @@
     <script src="js/tasks.js"></script>
     <script src="js/calendar.js"></script>
     <script src="js/update_task.js"></script>
+    <script src="js/task_ordering.js"></script>
+    <script src="js/theme.js"></script>
   </body>
 </html>

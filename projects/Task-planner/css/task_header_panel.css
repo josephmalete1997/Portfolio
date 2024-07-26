@@ -1,0 +1,17 @@
+.task-panel-header {
+  display: flex;
+  margin: 0rem;
+}
+
+.list-item {
+  background: #eeeeee;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.active-selection {
+  background: black;
+  color: white;
+}

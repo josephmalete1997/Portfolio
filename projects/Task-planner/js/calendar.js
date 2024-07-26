@@ -35,6 +35,10 @@ function generateArrows() {
   rightArrow.innerHTML = `<i class="fa-solid fa-angle-right"></i>`;
   rightArrow.classList.add("right-arrow");
 
+  const closeCalendar = document.createElement("div");
+  closeCalendar.innerHTML = `<i class="fa-solid fa-times"></i>`;
+  closeCalendar.classList.add("close-calendar");
+
   leftArrow.addEventListener("click", () => {
     count--;
     if (count < -now.getMonth()) {
@@ -57,7 +61,11 @@ function generateArrows() {
     updateCalendar(monthIndex, year);
   });
 
-  arrowPanel.append(leftArrow, rightArrow);
+  arrowPanel.append(leftArrow, rightArrow, closeCalendar);
+  closeCalendar.addEventListener("click", () => {
+    calendar.classList.toggle("show");
+    overLayer.style.display = "none";
+  });
   calendar.append(arrowPanel);
 
   // Initial calendar generation
@@ -151,6 +159,7 @@ selectDays();
 
 currentDay.addEventListener("click", () => {
   calendar.classList.toggle("show");
+  overLayer.style.display = "block";
 });
 
 // Initialize arrows and calendar
