@@ -1,3 +1,8 @@
+import { domElements, taskId, formElements, taskObject } from "./elements_and_objects.js";
+
+const { update, name, date, start, end, importance, note } = formElements;
+const { form, overLayer, addNote } = domElements;
+
 const edit = document.querySelectorAll(".fa-edit");
 
 edit.forEach((edit, index) => {
@@ -16,7 +21,7 @@ edit.forEach((edit, index) => {
       form.children[7].value = taskObject[index].from;
       form.children[9].value = taskObject[index].to;
       form.children[11].value = taskObject[index].importance;
-      formElements.note.value = taskObject[index].note;
+      note.value = taskObject[index].note;
 
       form.children[form.children.length - 2].style.display = "none";
       form.children[form.children.length - 1].style.display = "block";
@@ -27,16 +32,16 @@ edit.forEach((edit, index) => {
 function updateTask() {
   for (let i = 0; i < taskObject.length; i++) {
     if (taskObject[i].id == taskId.value) {
-      taskObject[i].name = formElements.name.value;
-      taskObject[i].date = formElements.date.value;
-      taskObject[i].from = formElements.start.value;
-      taskObject[i].to = formElements.end.value;
-      taskObject[i].importance = formElements.importance.value;
-      taskObject[i].note = formElements.note.value;
+      taskObject[i].name = name.value;
+      taskObject[i].date = date.value;
+      taskObject[i].from = start.value;
+      taskObject[i].to = end.value;
+      taskObject[i].importance = importance.value;
+      taskObject[i].note = note.value;
     }
   }
   localStorage.setItem("task", JSON.stringify(taskObject));
   taskId.value = null;
 }
 
-formElements.update.addEventListener("click", updateTask);
+update.addEventListener("click", updateTask);

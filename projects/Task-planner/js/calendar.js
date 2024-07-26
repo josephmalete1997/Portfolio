@@ -1,3 +1,7 @@
+import { domElements } from "./elements_and_objects.js";
+
+const { overLayer } = domElements;
+
 const currentDay = document.querySelector(".title-day");
 const calendar = document.querySelector(".calendar");
 calendar.classList.add("show");

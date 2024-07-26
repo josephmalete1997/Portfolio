@@ -1,3 +1,9 @@
+import { domElements, formElements, colorObject, taskObject } from "./elements_and_objects.js";
+
+const { timeline, rightItem, addNewItem, form, overLayer, cancel, notes, addNote } = domElements;
+
+const { submit, name, date, start, end, importance, note } = formElements;
+
 function timeLine() {
   for (let i = 0; i < 24; i++) {
     const hours = document.createElement("div");
@@ -52,76 +58,126 @@ function addToTimeline(taskObject) {
 addToTimeline(taskObject);
 
 function addNewTask() {
-  for (let i = 0; i < taskObject.length; i++) {
+  taskObject.forEach((task) => {
     const newTask = document.createElement("div");
-    newTask.id = taskObject[i].id;
+    newTask.id = task.id;
     newTask.classList.add("task");
 
-    const timeNow = new Date().getHours();
-    const from = parseInt(taskObject[i].from.slice(0, 2));
-    const to = parseInt(taskObject[i].to.slice(0, 2));
-    newTask.innerHTML = `
-      <p>${
-        taskObject[i].name.length > 25
-          ? taskObject[i].name.slice(0, 25) + `...`
-          : taskObject[i].name
-      }</p>
-      <div><i class='fa-solid fa-edit'></i><i class='fa-solid fa-trash'></i></div>
-    <p>
-  ${
-    timeNow > to
-      ? `<span style="text-decoration: line-through;">${taskObject[i].from}-${taskObject[i].to}</span>`
-      : `${taskObject[i].from}-${taskObject[i].to}`
-  }
-    </p>
+    const timeNow = new Date();
+    const currentHour = timeNow.getHours();
+    const currentMinute = timeNow.getMinutes();
 
-    <span>${
-      timeNow > to
+    const fromHour = parseInt(task.from.slice(0, 2));
+    const fromMinute = parseInt(task.from.slice(3, 5));
+    const toHour = parseInt(task.to.slice(0, 2));
+    const toMinute = parseInt(task.to.slice(3, 5));
+
+    const fromTotalMinutes = fromHour * 60 + fromMinute;
+    const toTotalMinutes = toHour * 60 + toMinute;
+    const currentTotalMinutes = currentHour * 60 + currentMinute;
+
+    const taskStatus =
+      currentTotalMinutes > toTotalMinutes
         ? "<font color='red'><i>Task Expired</i></font>"
-        : timeNow >= from && timeNow <= to
+        : currentTotalMinutes >= fromTotalMinutes && currentTotalMinutes <= toTotalMinutes
         ? "<font color='green'><i>Active</i></font>"
-        : Math.abs(timeNow - from) + "hours and 28 minutes to go"
-    } </span>
-      `;
-    for (let color in colorObject) {
-      if (color === taskObject[i].importance)
-        newTask.style.borderLeft = `5px solid ${colorObject[color]}`;
+        : calculateTimeToGo(fromTotalMinutes, currentTotalMinutes);
+
+    newTask.innerHTML = `
+      <p>
+        ${task.name.length > 25 ? task.name.slice(0, 25) + "..." : task.name}
+      </p>
+      <div>
+        <i class='fa-solid fa-edit'></i>
+        <i class='fa-solid fa-trash'></i>
+      </div>
+      <p>
+        ${
+          currentTotalMinutes > toTotalMinutes
+            ? `<span style="text-decoration: line-through;">${task.from}-${task.to}</span>`
+            : `${task.from}-${task.to}`
+        }
+      </p>
+      <span>${taskStatus}</span>
+    `;
+
+    // Set border color based on task importance
+    if (colorObject[task.importance]) {
+      newTask.style.borderLeft = `5px solid ${colorObject[task.importance]}`;
     }
+
     rightItem.append(newTask);
-  }
+  });
+}
+
+function calculateTimeToGo(fromTotalMinutes, currentTotalMinutes) {
+  const minutesToGo = fromTotalMinutes - currentTotalMinutes;
+  const hoursToGo = Math.floor(minutesToGo / 60);
+  const minutesRemainder = minutesToGo % 60;
+
+  return hoursToGo === 0
+    ? `${minutesRemainder} minutes to go`
+    : hoursToGo === 1
+    ? `${hoursToGo} hour and ${minutesRemainder} minutes to go`
+    : `${hoursToGo} hours and ${minutesRemainder} minutes to go`;
 }
 
 addNewTask();
 
-function createTask() {
+function createTask(taskObject) {
   const task = {
     id: Math.floor(Math.random() * 100000),
-    name: formElements.name.value,
-    date: formElements.date.value,
-    from: formElements.start.value,
-    to: formElements.end.value,
-    importance: formElements.importance.value,
-    note: formElements.note.value,
+    name: name.value,
+    date: date.value,
+    from: start.value,
+    to: end.value,
+    importance: importance.value,
+    note: note.value,
   };
 
   const newTask = document.createElement("div");
   newTask.classList.add("task");
   newTask.id = task.id;
+
+  const timeNow = new Date();
+  const currentHour = timeNow.getHours();
+  const currentMinute = timeNow.getMinutes();
+
+  const fromHour = parseInt(task.from.slice(0, 2));
+  const fromMinute = parseInt(task.from.slice(3, 5));
+  const toHour = parseInt(task.to.slice(0, 2));
+  const toMinute = parseInt(task.to.slice(3, 5));
+
+  const fromTotalMinutes = fromHour * 60 + fromMinute;
+  const toTotalMinutes = toHour * 60 + toMinute;
+  const currentTotalMinutes = currentHour * 60 + currentMinute;
+
+  const taskStatus =
+    currentTotalMinutes > toTotalMinutes
+      ? "<font color='red'><i>Task Expired</i></font>"
+      : currentTotalMinutes >= fromTotalMinutes && currentTotalMinutes <= toTotalMinutes
+      ? "<font color='green'><i>Active</i></font>"
+      : calculateTimeToGo(fromTotalMinutes, currentTotalMinutes);
+
   newTask.innerHTML = `
-    
-      <p>${
-        formElements.name.value.length > 25
-          ? formElements.name.value.slice(0, 25) + `...`
-          : formElements.name.value
-      }</p>
-      <p> ${formElements.start.value} - ${formElements.end.value}</p>
-      <span>${
-        new Date().getHours - formElements.start.value.slice(0, 2)
-      } hours and 28 minutes to go</span>
-      `;
+  <p>
+    ${task.name.length > 25 ? task.name.slice(0, 25) + "..." : task.name}
+  </p>
+  <div>
+    <i class='fa-solid fa-edit'></i>
+    <i class='fa-solid fa-trash'></i>
+  </div>
+  <p>
+    ${
+      currentTotalMinutes > toTotalMinutes
+        ? `<span style="text-decoration: line-through;">${task.from}-${task.to}</span>`
+        : `${task.from}-${task.to}`
+    }
+  </p>
+  <span>${taskStatus}</span>
+`;
   for (let color in colorObject) {
-    if (color === formElements.importance.value)
-      newTask.style.borderLeft = `5px solid ${colorObject[color]}`;
+    if (color === importance.value) newTask.style.borderLeft = `5px solid ${colorObject[color]}`;
   }
   rightItem.append(newTask);
   taskObject.push(task);
@@ -133,18 +189,19 @@ function createTask() {
   }, 100);
 }
 
-formElements.submit.addEventListener("click", () => {
+submit.addEventListener("click", () => {
   const task = {
-    name: formElements.name.value,
-    date: formElements.date.value,
-    from: formElements.start.value,
-    to: formElements.end.value,
-    importance: formElements.importance.value,
+    name: name.value,
+    date: date.value,
+    from: start.value,
+    to: end.value,
+    importance: importance.value,
+    note: note.value,
   };
   if (task.name == "" && task.date == "" && task.from == "" && task.to == "") {
     alert("fields cannot be empty!");
   } else {
-    createTask();
+    createTask(taskObject);
     makeInvisible(form, overLayer);
   }
 });
@@ -167,7 +224,7 @@ addNewItem.addEventListener("click", () => {
 cancel.addEventListener("click", () => {
   makeInvisible(form, overLayer, notes);
   form.reset();
-  formElements.note.value = "";
+  note.value = "";
 });
 
 const tasks = document.querySelectorAll(".task");

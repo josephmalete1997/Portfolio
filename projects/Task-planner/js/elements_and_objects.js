@@ -1,22 +1,24 @@
-const timeline = document.querySelector(".time-line");
-const rightItem = document.querySelector(".task-panel");
-const taskNumber = document.querySelector("#tasks-number");
-const addNewItem = document.querySelector(".addNew");
-const form = document.querySelector("form");
-const overLayer = document.querySelector(".over-layer");
-const cancel = document.querySelector("#cancel");
-const backToForm = document.querySelector(".back-to-form");
-const notes = document.querySelector(".notes");
-const addNote = document.querySelector(".add-note");
+const domElements = {
+  timeline: document.querySelector(".time-line"),
+  rightItem: document.querySelector(".task-panel"),
+  taskNumber: document.querySelector("#tasks-number"),
+  addNewItem: document.querySelector(".addNew"),
+  form: document.querySelector("form"),
+  overLayer: document.querySelector(".over-layer"),
+  cancel: document.querySelector("#cancel"),
+  backToForm: document.querySelector(".back-to-form"),
+  notes: document.querySelector(".notes"),
+  addNote: document.querySelector(".add-note"),
+};
 
-backToForm.addEventListener("click", () => {
-  notes.style.display = "none";
-  form.style.display = "flex";
+domElements.backToForm.addEventListener("click", () => {
+  domElements.notes.style.display = "none";
+  domElements.form.style.display = "flex";
 });
 
-addNote.addEventListener("click", () => {
-  notes.style.display = "flex";
-  form.style.display = "none";
+domElements.addNote.addEventListener("click", () => {
+  domElements.notes.style.display = "flex";
+  domElements.form.style.display = "none";
 });
 
 const formElements = {
@@ -32,7 +34,7 @@ const formElements = {
 
 const taskObject = JSON.parse(localStorage.getItem("task")) || [];
 
-taskNumber.textContent = taskObject.length;
+domElements.taskNumber.textContent = taskObject.length;
 
 const colorObject = {
   low: "grey",
@@ -43,3 +45,5 @@ const colorObject = {
 const taskId = {
   value: null,
 };
+
+export { domElements, formElements, taskId, colorObject, taskObject };
