@@ -108,6 +108,10 @@ form {
   box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.18);
 }
 
+label {
+  font-size: 1.4rem;
+}
+
 .add-note {
   position: absolute;
   right: 2rem;
@@ -145,10 +149,14 @@ form {
   height: 100%;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-size: 1.4rem;
-  padding: 0.2rem;
+  padding: 0.1rem;
   resize: none;
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   margin-top: 2%;
+}
+
+.number-of-characters {
+  margin: 0.2rem 0rem 0rem 0rem;
 }
 
 .back-to-form {
@@ -163,7 +171,7 @@ form {
 .over-layer {
   width: 100vw;
   height: 100vh;
-  background: rgb(0, 0, 0, 0.3);
+  background: rgb(0, 0, 0, 0.5);
   position: fixed;
   z-index: 150;
   display: none;
@@ -207,13 +215,18 @@ option {
 .update-task {
   background: rgb(0, 0, 0);
   color: white;
-  width: 40%;
+  width: 20%;
   border-radius: 10px;
   padding: 0.5rem;
   margin: 0.2rem 0rem;
   cursor: pointer;
   font-size: 1rem;
   border: none;
+}
+
+.add-task:hover,
+.update-task:hover {
+  opacity: 0.8;
 }
 
 .content-grid {

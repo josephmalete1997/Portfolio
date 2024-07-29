@@ -1,7 +1,9 @@
 import { domElements, taskId, formElements, taskObject } from "./elements_and_objects.js";
+import { makeInvisible, makeVisible } from "./functions.js";
+import { filterObject } from "./task_ordering.js";
 
 const { update, name, date, start, end, importance, note } = formElements;
-const { form, overLayer, addNote } = domElements;
+const { form, overLayer, addNote, numberOfCharacters } = domElements;
 
 const edit = document.querySelectorAll(".fa-edit");
 
@@ -11,20 +13,22 @@ edit.forEach((edit, index) => {
 
     addNote.innerHTML = `<i class="fa-solid fa-file-lines"></i> Edit Note`;
 
-    if (task[index].id == taskObject[index].id) {
-      taskId.value = taskObject[index].id;
-      form.style.display = "flex";
-      overLayer.style.display = "flex";
+    if (task[index].id == filterObject.value[index].id) {
+      taskId.value = filterObject.value[index].id;
+      makeVisible(form, overLayer, form.children[form.children.length - 1]);
 
-      form.children[3].value = taskObject[index].name;
-      form.children[5].value = taskObject[index].date;
-      form.children[7].value = taskObject[index].from;
-      form.children[9].value = taskObject[index].to;
-      form.children[11].value = taskObject[index].importance;
-      note.value = taskObject[index].note;
+      form.children[3].value = filterObject.value[index].name;
+      form.children[5].value = filterObject.value[index].date;
+      form.children[7].value = filterObject.value[index].from;
+      form.children[9].value = filterObject.value[index].to;
+      form.children[11].value = filterObject.value[index].importance;
+      note.value = filterObject.value[index].note;
 
-      form.children[form.children.length - 2].style.display = "none";
-      form.children[form.children.length - 1].style.display = "block";
+      numberOfCharacters.innerHTML = `${
+        note.value.length > 1 ? note.value.length + "\nchars" : note.value.length + "\nchar"
+      }`;
+
+      makeInvisible(form.children[form.children.length - 2]);
     }
   });
 });

@@ -102,6 +102,28 @@
   /* border: 1px solid rgb(34, 34, 34); */
 }
 
+.space {
+  margin: 0.2rem;
+}
+
+.scale-up {
+  width: 40%;
+  height: 400px;
+  margin-left: 20%;
+  background: white;
+  border-radius: 1.5rem;
+  z-index: 200;
+  position: absolute;
+  color: black;
+}
+
+.cancel-this-panel {
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.4rem;
+  position: absolute;
+}
+
 .importance {
   display: flex;
   left: 10rem;
@@ -121,7 +143,7 @@
 
 .importance span:nth-child(2)::before {
   content: "";
-  background: grey;
+  background: rgb(122, 189, 22);
   width: 10px;
   height: 10px;
   position: absolute;
@@ -170,4 +192,9 @@
 
 .tasks-number {
   font-size: 1.3rem;
+}
+
+.fa-times:hover {
+  color: rgb(88, 88, 88);
+  transition-delay: 1;
 }

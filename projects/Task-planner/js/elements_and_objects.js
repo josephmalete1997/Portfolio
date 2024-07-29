@@ -9,6 +9,7 @@ const domElements = {
   backToForm: document.querySelector(".back-to-form"),
   notes: document.querySelector(".notes"),
   addNote: document.querySelector(".add-note"),
+  numberOfCharacters: document.querySelector(".number-of-characters"),
 };
 
 domElements.backToForm.addEventListener("click", () => {
@@ -32,12 +33,19 @@ const formElements = {
   note: document.querySelector(".note-text"),
 };
 
+const importanceElements = {
+  by: document.querySelector(".by-importance"),
+  all: document.querySelectorAll(".i"),
+  listByImportance: document.querySelector("#list-by-importance"),
+  importanceStatus: document.querySelector("#importance-status"),
+};
+
 const taskObject = JSON.parse(localStorage.getItem("task")) || [];
 
 domElements.taskNumber.textContent = taskObject.length;
 
 const colorObject = {
-  low: "grey",
+  low: "rgb(122, 189, 22)",
   medium: "orange",
   high: "red",
 };
@@ -46,4 +54,4 @@ const taskId = {
   value: null,
 };
 
-export { domElements, formElements, taskId, colorObject, taskObject };
+export { domElements, formElements, taskId, colorObject, taskObject, importanceElements };

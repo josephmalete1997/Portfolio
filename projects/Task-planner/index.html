@@ -28,7 +28,7 @@
         <h4>Importance:</h4>
         <span>Low<i class="desc-imp">This task is of low importance</i></span>
         <span>Medium <i class="desc-imp">This task is of medium importance</i></span>
-        <span>Priority <i class="desc-imp">This task is a priority</i></span>
+        <span>High <i class="desc-imp">This task is of high importance</i></span>
       </div>
       <i class="fa-solid fa-bell"></i>
       <i class="fa-regular fa-lightbulb"></i>
@@ -55,7 +55,7 @@
           <select id="importance">
             <option value="low">Low</option>
             <option value="medium">Medium</option>
-            <option value="high">Priority</option>
+            <option value="high">High</option>
           </select>
           <!-- <button class="add-task">Add Note</button> -->
           <button class="add-task">Add Task</button>
@@ -66,6 +66,7 @@
         <div class="notes">
           <div class="back-to-form"><i class="fa-solid fa-arrow-left"></i></div>
           <textarea class="note-text"></textarea>
+          <span class="number-of-characters"></span>
         </div>
       </div>
       <div class="right-items">
@@ -74,13 +75,19 @@
         </p>
         <div class="task-panel-header">
           <div class="list-item">All</div>
-          <div class="list-item">today</div>
-          <div class="list-item">List by importance</div>
+          <div class="list-item">Today</div>
+          <div class="list-item" id="list-by-importance">
+            By importance<span id="importance-status"></span>
+            <div class="by-importance">
+              <span class="importance-low i">Low</span>
+              <span class="importance-medium i">Medium</span>
+              <span class="importance-high i">High</span>
+            </div>
+          </div>
         </div>
         <div class="task-panel"></div>
       </div>
     </div>
-    <script type="module" src="js/functions.js"></script>
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/elements_and_objects.js"></script>
     <script type="module" src="js/tasks.js"></script>
@@ -88,5 +95,6 @@
     <script type="module" src="js/update_task.js"></script>
     <script type="module" src="js/task_ordering.js"></script>
     <script type="module" src="js/theme.js"></script>
+    <script type="module" src="js/view_task.js"></script>
   </body>
 </html>

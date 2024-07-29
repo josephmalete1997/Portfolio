@@ -1,6 +1,18 @@
 import { domElements, formElements, colorObject, taskObject } from "./elements_and_objects.js";
+import { makeVisible, makeInvisible } from "./functions.js";
+import { filterObject } from "./task_ordering.js";
 
-const { timeline, rightItem, addNewItem, form, overLayer, cancel, notes, addNote } = domElements;
+const {
+  timeline,
+  rightItem,
+  addNewItem,
+  form,
+  overLayer,
+  cancel,
+  notes,
+  addNote,
+  numberOfCharacters,
+} = domElements;
 
 const { submit, name, date, start, end, importance, note } = formElements;
 
@@ -36,6 +48,7 @@ function addToTimeline(taskObject) {
     const newTask = document.createElement("div");
     newTask.classList.add("task-on-timeline");
     newTask.setAttribute("draggable", true);
+    newTask.style.transition = "1s";
     const time = taskObject[i].from.slice(0, 2);
     const timeFromHalf = parseInt(taskObject[i].from.slice(3, 5)) / 60;
     const timeToHalf = parseInt(taskObject[i].to.slice(3, 5)) / 60;
@@ -46,19 +59,20 @@ function addToTimeline(taskObject) {
     newTask.style.top = `${heightFrom * 30 + 50}px`;
     newTask.style.height = `${height * 30}px`;
     newTask.style.background = taskObject[i].color;
-    newTask.innerHTML = `${taskObject[i].name} <i class='text-time'> ( ${taskObject[i].from}-${taskObject[i].to} )</i>`;
+    newTask.innerHTML = `${taskObject[i].name} <i class='text-time'><span class="space"></span>(${taskObject[i].from}-${taskObject[i].to})</i>`;
 
     for (let color in colorObject) {
       if (color === taskObject[i].importance) newTask.style.background = `${colorObject[color]}`;
     }
+
     timeline.append(newTask);
   }
 }
 
-addToTimeline(taskObject);
+addToTimeline(filterObject.value);
 
-function addNewTask() {
-  taskObject.forEach((task) => {
+function addNewTask(taskList) {
+  taskList.forEach((task) => {
     const newTask = document.createElement("div");
     newTask.id = task.id;
     newTask.classList.add("task");
@@ -78,7 +92,7 @@ function addNewTask() {
 
     const taskStatus =
       currentTotalMinutes > toTotalMinutes
-        ? "<font color='red'><i>Task Expired</i></font>"
+        ? "<font color='red'><i>Expired</i></font>"
         : currentTotalMinutes >= fromTotalMinutes && currentTotalMinutes <= toTotalMinutes
         ? "<font color='green'><i>Active</i></font>"
         : calculateTimeToGo(fromTotalMinutes, currentTotalMinutes);
@@ -122,7 +136,7 @@ function calculateTimeToGo(fromTotalMinutes, currentTotalMinutes) {
     : `${hoursToGo} hours and ${minutesRemainder} minutes to go`;
 }
 
-addNewTask();
+addNewTask(filterObject.value);
 
 function createTask(taskObject) {
   const task = {
@@ -206,18 +220,9 @@ submit.addEventListener("click", () => {
   }
 });
 
-function makeVisible(...item) {
-  for (let i = 0; i < item.length; i++) item[i].style.display = "flex";
-}
-
-function makeInvisible(...item) {
-  for (let i = 0; i < item.length; i++) item[i].style.display = "none";
-}
-
 addNewItem.addEventListener("click", () => {
-  makeVisible(form, overLayer);
-  form.children[form.children.length - 2].style.display = "block";
-  form.children[form.children.length - 1].style.display = "none";
+  makeVisible(form, overLayer, form.children[form.children.length - 2]);
+  makeInvisible(form.children[form.children.length - 1]);
   addNote.innerHTML = `<i class="fa-solid fa-file-lines"></i> Add Note`;
 });
 
@@ -225,6 +230,15 @@ cancel.addEventListener("click", () => {
   makeInvisible(form, overLayer, notes);
   form.reset();
   note.value = "";
+  numberOfCharacters.innerHTML = `${note.value.length} char`;
+});
+
+numberOfCharacters.innerHTML = `${note.value.length} char`;
+
+note.addEventListener("input", () => {
+  numberOfCharacters.innerHTML = `${
+    note.value.length > 1 ? note.value.length + "\nchars" : note.value.length + "\nchar"
+  }`;
 });
 
 const tasks = document.querySelectorAll(".task");

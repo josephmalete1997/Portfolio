@@ -1,4 +1,4 @@
-import { domElements } from "./elements_and_objects.js";
+import { domElements, taskObject } from "./elements_and_objects.js";
 
 const { overLayer } = domElements;
 
@@ -107,6 +107,7 @@ function generateCalendar(month, year) {
         if (date === now.getDate() && month === now.getMonth() && year === now.getFullYear()) {
           cell.classList.add("today");
         }
+
         cell.classList.add("day");
         row.append(cell);
         date++;
@@ -131,6 +132,24 @@ function generateCalendar(month, year) {
 function updateCalendar(monthIndex, year) {
   generateCalendar(monthIndex, year);
   const newDate = new Date(year, monthIndex, 1);
+  const month = newDate.getMonth();
+  const newYear = newDate.getFullYear();
+  const day = document.querySelectorAll(".day");
+
+  taskObject.forEach((task, index) => {
+    for (let i = 0; i < day.length; i++) {
+      if (
+        parseInt(task.date.slice(0, 4)) == parseInt(newYear) &&
+        parseInt(task.date.slice(5, 7)) == parseInt(month + 1) &&
+        parseInt(task.date.slice(8, 10)) == parseInt(day[i].innerHTML)
+      ) {
+        if (!day[i].classList.contains("today")) {
+          day[i].classList.add("scheduled");
+        }
+      }
+    }
+  });
+
   updateCurrentDay(newDate);
 }
 
@@ -164,6 +183,7 @@ selectDays();
 currentDay.addEventListener("click", () => {
   calendar.classList.toggle("show");
   overLayer.style.display = "block";
+  updateCalendar((now.getMonth() + 0 + 12) % 12, now.getFullYear());
 });
 
 // Initialize arrows and calendar

@@ -1,6 +1,6 @@
 .calendar {
   width: 450px;
-  height: 400px;
+  height: 420px;
   background: #ffffff;
   display: flex;
   flex-direction: column;
@@ -71,6 +71,15 @@ tr {
 .today {
   background: #4c7cff;
   color: white;
+}
+
+.scheduled {
+  background: #58af1e;
+  color: white;
+}
+
+.scheduled:hover {
+  background: #58af1e;
 }
 
 .today:hover {

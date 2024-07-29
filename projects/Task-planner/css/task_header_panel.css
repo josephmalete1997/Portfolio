@@ -1,17 +1,53 @@
 .task-panel-header {
   display: flex;
   margin: 0rem;
+  z-index: 100;
+  position: relative;
 }
 
 .list-item {
   background: #eeeeee;
   border-radius: 2rem;
   padding: 0.5rem 1rem;
-  margin: 0.5rem;
+  margin: 0.2rem;
   cursor: pointer;
+  position: relative;
 }
 
 .active-selection {
   background: black;
   color: white;
+}
+
+.by-importance {
+  background: rgb(255, 255, 255);
+  position: absolute;
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.28);
+  display: none;
+}
+
+.importance-low,
+.importance-medium,
+.importance-high {
+  margin: 0.1rem;
+  width: 98%;
+  padding: 0.5rem;
+}
+
+.importance-low:hover {
+  color: rgb(122, 189, 22);
+}
+
+.importance-medium:hover {
+  color: orange;
+}
+
+.importance-high:hover {
+  color: red;
 }
