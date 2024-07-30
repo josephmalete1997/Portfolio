@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/table.css" />
+    <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+    <title>Visitor Management</title>
+    <script>
+      //   function loader() {
+      //     const loadingBar = document.querySelector(".over-layer");
+      //     loadingBar.style.display = "flex";
+      //   }
+    </script>
+  </head>
+  <body onload="{loader()}">
+    <div class="over-layer">
+      <div id="loading">
+        <div class="bar b1"></div>
+        <div class="bar b2"></div>
+        <div class="bar b3"></div>
+      </div>
+    </div>
+    <header>
+      <h1>Visitor Management</h1>
+      <div class="buttons">
+        <button class="button add-new">Add new</button>
+        <button class="button view-all">View all</button>
+      </div>
+    </header>
+    <div class="content">
+      <form>
+        <h1>Add new visitor</h1>
+        <label>Full names</label>
+        <input type="text" class="full-names" name="names" />
+        <label>Age</label>
+        <input type="text" class="age" name="age" />
+        <label>Date of visit</label>
+        <input type="date" class="date" name="date" />
+        <label>Time of visit</label>
+        <input type="time" class="time" name="time" />
+        <label>Comments</label>
+        <textarea class="comments"></textarea>
+        <label>Assisted by</label>
+        <input type="text" class="assisted-by" name="assist" />
+        <input type="submit" class="submit" value="Add Visitor" />
+        <div class="update">Update Visitor's info</div>
+        <!-- <div class="submit">Add Visitor</div> -->
+      </form>
+      <table>
+        <th>Full names</th>
+        <th>Age</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Comments</th>
+        <th>Assisted by</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <tbody></tbody>
+      </table>
+      <h1 class="empty-table">Visitor table is empty</h1>
+    </div>
+
+    <script>
+      function load() {
+        const loadingBar = document.querySelector(".over-layer");
+        loadingBar.style.display = "none";
+      }
+      setTimeout(() => {
+        load();
+      }, 1500);
+    </script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

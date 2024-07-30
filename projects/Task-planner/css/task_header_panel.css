@@ -51,3 +51,7 @@
 .importance-high:hover {
   color: red;
 }
+
+.display {
+  display: flex;
+}

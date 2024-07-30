@@ -1,0 +1,72 @@
+.over-layer {
+  background: rgb(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 200;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loading {
+  display: flex;
+  /* display: none; */
+  margin: 20px;
+  position: relative;
+}
+
+#loading .bar {
+  background: rgb(255, 255, 255);
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+  position: absolute;
+}
+
+.b1 {
+  left: 0px;
+  animation: move1 1s linear infinite;
+}
+
+.b2 {
+  left: 0px;
+  animation: move2 1s linear infinite;
+}
+
+.b3 {
+  left: 0px;
+  animation: move3 1s linear infinite;
+}
+
+@keyframes move1 {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: 50px;
+    opacity: 0;
+  }
+}
+
+@keyframes move2 {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: -50px;
+    opacity: 0;
+  }
+}
+
+@keyframes move3 {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

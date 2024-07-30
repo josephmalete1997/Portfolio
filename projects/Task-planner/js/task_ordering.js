@@ -71,7 +71,9 @@ const filterObject = {
 if (filterVar === "Today") {
   filterObject.value = todayTask();
 } else if (filterVar === "All") {
-  filterObject.value = taskObject;
+  filterObject.value = taskObject.sort((a, b) => {
+    return a.date - b.date;
+  });
 } else if (filterVar == "Low") {
   activateImportance();
   filterObject.value = taskByImportance("low");
@@ -90,7 +92,7 @@ function activateImportance() {
 }
 
 importanceElements.listByImportance.addEventListener("click", () => {
-  importanceElements.by.style.display = "flex";
+  importanceElements.by.classList.toggle("display");
 });
 
 export { filterObject };

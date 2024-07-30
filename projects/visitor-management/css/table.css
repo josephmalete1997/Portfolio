@@ -1,0 +1,62 @@
+table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 0.5rem;
+  /* display: block; */
+  position: relative;
+  cursor: default;
+}
+
+th {
+  background: black;
+  color: white;
+  position: relative;
+  position: sticky;
+  top: 0px;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+}
+
+tbody {
+  position: relative;
+}
+
+td {
+  border: 1px solid;
+  padding: 0.2rem 1rem;
+}
+
+tr {
+  background: white;
+}
+
+td img {
+  width: 1.1rem;
+  cursor: pointer;
+}
+
+th:nth-child(1) {
+  width: 20%;
+}
+
+th:nth-child(5) {
+  width: 200px;
+}
+
+.edit,
+.delete {
+  width: 5%;
+}
+
+.view-more,
+.view-less {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.view-more:hover,
+.view-less:hover {
+  color: red;
+}

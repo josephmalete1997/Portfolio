@@ -80,20 +80,21 @@ function addNewTask(taskList) {
     const timeNow = new Date();
     const currentHour = timeNow.getHours();
     const currentMinute = timeNow.getMinutes();
-
     const fromHour = parseInt(task.from.slice(0, 2));
     const fromMinute = parseInt(task.from.slice(3, 5));
     const toHour = parseInt(task.to.slice(0, 2));
     const toMinute = parseInt(task.to.slice(3, 5));
-
     const fromTotalMinutes = fromHour * 60 + fromMinute;
     const toTotalMinutes = toHour * 60 + toMinute;
     const currentTotalMinutes = currentHour * 60 + currentMinute;
-
     const taskStatus =
       currentTotalMinutes > toTotalMinutes
         ? "<font color='red'><i>Expired</i></font>"
-        : currentTotalMinutes >= fromTotalMinutes && currentTotalMinutes <= toTotalMinutes
+        : currentTotalMinutes >= fromTotalMinutes &&
+          currentTotalMinutes <= toTotalMinutes &&
+          task.date.slice(5, 7) == new Date().getMonth() + 1 &&
+          task.date.slice(0, 4) == new Date().getFullYear() &&
+          task.date.slice(8, 10) == new Date().getDate()
         ? "<font color='green'><i>Active</i></font>"
         : calculateTimeToGo(fromTotalMinutes, currentTotalMinutes);
 
