@@ -7,71 +7,101 @@
     <link rel="stylesheet" href="css/table.css" />
     <link rel="stylesheet" href="css/form.css" />
     <link rel="stylesheet" href="css/loader.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/062d0051ac.js" crossorigin="anonymous"></script>
     <title>Visitor Management</title>
     <script>
-      //   function loader() {
-      //     const loadingBar = document.querySelector(".over-layer");
-      //     loadingBar.style.display = "flex";
-      //   }
+      // const loadingBar = document.querySelector(".over-layer");
+      // function loader() {
+      //   loadingBar.style.display = "flex";
+      // }
+      // setTimeout(() => {
+      //   loadingBar.style.display = "none";
+      // }, 15);
     </script>
   </head>
-  <body onload="{loader()}">
-    <div class="over-layer">
+  <body>
+    <!-- <div class="over-layer">
       <div id="loading">
         <div class="bar b1"></div>
         <div class="bar b2"></div>
         <div class="bar b3"></div>
       </div>
-    </div>
+    </div> -->
     <header>
-      <h1>Visitor Management</h1>
+      <h1>Visitor Database</h1>
       <div class="buttons">
         <button class="button add-new">Add new</button>
         <button class="button view-all">View all</button>
       </div>
     </header>
     <div class="content">
+      <div class="visitor-added"><h1>Visitor Added Successfully!</h1></div>
       <form>
         <h1>Add new visitor</h1>
+        <div class="error">
+          <span class="message">Error example here!</span>
+          <span class="close"><i class="fa-solid fa-times close-error"></i></span>
+        </div>
         <label>Full names</label>
-        <input type="text" class="full-names" name="names" />
+        <input type="text" class="full-names" name="names" required />
         <label>Age</label>
-        <input type="text" class="age" name="age" />
+        <input type="text" class="age" name="age" required />
         <label>Date of visit</label>
-        <input type="date" class="date" name="date" />
+        <input type="date" class="date" name="date" required />
         <label>Time of visit</label>
-        <input type="time" class="time" name="time" />
+        <input type="time" class="time" name="time" required />
         <label>Comments</label>
         <textarea class="comments"></textarea>
         <label>Assisted by</label>
-        <input type="text" class="assisted-by" name="assist" />
+        <input type="text" class="assisted-by" name="assist" required />
         <input type="submit" class="submit" value="Add Visitor" />
         <div class="update">Update Visitor's info</div>
         <!-- <div class="submit">Add Visitor</div> -->
       </form>
-      <table>
-        <th>Full names</th>
-        <th>Age</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Comments</th>
-        <th>Assisted by</th>
-        <th>Edit</th>
-        <th>Delete</th>
-        <tbody></tbody>
-      </table>
+      <div class="table-section">
+        <div class="sort-section">
+          <label>Sort by</label>
+          <select id="sort-by">
+            <option value="name">Name</option>
+            <option value="age">Age</option>
+            <option value="date">Date</option>
+            <option value="time">Time</option>
+          </select>
+          <div class="age-range">
+            <label
+              >Filter by Age ( <input id="min-age" value="0" type="text" min="0" max="100" /> -
+              <span id="age-filter-value"></span> )</label
+            >
+            <input type="range" id="age-filter" value="0" min="0" max="100" />
+          </div>
+        </div>
+        <h1>Visitors Table</h1>
+        <table>
+          <th>Full names</th>
+          <th>Age</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Comments</th>
+          <th>Assisted by</th>
+          <th>Edit</th>
+          <th>Delete</th>
+          <tbody></tbody>
+        </table>
+      </div>
       <h1 class="empty-table">Visitor table is empty</h1>
     </div>
 
     <script>
-      function load() {
-        const loadingBar = document.querySelector(".over-layer");
-        loadingBar.style.display = "none";
-      }
-      setTimeout(() => {
-        load();
-      }, 1500);
+      // function load() {
+      //   const loadingBar = document.querySelector(".over-layer");
+      //   loadingBar.style.display = "none";
+      // }
+      // setTimeout(() => {
+      //   load();
+      // }, 15);
     </script>
     <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/validate_inputs.js"></script>
   </body>
 </html>

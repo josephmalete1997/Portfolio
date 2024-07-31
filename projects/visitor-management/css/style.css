@@ -1,6 +1,6 @@
 body {
   margin: 0rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
   width: 100%;
   height: 100vh;
   background: #ececec;
@@ -37,7 +37,7 @@ header .buttons .button {
   margin: 0.5rem;
   border: none;
   font-size: 1.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 1rem;
   border-radius: 1rem;
   cursor: pointer;
   border: 2px solid;
@@ -50,9 +50,15 @@ header .buttons .button:hover {
 
 .content {
   width: 100%;
-  flex: 4;
+  flex: 5;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
+}
+
+.visitor-added {
+  background: white;
+  padding: 2rem;
+  margin: 2rem;
 }

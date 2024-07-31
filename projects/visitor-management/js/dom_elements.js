@@ -13,10 +13,13 @@ const formElements = {
 const domElements = {
   form: document.querySelector("form"),
   table: document.querySelector("table"),
+  tableSection: document.querySelector(".table-section"),
   tableBody: document.querySelector("table tbody"),
   addNewButton: document.querySelector(".add-new"),
   viewAllButton: document.querySelector(".view-all"),
   emptyTable: document.querySelector(".empty-table"),
+  closeError: document.querySelector(".close-error"),
+  error: document.querySelector(".error"),
 };
 
 const visitorsObject = JSON.parse(localStorage.getItem("visitors")) || [];
@@ -25,4 +28,8 @@ const visitorId = {
   value: null,
 };
 
-export { formElements, visitorsObject, domElements, visitorId };
+const visitorList = {
+  value: visitorsObject,
+};
+
+export { formElements, visitorsObject, domElements, visitorId, visitorList };

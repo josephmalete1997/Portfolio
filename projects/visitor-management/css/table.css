@@ -1,21 +1,70 @@
+.table-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-section h1 {
+  font-weight: 100;
+  margin: 0.5rem 1rem 0.1rem 1rem;
+}
+
+.age-range {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.age-range label {
+  font-size: 1rem;
+}
+
+.age-range input {
+  margin: 0rem;
+}
+
+#min-age {
+  border-radius: 0rem;
+  padding: 0rem;
+  border-bottom: 0.1rem solid;
+  width: 2rem;
+  text-align: center;
+}
+.sort-section {
+  width: 99.8%;
+  background: white;
+  padding: 0.1%;
+  display: flex;
+  align-items: center;
+}
+
+select {
+  font-size: 1.1rem;
+  padding: 0.1rem;
+  border: none;
+  border-bottom: 0.1rem solid;
+}
+
 table {
-  width: 95%;
+  width: 98%;
+  width: auto;
   border-collapse: collapse;
-  margin: 0.5rem;
-  /* display: block; */
-  position: relative;
+  margin: 1%;
   cursor: default;
+  /* box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.18); */
+  border: 0.1rem solid;
 }
 
 th {
-  background: black;
+  background: rgb(41, 41, 41);
   color: white;
   position: relative;
   position: sticky;
   top: 0px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 0.5rem 1rem;
-  border: 1px solid black;
+  text-align: left;
 }
 
 tbody {
@@ -23,12 +72,20 @@ tbody {
 }
 
 td {
-  border: 1px solid;
+  /* border: 1px solid; */
   padding: 0.2rem 1rem;
+}
+td:nth-child(5) {
+  width: 30%;
 }
 
 tr {
   background: white;
+}
+
+.even-row {
+  background: rgb(232, 233, 240);
+  color: rgb(0, 0, 0);
 }
 
 td img {
@@ -36,17 +93,10 @@ td img {
   cursor: pointer;
 }
 
-th:nth-child(1) {
-  width: 20%;
-}
-
-th:nth-child(5) {
-  width: 200px;
-}
-
 .edit,
 .delete {
-  width: 5%;
+  cursor: pointer;
+  text-align: center;
 }
 
 .view-more,

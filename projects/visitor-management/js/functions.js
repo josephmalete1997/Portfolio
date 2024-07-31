@@ -1,4 +1,4 @@
-import { formElements, visitorsObject, domElements } from "./dom_elements.js";
+import { formElements, visitorsObject, domElements, visitorList } from "./dom_elements.js";
 
 const { fullNames, age, date, time, comments, assisted } = formElements;
 const { tableBody } = domElements;
@@ -20,7 +20,7 @@ const addVisitor = () => {
 };
 
 const getVisitors = () => {
-  visitorsObject.forEach((visitor) => {
+  visitorList.value.forEach((visitor) => {
     const tr = document.createElement("tr");
     tr.classList.add("table-row");
     tr.id = visitor.id;
@@ -28,8 +28,8 @@ const getVisitors = () => {
       if (item !== "id") {
         const td = document.createElement("td");
         if (item == "comments") {
-          if (visitor[item].length > 20) {
-            td.innerHTML = `${visitor[item].slice(0, 20)}... <span data-id="${
+          if (visitor[item].length > 50) {
+            td.innerHTML = `${visitor[item].slice(0, 50)}... <span data-id="${
               visitor.id
             }" class='view-more'>Read more</span>"`;
           } else {
@@ -65,7 +65,7 @@ const hideShowElements = (...[...element]) => {
 const rowColoring = () => {
   document.querySelectorAll(".table-row").forEach((tr, index) => {
     tr.style.background = "";
-    if (index % 2 === 0) tr.style.background = "hsl(0,5%,90%)";
+    if (index % 2 !== 0) tr.classList.add("even-row");
   });
 };
 
@@ -95,7 +95,7 @@ const readLess = () => {
         item.addEventListener("click", () => {
           document.getElementById(
             item.getAttribute("new-data-id")
-          ).children[4].innerHTML = `${visitorsObject[i].comments.slice(0, 20)}...
+          ).children[4].innerHTML = `${visitorsObject[i].comments.slice(0, 50)}...
           <span class='view-more' data-id=${visitorsObject[i].id}>Read more</span>`;
         });
       }
