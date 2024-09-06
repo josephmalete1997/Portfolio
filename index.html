@@ -1,466 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-    />
-    <meta
-      name="description"
-      content=" I am a dedicated and passionate full stack developer with a strong commitment to
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="description" content=" I am a dedicated and passionate full stack developer with a strong commitment to
     delivering visually engaging, responsive, and functional websites. Known for my
     disciplined work ethic and creativity, I thrive on collaborative teamwork and am eager
     to contribute my skills to new projects. Currently seeking exciting job opportunities
-    and eager to continue expanding my knowledge through learning experiences."
-    />
+    and eager to continue expanding my knowledge through learning experiences." />
 
-    <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/panels.css" />
-    <link rel="stylesheet" href="css/icons.css" />
-    <link rel="stylesheet" href="css/contact.css" />
-    <link rel="stylesheet" href="css/computer.css" />
-    <link rel="stylesheet" href="css/machine.css" />
-    <link rel="stylesheet" href="css/projects.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
-    <link rel="stylesheet" href="css/tablet.css" />
-    <link rel="stylesheet" href="./fontAwesome/css/all.min.css" />
-    <link rel="shortcut icon" href="images/profile.gif" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/062d0051ac.js" crossorigin="anonymous"></script>
-    <title>Joseph Malete</title>
-  </head>
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/panels.css" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/computer.css" />
+  <link rel="stylesheet" href="css/machine.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/tablet.css" />
+  <link rel="stylesheet" href="./fontAwesome/css/all.min.css" />
+  <link rel="shortcut icon" href="images/profile.gif" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/062d0051ac.js" crossorigin="anonymous"></script>
+  <title>Joseph Malete</title>
+</head>
 
-  <body>
-    <div class="box box-1">
-      <div class="side-left"></div>
-      <div class="side-right"></div>
-      <div class="side-top"></div>
+<body>
+  <div class="box box-1">
+    <div class="side-left"></div>
+    <div class="side-right"></div>
+    <div class="side-top"></div>
+  </div>
+  <div class="mobi-nav"><i class="fa-solid fa-bars"></i></div>
+  <div class="side-nav"></div>
+  <div class="content">
+    <div id="home" class="section">
+      <!-- <img src="sub.jpg" width="80%" class="profile" /> -->
+      <script>
+        fetch("https://api.github.com/repos/josephmalete1997/Portfolio/commits?per_page=1")
+          .then((res) => res.json())
+          .then((res) => {
+            document.getElementById("message").innerHTML = ` ${res[0].commit.committer.date.slice(
+              0,
+              10
+            )} <i class="update-time">(${res[0].commit.committer.date.slice(11, 16)})</i>`;
+          });
+      </script>
+      <div id="home-inner">
+        <p class="updates">Last Update:<span id="message">Loading...</span></p>
+      </div>
+      <div id="home-text">
+        <p>Joseph Malete</p>
+        <p><i class="fa-solid fa-phone"></i> 081 819 8122</p>
+        <p><i class="fa-regular fa-envelope"></i> josephmalete75@gmail.com</p>
+        <p>
+          <i class="fa-solid fa-location-dot"></i> South Africa, Limpopo province,<br />
+          Bela-Bela<br />0480
+        </p>
+        <p>I'm a Full-stack Developer</p>
+        <div class="download-section">
+          <div class="download-cv d" id="download">
+            <i class="fa-solid fa-download"></i>
+            Download CV
+            <div class="btn-load loader-1"></div>
+          </div>
+          <div class="download-cv v" id="view">
+            <i class="fa-solid fa-eye"></i> View CV
+            <div class="btn-load loader-2"></div>
+          </div>
+        </div>
+        <div class="socials-icons">
+          <div class="socials-inner">
+            <div class="tool-tip">Facebook</div>
+            <a href="https://web.facebook.com/profile.php?id=61553547607080" target="_blank"><img
+                src="css/icons/facebook.svg" alt="Facebook" /></a>
+          </div>
+          <div class="socials-inner">
+            <div class="tool-tip">Github</div>
+            <a href="https://github.com/josephmalete1997" target="_blank"><img src="css/icons/github.svg"
+                alt="Github" /></a>
+          </div>
+          <div class="socials-inner">
+            <div class="tool-tip">LinkedIn</div>
+            <a href="https://www.linkedin.com/in/joseph-jacob-malete-a5b263276/" target="_blank"><img
+                src="css/icons/linkedin.svg" alt="linkedin" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="computer">
+        <div><i class="fa-solid fa-eye"></i></div>
+        <div class="screen">
+          <span id="typing">
+            <font color="limegreen">>></font>
+          </span><span id="blink">_</span>
+        </div>
+        <div class="keyboard"></div>
+      </div>
     </div>
-    <div class="mobi-nav"><i class="fa-solid fa-bars"></i></div>
-    <div class="side-nav"></div>
-    <div class="content">
-      <div id="home" class="section">
-        <!-- <img src="sub.jpg" width="80%" class="profile" /> -->
-        <script>
-          fetch("https://api.github.com/repos/josephmalete1997/Portfolio/commits?per_page=1")
-            .then((res) => res.json())
-            .then((res) => {
-              document.getElementById("message").innerHTML = ` ${res[0].commit.committer.date.slice(
-                0,
-                10
-              )} <i class="update-time">(${res[0].commit.committer.date.slice(11, 16)})</i>`;
-            });
-        </script>
-        <div id="home-inner">
-          <p class="updates">Last Update:<span id="message">Loading...</span></p>
-        </div>
-        <div id="home-text">
-          <p>Joseph Malete</p>
-          <p><i class="fa-solid fa-phone"></i> 081 819 8122</p>
-          <p><i class="fa-regular fa-envelope"></i> josephmalete75@gmail.com</p>
-          <p>
-            <i class="fa-solid fa-location-dot"></i> South Africa, Limpopo province,<br />
-            Bela-Bela<br />0480
-          </p>
-          <p>I'm a Full-stack Developer</p>
-          <div class="download-section">
-            <div class="download-cv d" id="download">
-              <i class="fa-solid fa-download"></i>
-              Download CV
-              <div class="btn-load loader-1"></div>
-            </div>
-            <div class="download-cv v" id="view">
-              <i class="fa-solid fa-eye"></i> View CV
-              <div class="btn-load loader-2"></div>
-            </div>
-          </div>
-          <div class="socials-icons">
-            <div class="socials-inner">
-              <div class="tool-tip">Facebook</div>
-              <a href="https://web.facebook.com/profile.php?id=61553547607080" target="_blank"
-                ><img src="css/icons/facebook.svg" alt="Facebook"
-              /></a>
-            </div>
-            <div class="socials-inner">
-              <div class="tool-tip">Github</div>
-              <a href="https://github.com/josephmalete1997" target="_blank"
-                ><img src="css/icons/github.svg" alt="Github"
-              /></a>
-            </div>
-            <div class="socials-inner">
-              <div class="tool-tip">LinkedIn</div>
-              <a href="https://www.linkedin.com/in/joseph-jacob-malete-a5b263276/" target="_blank"
-                ><img src="css/icons/linkedin.svg" alt="linkedin"
-              /></a>
-            </div>
-          </div>
-        </div>
-        <div class="computer">
-          <div><i class="fa-solid fa-eye"></i></div>
-          <div class="screen">
-            <span id="typing"><font color="limegreen">>></font> </span><span id="blink">_</span>
-          </div>
-          <div class="keyboard"></div>
-        </div>
-      </div>
-      <div id="about" class="section">
-        <div class="mobile-about"></div>
-        <h1 class="title">About me</h1>
-        <div class="text-image">
-          <div class="welcome photo"></div>
-          <div>
-            <p>
-              I am a dedicated and passionate full stack developer with a strong commitment to
-              delivering visually engaging, responsive, and functional websites. Known for my
-              disciplined work ethic and creativity, I thrive on collaborative teamwork and am eager
-              to contribute my skills to new projects. Currently seeking exciting job opportunities
-              and eager to continue expanding my knowledge through learning experiences.
-            </p>
-          </div>
-        </div>
-
-        <div class="sub-title interest-and-hobbies">Hobbies and interests</div>
-        <div class="panel-one">
-          <div class="welcome hobbies">
-            <div class="over-layer">Soccer</div>
-          </div>
-          <div class="welcome hobbies">
-            <div class="over-layer">Reading</div>
-          </div>
-
-          <div class="welcome hobbies">
-            <div class="over-layer">Music</div>
-          </div>
-          <div class="welcome hobbies">
-            <div class="over-layer">Art</div>
-          </div>
-        </div>
-
-        <div class="sub-title">Education</div>
-        <div class="schools-items">
-          <table>
-            <th>Year</th>
-            <th>School</th>
-            <th>Course</th>
-            <th>Status</th>
-            <tr>
-              <td>2013 - 2017</td>
-              <td>Raeleng secondary school</td>
-              <td>Grade 12 <em>(Matric)</em></td>
-              <td>Complete</td>
-            </tr>
-            <tr>
-              <td>2018 - 2018</td>
-              <td>University Of Johannesburg</td>
-              <td>Bachelor Of Accounting <em>(CA stream)</em></td>
-              <td>Incomplete</td>
-            </tr>
-            <tr>
-              <td>2020 - 2022</td>
-              <td>North West University</td>
-              <td>BCom Chartered Accountancy</td>
-              <td>Incomplete</td>
-            </tr>
-            <tr>
-              <td>2023 - Present</td>
-              <td>Umuzi Academy</td>
-              <td>
-                National Certificate in Information Technology
-                <li>NQF Level 5</li>
-              </td>
-              <td>Pending</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-
-      <!-- Skills -->
-      <div class="skills-main" id="skills">
-        <h1 class="title">Skills</h1>
-        <div class="section skills-grid">
-          <!-- UI / UX Design -->
-          <div class="skills-row">
-            <div class="sub-title">
-              UI / UX Design
-              <div class="panel-skills">
-                <div class="skillsPanel">
-                  <img src="icons/icons8-figma.gif" />
-                  <div>Figma</div>
-                </div>
-                <div class="skillsPanel">
-                  <img src="icons/icons8-photoshop.gif" />
-                  <div>Adobe Photoshop</div>
-                </div>
-                <div class="skillsPanel">
-                  <img src="icons/icons8-adobe-flash.gif" />
-                  <div>Adobe Animate</div>
-                </div>
-                <div class="skillsPanel">
-                  <img src="icons/icons8-canva.svg" />
-                  <div>Canva</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Front-end -->
-          <div class="skills-row">
-            <div class="sub-title">
-              Front-end
-              <div class="panel-skills">
-                <div class="skillsPanel">
-                  <img src="icons/icons8-html.svg" />
-                  <div>Html</div>
-                </div>
-                <div class="skillsPanel">
-                  <img src="icons/icons8-css.svg" />
-                  <div>Css</div>
-                </div>
-                <div class="skillsPanel">
-                  <img src="icons/icons8-javascript.gif" />
-                  <div>Javascript</div>
-                </div>
-                <div class="skillsPanel">
-                  <img src="icons/icons8-node-js.svg" />
-                  <div>Node js</div>
-                </div>
-                <div class="skillsPanel">
-                  <img src="icons/webpack.webp" width="48" height="48" />
-                  <div>Webpack</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Back-end -->
-          <div class="skills-row">
-            <div class="sub-title">
-              Back-end
-              <div class="panel-skills">
-                <div class="skillsPanel">
-                  <img src="icons/icons8-express-js.svg" />
-                  <div>Express JS</div>
-                </div>
-                <div class="skillsPanel">
-                  <img src="icons/icons8-docker.svg" />
-                  <div>Docker</div>
-                </div>
-                <div class="skillsPanel">
-                  <img src="icons/icons8-postgres.svg" />
-                  <div>Postgres SQL</div>
-                </div>
-                <div class="skillsPanel">
-                  <img src="icons/icons8-api-48.png" />
-                  <div>API's</div>
-                </div>
-                <div class="skillsPanel">
-                  <img src="icons/socket.png" width="48" height="48" />
-                  <div>Socket.io</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Version control -->
-          <div class="skills-row">
-            <div class="sub-title">
-              Version control
-              <div class="panel-skills">
-                <div class="skillsPanel">
-                  <img src="icons/icons8-github.gif" />
-                  <div>Github</div>
-                </div>
-                <div class="skillsPanel">
-                  <img src="icons/icons8-git.svg" />
-                  <div>Git</div>
-                </div>
-                <div class="skillsPanel">
-                  <img src="icons/icons8-bash-50.png" />
-                  <div>Bash</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Unit testing -->
-          <div class="skills-row">
-            <div class="sub-title">
-              Unit testing
-              <div class="panel-skills">
-                <div class="skillsPanel">
-                  <img src="icons/jasmine.png" width="48" height="48" />
-                  <div>Jasmine</div>
-                </div>
-                <div class="skillsPanel">
-                  <img src="icons/Jest.svg" width="48" height="48" />
-                  <div>Jest</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="skills-row">
-            <div class="sub-title">
-              Soft skills
-              <div class="panel-skills">
-                <div class="skillsPanel">
-                  <i class="fa fa-message"></i>
-                  <div>Communication</div>
-                </div>
-                <div class="skillsPanel">
-                  <i class="fa fa-people-pulling"></i>
-                  <div>Team work</div>
-                </div>
-                <div class="skillsPanel">
-                  <i class="fa fa-person-chalkboard"></i>
-                  <div>Problem solving</div>
-                </div>
-                <div class="skillsPanel">
-                  <i class="fa fa-clock"></i>
-                  <div>Time management</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Soft skills -->
-        </div>
-      </div>
-
-      <div id="portfolio" class="section">
-        <h1 class="title">Projects</h1>
-        <h2>Task Manager <a href="./projects/Task-planner/" target="_blank">Visit site</a></h2>
-        <div class="main laptop">
-          <div class="screen t0 si"></div>
-        </div>
-        <div class="main phone">
-          <div class="screen mob-screen t0-mobile si"></div>
-        </div>
-
-        <h2>
-          Cleaners closet Pty(Ltd)
-          <a href="https://josephmalete1997.github.io/Cleaners-closet/" target="_blank"
-            >Visit site</a
-          >
-        </h2>
-        <div class="main laptop">
-          <div class="screen t1 si"></div>
-        </div>
-        <div class="main phone">
-          <div class="screen mob-screen t1-mobile si"></div>
-        </div>
-
-        <h2>
-          Noks Construction Pty(Ltd)
-          <a href="https://noksconstruction.github.io/Portfolio-" target="_blank">Visit site</a>
-        </h2>
-        <div class="main laptop">
-          <div class="screen t2 si"></div>
-        </div>
-        <div class="main phone">
-          <div class="screen mob-screen t2-mobile si"></div>
-        </div>
-
-        <h2>2 minutes Lotto App <a href="./projects/lotto-app/" target="_blank">Visit site</a></h2>
-        <div class="main laptop">
-          <div class="screen t3 si"></div>
-        </div>
-        <div class="main phone">
-          <div class="screen mob-screen t3-mobile si"></div>
-        </div>
-        <h2>
-          Visitors Database
-          <a href="./projects/visitor-management/" target="_blank">Visit site</a>
-        </h2>
-        <div class="main laptop">
-          <div class="screen t4 si"></div>
-        </div>
-        <div class="main phone">
-          <div class="screen mob-screen t4-mobile si"></div>
-        </div>
-      </div>
-
-      <div id="services" class="section">
-        <h1 class="title">Services</h1>
+    <div id="about" class="section">
+      <div class="mobile-about"></div>
+      <h1 class="title">About me</h1>
+      <div class="text-image">
+        <div class="welcome photo"></div>
         <div>
-          <ul>
-            <li>UI / UX Design</li>
-            <li>Front-end Web development</li>
-            <li>Back-end Web development</li>
-            <li>Email Templates</li>
-            <li>Graphics design(Logo, Banner, etc)</li>
-            <li>Product design Mock-ups</li>
-            <li>Software testing</li>
-          </ul>
+          <p>
+            I am a dedicated and passionate full stack developer with a strong commitment to
+            delivering visually engaging, responsive, and functional websites. Known for my
+            disciplined work ethic and creativity, I thrive on collaborative teamwork and am eager
+            to contribute my skills to new projects. Currently seeking exciting job opportunities
+            and eager to continue expanding my knowledge through learning experiences.
+          </p>
         </div>
       </div>
 
-      <div id="contact" class="section">
-        <h1 class="title">Contact me</h1>
-        <div class="contact-me">
-          <form action="https://formsubmit.co/16e85c0a36231f26cd456fb5e3e24b00" method="POST">
-            <div class="Personal-details">
-              <label for="name">Names</label>
-              <input
-                type="text"
-                id="name"
-                placeholder="Your names..."
-                name="Name"
-                class="name"
-                required
-              />
-              <label for="email">Email</label>
-              <input
-                type="text"
-                id="email"
-                placeholder="your email"
-                name="Email"
-                class="name"
-                required
-              />
-            </div>
-            <div class="mail">
-              <label for="subject">Subject</label>
-              <input
-                type="text"
-                id="subject"
-                placeholder="Enter subject..."
-                name="_subject"
-                class="subject"
-                required
-              />
-              <label for="message">Message</label>
-              <textarea
-                placeholder="type message here..."
-                id="message"
-                class="message"
-                name="message"
-                required
-              ></textarea>
-              <input type="hidden" name="_captcha" value="false" />
-              <input
-                type="hidden"
-                name="_next"
-                value="https://josephmalete1997.github.io/Portfolio/thankyou.html"
-              />
-              <button class="send-button" id="send">
-                Send<span class="btn-load loader-3"> </span>
-              </button>
-              <div class="invalid-email">
-                <p class="error-response"></p>
-              </div>
-            </div>
-          </form>
+      <div class="sub-title interest-and-hobbies">Hobbies and interests</div>
+      <div class="panel-one">
+        <div class="welcome hobbies">
+          <div class="over-layer">Soccer</div>
+        </div>
+        <div class="welcome hobbies">
+          <div class="over-layer">Reading</div>
+        </div>
+
+        <div class="welcome hobbies">
+          <div class="over-layer">Music</div>
+        </div>
+        <div class="welcome hobbies">
+          <div class="over-layer">Art</div>
         </div>
       </div>
+
+      <div class="sub-title">Education</div>
+      <div class="schools-items">
+        <table>
+          <th>Year</th>
+          <th>School</th>
+          <th>Course</th>
+          <th>Status</th>
+          <tr>
+            <td>2013 - 2017</td>
+            <td>Raeleng secondary school</td>
+            <td>Grade 12 <em>(Matric)</em></td>
+            <td>Complete</td>
+          </tr>
+          <tr>
+            <td>2018 - 2018</td>
+            <td>University Of Johannesburg</td>
+            <td>Bachelor Of Accounting <em>(CA stream)</em></td>
+            <td>Incomplete</td>
+          </tr>
+          <tr>
+            <td>2020 - 2022</td>
+            <td>North West University</td>
+            <td>BCom Chartered Accountancy</td>
+            <td>Incomplete</td>
+          </tr>
+          <tr>
+            <td>2023 - Present</td>
+            <td>Umuzi Academy</td>
+            <td>
+              National Certificate in Information Technology
+              <li>NQF Level 5</li>
+            </td>
+            <td>Complete</td>
+          </tr>
+        </table>
+      </div>
     </div>
-    <footer>Copyright &copy;<span id="year"></span> Joseph Malete</footer>
-    <script>
-      const newYear = document.getElementById("year");
-      newYear.innerHTML = new Date().getFullYear();
-      newYear.style.margin = "0px 20px 0px 5px";
-    </script>
-    <script src="js/main.js"></script>
-    <script src="js/panels.js"></script>
-    <script src="js/contact.js"></script>
-    <script src="js/scroll_effects.js"></script>
-    <script src="js/computer.js"></script>
-  </body>
+
+    <!-- Skills -->
+    <div class="skills-main" id="skills">
+      <h1 class="title">Skills</h1>
+      <div class="section skills-grid">
+        <!-- UI / UX Design -->
+        <div class="skills-row">
+          <div class="sub-title">
+            UI / UX Design
+            <div class="panel-skills">
+              <div class="skillsPanel">
+                <img src="icons/icons8-figma.gif" />
+                <div>Figma</div>
+              </div>
+              <div class="skillsPanel">
+                <img src="icons/icons8-photoshop.gif" />
+                <div>Adobe Photoshop</div>
+              </div>
+              <div class="skillsPanel">
+                <img src="icons/icons8-adobe-flash.gif" />
+                <div>Adobe Animate</div>
+              </div>
+              <div class="skillsPanel">
+                <img src="icons/icons8-canva.svg" />
+                <div>Canva</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Front-end -->
+        <div class="skills-row">
+          <div class="sub-title">
+            Front-end
+            <div class="panel-skills">
+              <div class="skillsPanel">
+                <img src="icons/icons8-html.svg" />
+                <div>Html</div>
+              </div>
+              <div class="skillsPanel">
+                <img src="icons/icons8-css.svg" />
+                <div>Css</div>
+              </div>
+              <div class="skillsPanel">
+                <img src="icons/icons8-javascript.gif" />
+                <div>Javascript</div>
+              </div>
+              <div class="skillsPanel">
+                <img src="icons/icons8-node-js.svg" />
+                <div>Node js</div>
+              </div>
+              <div class="skillsPanel">
+                <img src="icons/webpack.webp" width="48" height="48" />
+                <div>Webpack</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Back-end -->
+        <div class="skills-row">
+          <div class="sub-title">
+            Back-end
+            <div class="panel-skills">
+              <div class="skillsPanel">
+                <img src="icons/icons8-express-js.svg" />
+                <div>Express JS</div>
+              </div>
+              <div class="skillsPanel">
+                <img src="icons/icons8-docker.svg" />
+                <div>Docker</div>
+              </div>
+              <div class="skillsPanel">
+                <img src="icons/icons8-postgres.svg" />
+                <div>Postgres SQL</div>
+              </div>
+              <div class="skillsPanel">
+                <img src="icons/icons8-api-48.png" />
+                <div>API's</div>
+              </div>
+              <div class="skillsPanel">
+                <img src="icons/socket.png" width="48" height="48" />
+                <div>Socket.io</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Version control -->
+        <div class="skills-row">
+          <div class="sub-title">
+            Version control
+            <div class="panel-skills">
+              <div class="skillsPanel">
+                <img src="icons/icons8-github.gif" />
+                <div>Github</div>
+              </div>
+              <div class="skillsPanel">
+                <img src="icons/icons8-git.svg" />
+                <div>Git</div>
+              </div>
+              <div class="skillsPanel">
+                <img src="icons/icons8-bash-50.png" />
+                <div>Bash</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Unit testing -->
+        <div class="skills-row">
+          <div class="sub-title">
+            Unit testing
+            <div class="panel-skills">
+              <div class="skillsPanel">
+                <img src="icons/jasmine.png" width="48" height="48" />
+                <div>Jasmine</div>
+              </div>
+              <div class="skillsPanel">
+                <img src="icons/Jest.svg" width="48" height="48" />
+                <div>Jest</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-row">
+          <div class="sub-title">
+            Soft skills
+            <div class="panel-skills">
+              <div class="skillsPanel">
+                <i class="fa fa-message"></i>
+                <div>Communication</div>
+              </div>
+              <div class="skillsPanel">
+                <i class="fa fa-people-pulling"></i>
+                <div>Team work</div>
+              </div>
+              <div class="skillsPanel">
+                <i class="fa fa-person-chalkboard"></i>
+                <div>Problem solving</div>
+              </div>
+              <div class="skillsPanel">
+                <i class="fa fa-clock"></i>
+                <div>Time management</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Soft skills -->
+      </div>
+    </div>
+
+    <div id="portfolio" class="section">
+      <h1 class="title">Projects</h1>
+      <h2>Task Manager <a href="./projects/Task-planner/" target="_blank">Visit site</a></h2>
+      <div class="main laptop">
+        <div class="screen t0 si"></div>
+      </div>
+      <div class="main phone">
+        <div class="screen mob-screen t0-mobile si"></div>
+      </div>
+
+      <h2>
+        Cleaners closet Pty(Ltd)
+        <a href="https://josephmalete1997.github.io/Cleaners-closet/" target="_blank">Visit site</a>
+      </h2>
+      <div class="main laptop">
+        <div class="screen t1 si"></div>
+      </div>
+      <div class="main phone">
+        <div class="screen mob-screen t1-mobile si"></div>
+      </div>
+
+      <h2>
+        Noks Construction Pty(Ltd)
+        <a href="https://noksconstruction.github.io/Portfolio-" target="_blank">Visit site</a>
+      </h2>
+      <div class="main laptop">
+        <div class="screen t2 si"></div>
+      </div>
+      <div class="main phone">
+        <div class="screen mob-screen t2-mobile si"></div>
+      </div>
+
+      <h2>2 minutes Lotto App <a href="./projects/lotto-app/" target="_blank">Visit site</a></h2>
+      <div class="main laptop">
+        <div class="screen t3 si"></div>
+      </div>
+      <div class="main phone">
+        <div class="screen mob-screen t3-mobile si"></div>
+      </div>
+      <h2>
+        Visitors Database
+        <a href="./projects/visitor-management/" target="_blank">Visit site</a>
+      </h2>
+      <div class="main laptop">
+        <div class="screen t4 si"></div>
+      </div>
+      <div class="main phone">
+        <div class="screen mob-screen t4-mobile si"></div>
+      </div>
+    </div>
+
+    <div id="services" class="section">
+      <h1 class="title">Services</h1>
+      <div>
+        <ul>
+          <li>UI / UX Design</li>
+          <li>Front-end Web development</li>
+          <li>Back-end Web development</li>
+          <li>Email Templates</li>
+          <li>Graphics design(Logo, Banner, etc)</li>
+          <li>Product design Mock-ups</li>
+          <li>Software testing</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="contact" class="section">
+      <h1 class="title">Contact me</h1>
+      <div class="contact-me">
+        <form action="https://formsubmit.co/16e85c0a36231f26cd456fb5e3e24b00" method="POST">
+          <div class="Personal-details">
+            <label for="name">Names</label>
+            <input type="text" id="name" placeholder="Your names..." name="Name" class="name" required />
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="your email" name="Email" class="name" required />
+          </div>
+          <div class="mail">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" placeholder="Enter subject..." name="_subject" class="subject" required />
+            <label for="message">Message</label>
+            <textarea placeholder="type message here..." id="message" class="message" name="message"
+              required></textarea>
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_next" value="https://josephmalete1997.github.io/Portfolio/thankyou.html" />
+            <button class="send-button" id="send">
+              Send<span class="btn-load loader-3"> </span>
+            </button>
+            <div class="invalid-email">
+              <p class="error-response"></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer>Copyright &copy;<span id="year"></span> Joseph Malete</footer>
+  <script>
+    const newYear = document.getElementById("year");
+    newYear.innerHTML = new Date().getFullYear();
+    newYear.style.margin = "0px 20px 0px 5px";
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/panels.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/scroll_effects.js"></script>
+  <script src="js/computer.js"></script>
+</body>
+
 </html>
