@@ -5,7 +5,6 @@
   text-align: center;
   z-index: 100;
   transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  /* border-radius: 0px 0px 200px 200px; */
 }
 
 .fa-bars {
@@ -169,13 +168,13 @@
 .hobbies {
   width: 80%;
   padding: 10px;
-  transition: 0.5s;
+  transition: 0.2s;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .hobbies:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .hobbies:nth-child(1) {
