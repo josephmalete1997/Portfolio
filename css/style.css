@@ -7,7 +7,7 @@
 body {
   margin: 0%;
   /* background: rgb(240, 240, 240); */
-  background: rgb(255, 255, 255);
+  background: rgb(44, 44, 44);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,11 +49,10 @@ body {
 
 .title {
   z-index: 10;
-  font-size: 60px;
+  font-size: 32px;
   right: 0px;
   font-weight: 300;
   position: relative;
-  color: rgb(0, 0, 0);
 }
 
 .fa {
@@ -118,6 +117,7 @@ body {
     linear-gradient(90deg, #2c3539 2%, #282828 0, #282828 98%, #2c3539 0%) 0 0 #282828;
   background-size: 40px 60px;
   position: absolute;
+  /* background:rgb(77, 77, 77); */
 }
 
 @keyframes cubes {
@@ -136,10 +136,11 @@ body {
   text-align: left;
   background: rgb(255, 255, 255);
   height: 100vh;
-  width: 47vw;
+  width: 45%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding-left: 5vw;
   right: 0px;
 }
@@ -200,22 +201,37 @@ body {
 /* Social icons */
 .socials-icons {
   z-index: 200;
-  right: 100px;
   display: flex;
   flex-direction: row;
-}
-
-.socials-icons img {
-  width: 30px;
-  margin: 10px;
+  margin-top: 50px;
+  background: rgb(255, 255, 255);
 }
 
 .socials-inner {
   position: relative;
+  color: #000000;
+  border: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  margin: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.socials-inner:hover {
+  padding: 5px 20px;
+  border-bottom: 5px solid #000000;
+  transform: scale(1.1);
+}
+
+.socials-inner .fa-brands {
+  font-size: 30px;
+  color: #000000;
 }
 
 .socials-inner:hover .tool-tip {
-  display: block;
+  visibility: visible;
 }
 
 .tool-tip {
@@ -223,14 +239,19 @@ body {
   padding: 5px;
   color: rgb(255, 255, 255);
   position: absolute;
-  display: none;
+  display: flex;
   border-radius: 5px;
   left: -20%;
-  top: 95%;
+  top: -50px;
   animation: tip;
   animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  transition: 0.2s;
+  transition-delay: 0.5s;
 }
 
 .tool-tip::before {
@@ -241,9 +262,8 @@ body {
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-bottom: 10px solid rgb(0, 0, 0);
-  top: -10px;
-  margin: auto 30%;
-  transform: rotate(0deg);
+  bottom: -10px;
+  transform: rotate(180deg);
 }
 
 #skills,
@@ -266,22 +286,28 @@ body {
 
 .skills-grid {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
 }
 
 .skills-row {
-  border-bottom: 1px solid #ccc;
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
   position: relative;
+  background: #ffffff;
+  margin: 1.5%;
+  border-radius: 10px;
+  transition: 0.5s;
 }
 
-.skills-row::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background: #ccc;
-  display: block;
-  position: absolute;
-  bottom: 0px;
+.skills-row:hover {
+  transform: scale(1.1);
+}
+
+.skills-row h2 {
+  margin: 10px;
 }
 
 .description {
@@ -363,6 +389,6 @@ footer {
 }
 
 html {
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
   scroll-padding: 5rem;
 }

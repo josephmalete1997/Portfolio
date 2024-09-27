@@ -11,41 +11,22 @@ const textImage = document.querySelector(".text-image");
 const body = document.querySelector("body");
 const hobbies = document.querySelectorAll(".welcome");
 
-const linkNames = [
-  ` <div class="socials-icons" id="top-icons">
-<div class="socials-inner">
-    <a href="https://web.facebook.com/profile.php?id=61553547607080" target="_blank"><img
-            src="css/icons/facebook.svg" alt="Facebook"></a>
-</div>
-<div class="socials-inner">
-    <a href="https://github.com/josephmalete1997" target="_blank"><img
-            src="css/icons/github.svg" alt="Github"></a>
-</div>
-<div class="socials-inner">
-<a href="https://www.linkedin.com/in/joseph-jacob-malete-a5b263276/" target="_blank"
-><img src="css/icons/linkedin.svg" alt="linkedin"
-/></a>
-</div>
-</div>`,
-  "Home",
-  "About",
-  "Skills",
-  "Projects",
-  "Services",
-  "Contact",
+const linkNames = ["Home", "About", "Skills", "Work Experience", "Projects", "Services", "Contact"];
+const linkArray = [
+  "#home",
+  "#about",
+  "#skills",
+  "#work-experience",
+  "#portfolio",
+  "#services",
+  "#contact",
 ];
-const linkArray = ["#home", "#about", "#skills", "#portfolio", "#services", "#contact"];
 
 for (let i = 0; i < linkNames.length; i++) {
   const link = document.createElement("a");
   link.innerHTML = linkNames[i];
   link.classList.add("link");
-  link.href = linkArray[i - 1];
-  if (i > 0) {
-    const belowBorder = document.createElement("div");
-    belowBorder.classList.add("below-border");
-    link.appendChild(belowBorder);
-  }
+  link.href = linkArray[i];
   sideNav.appendChild(link);
 }
 
