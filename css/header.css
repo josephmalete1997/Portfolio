@@ -37,7 +37,8 @@
   align-items: center;
   justify-content: center;
   top: 0;
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background: transparent; /* Slightly transparent background */
   backdrop-filter: blur(20px); /* Adjust the blur amount as needed */
   transition: 0.5s;
@@ -137,6 +138,7 @@
   font-size: 20px;
   font-weight: 100;
   padding: 20px;
+  padding-left: 70px;
   color: white;
   font-family: "Montserrat-light";
   flex: 4;
@@ -159,43 +161,52 @@
   height: 90%;
   position: relative;
   border-radius: 30px;
+  padding: 0 30px;
   /* border: 2px solid rgb(255, 255, 255); */
 }
 
 .photo::before {
   content: "";
   display: block;
-  width: 150px;
-  height: 150px;
-  background: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  /* background: rgba(255, 255, 255, 0.1); */
   position: absolute;
-  left: -25px;
-  top: -25px;
-  z-index: -1;
-  border-radius: 30px;
+  left: -10px;
+  top: -10px;
   transition: 0.3s;
+  border-radius: 40px 0 0 0;
+  border-top: 5px solid rgb(255, 255, 255, 0.5);
+  border-left: 5px solid rgb(255, 255, 255, 0.5);
 }
+
 .photo::after {
   content: "";
   display: block;
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.2);
+  width: 40px;
+  height: 40px;
+  /* background: rgba(255, 255, 255, 0.2); */
   position: absolute;
-  right: -15px;
-  bottom: -25px;
-  z-index: -1;
-  border-radius: 20px;
+  right: -10px;
+  bottom: -10px;
   transition: 0.3s;
+  border-radius: 0 0 40px 0;
+  border-bottom: 5px solid rgb(255, 255, 255, 0.5);
+  border-right: 5px solid rgb(255, 255, 255, 0.5);
 }
 
 .photo:hover::before {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
+  border-top: 5px solid rgb(255, 255, 255);
+  border-left: 5px solid rgb(255, 255, 255);
 }
+
 .photo:hover::after {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
+  border-bottom: 5px solid rgb(255, 255, 255);
+  border-right: 5px solid rgb(255, 255, 255);
 }
 
 .over-layer {
@@ -226,7 +237,7 @@
 
 .hobbies {
   width: 80%;
-  height: 20em;
+  height: 18em;
   padding: 10px;
   transition: 0.2s;
   border-radius: 10px;
