@@ -193,18 +193,6 @@ body {
   overflow: hidden;
 }
 
-.scroll-down::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: rgb(255, 255, 255, 0.3);
-  position: absolute;
-  padding: 0px;
-  left: -100%;
-  transition: 0.3s left ease;
-  z-index: -1;
-}
 
 .scroll-down .fa-solid {
   transform: rotate(90deg);
@@ -350,6 +338,14 @@ body {
   /* border: 1px solid black; */
 }
 
+#work-experience table th:nth-child(1) {
+  border-radius: 30px 0 0 30px;
+}
+
+#work-experience table th:nth-child(3) {
+  border-radius: 0px 30px 30px 0px;
+}
+
 #work-experience table tr {
   border: none;
 }
@@ -359,6 +355,7 @@ body {
 
 .odd-row {
   background-color: rgb(241, 248, 255);
+  border-radius: 30px;
 }
 
 #portfolio .scrollers {
