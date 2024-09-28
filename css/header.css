@@ -16,7 +16,6 @@
   display: none;
 }
 
-/* header icons */
 #top-icons {
   background: rgb(204, 204, 204);
   height: 50px;
@@ -31,17 +30,25 @@
 .side-nav {
   position: fixed;
   display: flex;
-  width: 80vw;
-  padding: 0 10vw;
+  width: 90vw;
+  padding: 0 5vw;
   height: 50px;
   z-index: 120;
   align-items: center;
   justify-content: center;
-  top: -100px;
+  top: 0;
   padding-top: 20px;
-  background: rgb(0, 0, 0, 0.85);
+  background: transparent; /* Slightly transparent background */
+  backdrop-filter: blur(20px); /* Adjust the blur amount as needed */
   transition: 0.5s;
-  /* border: 2px solid white; */
+  color: black;
+}
+
+.side-nav h1 {
+  font-family: "Montserrat-extra-bold";
+  color: rgb(255, 255, 255);
+  position: absolute;
+  left: 50px;
 }
 
 .side-nav a {
@@ -49,16 +56,34 @@
   font-size: 18px;
   text-align: center;
   position: relative;
-  margin: 10px;
+  margin: 5px;
   transition: 0.5s;
   color: white;
-  border-radius: 5px;
   padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition-delay: 3s;
+}
+
+.below {
+  width: 0%;
+  height: 2px;
+  background: white;
+  transition: 0.3s ease;
+}
+
+.side-nav a:hover .below {
+  width: 100%;
 }
 
 .side-nav a:hover {
-  background: white;
-  color: black;
+  font-family: "Montserrat-bold";
+}
+
+.scrolled {
+  color: rgb(255, 15, 15);
 }
 
 .section {
@@ -93,40 +118,33 @@
   background: rgb(255, 255, 255);
 }
 
-/* Welcome */
-.about-me {
-  position: absolute;
-  font-size: 16px;
-  top: -70px;
-  left: 60px;
-  z-index: 2;
-}
-
 .text-image {
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   height: 250px;
   margin-bottom: 20px;
-  background: linear-gradient(80deg, white, white, rgb(255, 255, 255));
-  padding: 20px;
-  border-radius: 10px;
+  padding: 20px 10%;
   transition: 0.5s;
+  backdrop-filter: blur(20px);
 }
 
 .text-image div p {
   position: relative;
-  text-align: justify;
+  text-align: left;
   font-size: 20px;
   font-weight: 100;
   padding: 20px;
+  color: white;
+  font-family: "Montserrat-light";
+  flex: 4;
 }
 
-.text-image:hover {
+/* .text-image:hover {
   transform: scale(1.05);
-}
+} */
 
 .welcome {
   position: relative;
@@ -137,10 +155,47 @@
 }
 
 .photo {
-  width: 90%;
+  width: 100%;
   height: 90%;
   position: relative;
+  border-radius: 30px;
+  /* border: 2px solid rgb(255, 255, 255); */
+}
+
+.photo::before {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  left: -25px;
+  top: -25px;
+  z-index: -1;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+.photo::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  right: -15px;
+  bottom: -25px;
+  z-index: -1;
   border-radius: 20px;
+  transition: 0.3s;
+}
+
+.photo:hover::before {
+  width: 100px;
+  height: 100px;
+}
+.photo:hover::after {
+  width: 100px;
+  height: 100px;
 }
 
 .over-layer {
@@ -165,12 +220,18 @@
   margin-right: 10px;
 }
 
+.interest-and-hobbies {
+  height: 40vh;
+}
+
 .hobbies {
   width: 80%;
+  height: 20em;
   padding: 10px;
   transition: 0.2s;
   border-radius: 10px;
   overflow: hidden;
+  margin-top: -30vh;
 }
 
 .hobbies:hover {
@@ -207,10 +268,7 @@
 /* Update History */
 
 .updates {
-  font-size: 0.9rem;
-  color: #ccc;
-  left: 5rem;
-  position: absolute;
+  font-size: 16px;
 }
 .update-time {
   font-weight: 100;

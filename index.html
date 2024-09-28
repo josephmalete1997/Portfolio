@@ -35,7 +35,9 @@
     <div class="side-top"></div>
   </div>
   <div class="mobi-nav"><i class="fa-solid fa-bars"></i></div>
-  <div class="side-nav"></div>
+  <div class="side-nav">
+    <h1>JOSEPH.<span class="normal-size" style="color:rgb(100, 100, 100);">dev</span></h1>
+  </div>
   <div class="content">
     <div id="home" class="section">
       <!-- <img src="sub.jpg" width="80%" class="profile" /> -->
@@ -43,54 +45,47 @@
         fetch("https://api.github.com/repos/josephmalete1997/Portfolio/commits?per_page=1")
           .then((res) => res.json())
           .then((res) => {
-            document.getElementById("message").innerHTML = ` ${res[0].commit.committer.date.slice(
-              0,
+            const months = [
+              "January", "February", "March", "April", "May", "June",
+              "July", "August", "September", "October", "November", "December"
+            ];
+
+            document.getElementById("message").innerHTML = ` 
+            ${res[0].commit.committer.date.slice(8,
               10
-            )} <i class="update-time">(${res[0].commit.committer.date.slice(11, 16)})</i>`;
+            )}
+            ${months[parseInt(res[0].commit.committer.date.slice(5, 7)) - 1]}
+            ${res[0].commit.committer.date.slice(
+              0,
+              4
+            )}
+            
+            <i class="update-time">(${res[0].commit.committer.date.slice(11, 16)})</i>`;
           });
       </script>
       <div id="home-inner">
-        <p class="updates">Last Update:<span id="message">Loading...</span></p>
+        </p>
       </div>
       <div id="home-text">
-        <p>Joseph Malete</p>
-        <p><i class="fa-solid fa-phone"></i> 081 819 8122</p>
-        <p><i class="fa-regular fa-envelope"></i> josephmalete75@gmail.com</p>
+        <p><span class="normal-size">Welcome</span> To My Portfolio</p>
         <p>I'm a Full-stack Developer</p>
         <div class="download-section">
           <div class="download-cv d" id="download">
-            <i class="fa-solid fa-download"></i>
             Download CV
             <div class="btn-load loader-1"></div>
           </div>
-          <div class="download-cv v" id="view">
-            <i class="fa-solid fa-eye"></i> View CV
+          <div class="button" id="view">
+            View CV
             <div class="btn-load loader-2"></div>
           </div>
         </div>
-        <div class="socials-icons">
-          <div class="socials-inner">
-            <div class="tool-tip">Facebook</div>
-            <a href="https://web.facebook.com/profile.php?id=61553547607080" target="_blank"> <i
-                class="fa-brands fa-facebook"></i></a>
-          </div>
-          <div class="socials-inner">
-            <div class="tool-tip">Github</div>
-            <a href="https://github.com/josephmalete1997" target="_blank"> <i class="fa-brands fa-github"></i></a>
-          </div>
-          <div class="socials-inner">
-            <div class="tool-tip">LinkedIn</div>
-            <a href="https://www.linkedin.com/in/joseph-jacob-malete-a5b263276/" target="_blank">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-          </div>
-        </div>
+
+        <a href="#about" class="scroll-down">Scroll down<br><i class="fa-solid fa-chevron-right"></i></a>
       </div>
       <div class="computer">
-        <div><i class="fa-solid fa-eye"></i></div>
         <div class="screen">
           <span id="typing">
-            <font color="limegreen">>></font>
+            <font color="white">>></font>
           </span><span id="blink">_</span>
         </div>
         <div class="keyboard"></div>
@@ -301,56 +296,9 @@
       </div>
     </div>
 
-    <div id="work-experience" class="section">
-      <h1 class="title">Work Experience</h1>
-      <table>
-        <th>Period</th>
-        <th>Organisation</th>
-        <th>Role</th>
-        <tr>
-          <td>2017-2018</td>
-          <td>Maths and Science centre</td>
-          <td>Maths tutor</td>
-        </tr>
-        <tr>
-          <td>2019-2019</td>
-          <td>It Takes a Village day care centre</td>
-          <td>Tutor and Care Taker</td>
-        </tr>
-        <tr>
-          <td>2019-2019</td>
-          <td>Rampholodi Building and Construction</td>
-          <td>
-            <li>Office Administrator</li>
-            <li>Assistant Project Manager</li>
-          </td>
-        </tr>
-        <tr>
-          <td>2021-2023</td>
-          <td>Helgeo Printshop</td>
-          <td>
-            <li>Graphics Designer</li>
-            <li>Web developer</li>
-          </td>
-        </tr>
-        <tr></tr>
-        <td>2024-2024</td>
-        <td>Marketing Fridays</td>
-        <td>
-          <li>Web Developer (Front-end and Back-end roles)</li>
-          <span style="background:yellow;">Developed a website from scratch(Also created Admin Pages for Web Content
-            management)</span>
-          <br><br><span>Tech stack: Figma,Adobe XD,PHP, MariaDB(SQL), HTML, CSS, JavaScript</span>
-          <a href="https://www.marketingfridays.com/" style="color: blue;">Visit Live Site</a>
-        </td>
-        </tr>
-      </table>
-      <br /><br />
-    </div>
-
     <div id="portfolio" class="section">
       <h1 class="title">Projects</h1>
-      <h2>Task Manager <a href="./projects/Task-planner/" target="_blank">Visit site</a></h2>
+      <!-- <h2>Task Manager <a href="./projects/Task-planner/" target="_blank">Visit site</a></h2>
       <div class="main laptop">
         <div class="screen t0 si"></div>
       </div>
@@ -396,22 +344,63 @@
       </div>
       <div class="main phone">
         <div class="screen mob-screen t4-mobile si"></div>
+      </div>-->
+      <h2>Marketing Fridays Website</h2>
+      <a href="https://www.marketingfridays.com" style="text-decoration: none;" target="_blank" class="button">Live
+        site</a>
+      <img src="./projects/marketing.png" width="95%" alt="Task Planner App" />
+      <div class="scrollers">
+        <i class="fa-solid fa-chevron-left"></i>
+        <i class="fa-solid fa-chevron-right"></i>
       </div>
     </div>
 
-    <div id="services" class="section">
-      <h1 class="title">Services</h1>
-      <div>
-        <ul>
-          <li>UI / UX Design</li>
-          <li>Front-end Web development</li>
-          <li>Back-end Web development</li>
-          <li>Email Templates</li>
-          <li>Graphics design(Logo, Banner, etc)</li>
-          <li>Product design Mock-ups</li>
-          <li>Software testing</li>
-        </ul>
-      </div>
+    <div id="work-experience" class="section">
+      <h1 class="title">Work Experience</h1>
+      <table>
+        <th>Period</th>
+        <th>Organisation</th>
+        <th>Role</th>
+        <tr>
+          <td>2017-2018</td>
+          <td>Maths and Science centre</td>
+          <td>Maths tutor</td>
+        </tr>
+        <tr class="odd-row">
+          <td>2019-2019</td>
+          <td>It Takes a Village day care centre</td>
+          <td>Tutor and Care Taker</td>
+        </tr>
+        <tr>
+          <td>2019-2019</td>
+          <td>Rampholodi Building and Construction</td>
+          <td>
+            <li>Office Administrator</li>
+            <li>Assistant Project Manager</li>
+          </td>
+        </tr>
+        <tr class="odd-row">
+          <td>2021-2023</td>
+          <td>Helgeo Printshop</td>
+          <td>
+            <li>Graphics Designer</li>
+            <li>Web developer</li>
+          </td>
+        </tr>
+        <tr></tr>
+        <td>2024-2024</td>
+        <td>Marketing Fridays</td>
+        <td>
+          <li>Web Developer (Front-end and Back-end roles)</li>
+          <span>Developed a website from scratch(Also created Admin Pages for Web Content
+            management)</span>
+          <br><br><span>Tech stack: Figma,Adobe XD,PHP, MariaDB(SQL), HTML, CSS, JavaScript</span>
+          <a href="https://www.marketingfridays.com/" target="_blank" style="color: rgb(12, 0, 185);">Visit Live
+            Site</a>
+        </td>
+        </tr>
+      </table>
+      <br /><br />
     </div>
 
     <div id="contact" class="section">
@@ -420,19 +409,18 @@
         <form action="https://formsubmit.co/16e85c0a36231f26cd456fb5e3e24b00" method="POST">
           <div class="Personal-details">
             <label for="name">Names</label>
-            <input type="text" id="name" placeholder="Your names..." name="Name" class="name" required />
+            <input type="text" id="name" name="Name" class="name" required />
             <label for="email">Email</label>
-            <input type="text" id="email" placeholder="your email" name="Email" class="name" required />
+            <input type="text" id="email" name="Email" class="name" required />
           </div>
           <div class="mail">
             <label for="subject">Subject</label>
-            <input type="text" id="subject" placeholder="Enter subject..." name="_subject" class="subject" required />
+            <input type="text" id="subject" name="_subject" class="subject" required />
             <label for="message">Message</label>
-            <textarea placeholder="type message here..." id="message" class="message" name="message"
-              required></textarea>
+            <textarea id="message-text" class="message" name="message" required></textarea>
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_next" value="https://josephmalete1997.github.io/Portfolio/thankyou.html" />
-            <button class="send-button" id="send">
+            <button class="send-button button" id="send">
               Send<span class="btn-load loader-3"> </span>
             </button>
             <div class="invalid-email">
@@ -443,7 +431,13 @@
       </div>
     </div>
   </div>
-  <footer>Copyright &copy;<span id="year"></span> Joseph Malete</footer>
+
+  <footer>
+    <p><i class="fa-solid fa-phone"></i> 081 819 8122</p>
+    <p><i class="fa-regular fa-envelope"></i> josephmalete75@gmail.com</p>
+    <p>
+      Copyright &copy;<span id="year"></span> Joseph Malete</p>
+  </footer>
   <script>
     const newYear = document.getElementById("year");
     newYear.innerHTML = new Date().getFullYear();

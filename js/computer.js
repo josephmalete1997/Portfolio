@@ -56,6 +56,7 @@ for (let i = 0; i < keyboardAlphabet.length; i++) {
 }
 
 const typing = document.querySelector("#typing");
+typing.innerHTML = ` <p class="updates" style="font-size:14px;margin-top: 0px;color:#ccc;">Last Update:<span id="message">Loading...</span>`;
 const keys = document.querySelectorAll(".keyboard-key");
 
 const wordsArray = `        cd     josephmalete1997.github.io          _          ls -        l  +  index.html  chrome . =   clear           %
