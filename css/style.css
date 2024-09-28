@@ -17,19 +17,17 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
   background: #ffffff;
-  border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(142, 195, 224);
+  background: rgb(49, 69, 158);
   height: 10px;
   cursor: all-scroll;
-  border-radius: 20px;
 }
 
 @media screen and (max-width: 600px) {
@@ -192,7 +190,6 @@ body {
   border-radius: 20px;
   overflow: hidden;
 }
-
 
 .scroll-down .fa-solid {
   transform: rotate(90deg);
@@ -505,6 +502,30 @@ footer {
 
 footer p {
   margin: 5px;
+  font-family: "Montserrat-normal";
+}
+
+footer p:nth-child(2) {
+  margin: 5px;
+  font-size: 24px;
+  font-family: "Montserrat-bold";
+}
+
+footer p:nth-child(4) {
+  margin: 50px;
+  font-size: 16px;
+  font-family: "Montserrat-bold";
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+}
+
+footer p .fa-solid,
+footer p .fa-regular {
+  margin: 10px;
+  color: white;
+  background: rgb(0, 59, 90);
+  padding: 10px;
+  border-radius: 50%;
 }
 
 html {

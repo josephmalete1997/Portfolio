@@ -162,7 +162,7 @@ td:nth-child(1) {
   transition: 0.3s;
   font-family: "Montserrat-bold";
   overflow: hidden;
-  transition-delay: 0.2s;
+  /* transition-delay: 0.2s; */
   padding: 10px;
   z-index: 1;
 }

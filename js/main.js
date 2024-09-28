@@ -2,6 +2,7 @@ const contentInner = document.querySelector(".content");
 const progress = document.querySelector(".progress");
 
 const menu = document.querySelector(".menu");
+const button = document.querySelectorAll(".button");
 const inside = document.querySelectorAll(".menu-one");
 const insideChild = document.querySelectorAll(".menu-inside");
 const header = document.querySelector(".header");
@@ -80,3 +81,11 @@ function view() {
   const pdfUrl = "projects/CV/index.html";
   window.open(pdfUrl, "_blank");
 }
+button.forEach((button) => {
+  button.addEventListener("click", () => {
+    button.style.transform="scale(0.9)";
+    setTimeout(() => {
+      button.style.transform="scale(1)";
+    }, 300);
+  });
+});
