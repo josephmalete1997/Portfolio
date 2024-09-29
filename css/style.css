@@ -302,7 +302,7 @@ body {
   z-index: 12;
   position: relative;
 }
-#portfolio h1{
+#portfolio h1 {
   width: 100%;
 }
 
@@ -333,33 +333,20 @@ body {
   /* border: 1px solid black; */
 }
 
+#work-experience table tr:nth-child(1) {
+ background:#68c4db;
+ color:white;
+}
+
 #work-experience table th {
   /* background: #68bfe7; */
   border: none;
-  color: #68bfe7;
   text-align: center;
-  font-family: "Montserrat-normal";
-  font-size: 24px;
+  font-family: "Montserrat-light";
+  font-size: 30px;
   /* border: 1px solid black; */
-}
 
-#work-experience table th:nth-child(1) {
-  border: 4px solid #68bfe7;
-  border-right: 0px solid #68bfe7;
-  border-radius: 30px 0 0 30px;
-}
-
-#work-experience table th:nth-child(2) {
-  border: 4px solid #68bfe7;
-  border-radius: 30px 0 0 30px;
-  border-left: 0px solid #68bfe7;
-  border-right: 0px solid #68bfe7;
-}
-
-#work-experience table th:nth-child(3) {
-  border-radius: 0px 30px 30px 0px;
-  border: 4px solid #68bfe7;
-  border-left: 0px solid #68bfe7;
+  padding-bottom: 20px;
 }
 
 #work-experience table tr {
@@ -409,7 +396,6 @@ body {
 .description {
   color: white;
   font-size: 24px;
-
 }
 
 .portfolioPanel-display {
