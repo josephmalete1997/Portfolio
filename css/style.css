@@ -302,11 +302,8 @@ body {
   z-index: 12;
   position: relative;
 }
-
-#portfolio h1 {
-  position: absolute;
-  left: 10vw;
-  top: 0px;
+#portfolio h1{
+  width: 100%;
 }
 
 #portfolio::before {
@@ -370,6 +367,7 @@ body {
 }
 #work-experience table td {
   border: none;
+  font-size: 18px;
 }
 
 .odd-row {
@@ -411,15 +409,7 @@ body {
 .description {
   color: white;
   font-size: 24px;
-}
 
-.orange {
-  color: var(--orange);
-  font-size: 16px;
-}
-
-.orange .fa {
-  color: var(--orange);
 }
 
 .portfolioPanel-display {

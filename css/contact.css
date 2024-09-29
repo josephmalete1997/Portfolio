@@ -31,33 +31,44 @@ label {
 }
 
 input {
-  border-radius: 5px;
   padding: 10px 10px;
+  color: rgb(255, 255, 255);
+  border-color: white;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0);
 }
 
 #name,
 #email,
 #subject {
   margin-left: 0%;
-  border: 2px solid;
   font-size: 20px;
-  background: rgb(255, 255, 255, 0.5);
-  color: white;
-}
-
-input:focus-visible {
-  border: 2px solid transparent;background: none;
+  color: rgb(255, 255, 255);
 }
 
 textarea {
   height: 100px;
-  font-size: 20px;
   border: 2px solid;
   resize: none;
-  border-radius: 5px;
+  font-size: 20px;
   padding: 5px 10px;
-  background: rgb(255, 255, 255, 0.5);
-  color: white;
+  color: rgb(255, 255, 255);
+  background: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0);
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  border: 2px solid rgb(255, 255, 255); /* White border */
+  background: rgba(255, 255, 255, 0.5); /* Transparent background */
+  border-top: none; /* No top border */
+  border-left: none; /* No left border */
+  border-right: none; /* No right border */
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s ease, background 0.5s ease; /* Smooth transition */
+  color: white; /* Text color */
+  border-radius: 0px;
 }
 
 form {
