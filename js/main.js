@@ -15,16 +15,6 @@ const hobbies = document.querySelectorAll(".welcome");
 const linkNames = ["Home", "About", "Skills", "Work Experience", "Projects", "Contact"];
 const linkArray = ["#home", "#about", "#skills", "#work-experience", "#portfolio", "#contact"];
 
-for (let i = 0; i < linkNames.length; i++) {
-  const link = document.createElement("a");
-  const below = document.createElement("div");
-  below.classList.add("below");
-  link.innerHTML = linkNames[i];
-  link.classList.add("link");
-  link.append(below);
-  link.href = linkArray[i];
-  sideNav.appendChild(link);
-}
 const socialIcons = document.createElement("div");
 socialIcons.classList.add("socials-icons");
 socialIcons.innerHTML = `
@@ -45,6 +35,20 @@ socialIcons.innerHTML = `
         </div>`;
 
 sideNav.append(socialIcons);
+
+for (let i = 0; i < linkNames.length; i++) {
+  //scroll effect
+  document.querySelector(linkArray[i]).className = "scroll-section hidden-when-scrolling-down";
+
+  const link = document.createElement("a");
+  const below = document.createElement("div");
+  below.classList.add("below");
+  link.innerHTML = linkNames[i];
+  link.classList.add("link");
+  link.append(below);
+  link.href = linkArray[i];
+  sideNav.appendChild(link);
+}
 
 //Hobbies
 
@@ -83,9 +87,30 @@ function view() {
 }
 button.forEach((button) => {
   button.addEventListener("click", () => {
-    button.style.transform="scale(0.9)";
+    button.style.transform = "scale(0.9)";
     setTimeout(() => {
-      button.style.transform="scale(1)";
+      button.style.transform = "scale(1)";
     }, 300);
+  });
+});
+
+const skillPanels = document.querySelectorAll(".skills-row");
+
+function changeOpacity(value) {
+  skillPanels.forEach((item) => {
+    item.style.opacity = value;
+  });
+}
+
+skillPanels.forEach((item) => {
+  item.classList.add("scroll-section");
+  item.classList.add("hidden-when-scrolling-down");
+  item.addEventListener("mouseover", () => {
+    changeOpacity("0.4");
+    item.style.opacity = "1";
+  });
+  item.addEventListener("mouseout", () => {
+    changeOpacity("1");
+    item.style.opacity = "1";
   });
 });

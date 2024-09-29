@@ -36,7 +36,7 @@
   </div>
   <div class="mobi-nav"><i class="fa-solid fa-bars"></i></div>
   <div class="side-nav">
-    <h1>JOSEPH.<span class="normal-size" style="color:rgb(100, 100, 100);">dev</span></h1>
+    <h1>JOSEPH <span class="normal-size" style="color:rgb(255, 255, 255);">MALETE</span></h1>
   </div>
   <div class="content">
     <div id="home" class="section">
@@ -107,8 +107,8 @@
         </div>
       </div>
 
-      <div class="sub-title interest-and-hobbies">Hobbies and interests</div>
-      <div class="panel-one">
+      <div class="sub-title interest-and-hobbies scroll-section hidden-when-scrolling-down">Hobbies and interests</div>
+      <div class="panel-one scroll-section hidden-when-scrolling-down">
         <div class="welcome hobbies">
           <div class="over-layer">Soccer</div>
         </div>
@@ -125,8 +125,8 @@
       </div>
 
       <div class="sub-title">Education</div>
-      <div class="schools-items">
-        <table>
+      <div class="schools-items scroll-section hidden-when-scrolling-down">
+        <table class="scroll-section hidden-when-scrolling-down">
           <th>Year</th>
           <th>School</th>
           <th>Course</th>
@@ -163,7 +163,7 @@
     </div>
 
     <!-- Skills -->
-    <div class="skills-main" id="skills">
+    <div class="skills-main scroll-section hidden-when-scrolling-down" id="skills">
       <h1 class="title">Skills</h1>
       <div class="section skills-grid">
         <div class="skills-row">
@@ -345,10 +345,36 @@
       <div class="main phone">
         <div class="screen mob-screen t4-mobile si"></div>
       </div>-->
-      <h2>Marketing Fridays Website</h2>
-      <a href="https://www.marketingfridays.com" style="text-decoration: none;" target="_blank" class="button">Live
-        site</a>
-      <img src="./projects/marketing.png" width="95%" alt="Task Planner App" />
+      <div class="project-scroll">
+        <div class="scroll-item">
+          <h2>Marketing Fridays Website</h2>
+          <a href="https://www.marketingfridays.com" style="text-decoration: none;" target="_blank" class="button">Live
+            site</a>
+          <img src="./projects/marketing.png" width="90%" alt="Marketing Fridays photo" />
+          <div class="stack">
+            <div class="stack-item">UI/UX Design</div>
+            <div class="stack-item">Front-End Development</div>
+            <div class="stack-item">Back-End development</div>
+            <div class="stack-item">HTML</div>
+            <div class="stack-item">CSS</div>
+            <div class="stack-item">Javascript</div>
+            <div class="stack-item">PHP</div>
+            <div class="stack-item">SQL Database</div>
+          </div>
+        </div>
+        <div class="scroll-item">
+          <h2>Task Management Web App</h2>
+          <a href="./projects/Task-planner/" style="text-decoration: none;" target="_blank" class="button">Live
+            site</a>
+          <img src="./projects/planner-new.png" width="90%" alt="Task management Web App photo" />
+          <div class="stack">
+            <div class="stack-item">HTML</div>
+            <div class="stack-item">CSS</div>
+            <div class="stack-item">Javascript</div>
+            <div class="stack-item">Local Storage</div>
+          </div>
+        </div>
+      </div>
       <div class="scrollers">
         <i class="fa-solid fa-chevron-left"></i>
         <i class="fa-solid fa-chevron-right"></i>
@@ -357,7 +383,7 @@
 
     <div id="work-experience" class="section">
       <h1 class="title">Work Experience</h1>
-      <table>
+      <table class="scroll-section hidden-when-scrolling-down">
         <th>Period</th>
         <th>Organisation</th>
         <th>Role</th>
@@ -441,6 +467,63 @@
     </p>
     <p>Last Update: <span id="message"></span></p>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sections = document.querySelectorAll('.scroll-section');
+
+      function handleScroll() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const viewportHeight = window.innerHeight;
+
+        sections.forEach(section => {
+          const sectionTop = section.getBoundingClientRect().top + scrollTop;
+          const sectionHeight = section.offsetHeight;
+
+          if (scrollTop + viewportHeight > sectionTop && scrollTop < sectionTop + sectionHeight) {
+            // Element is within the viewport
+            section.classList.add('visible-when-scrolling-down');
+            section.classList.remove('hidden-when-scrolling-down');
+          } else {
+            // Element is outside the viewport
+            section.classList.add('hidden-when-scrolling-down');
+            section.classList.remove('visible-when-scrolling-down');
+          }
+        });
+      }
+
+      // Initial check
+      handleScroll();
+      // Check on scroll
+      window.addEventListener('scroll', handleScroll);
+
+      // Check on resize
+      window.addEventListener('resize', handleScroll);
+    });
+  </script>
+
+  <style>
+    /* Existing CSS */
+
+    /* Translation and visibility */
+    .scroll-section {
+      transition: opacity 1s ease, transform 1s;
+    }
+
+    .hidden-when-scrolling-down {
+      opacity: 0;
+      transform: translateY(40px);
+      visibility: hidden;
+    }
+
+    .visible-when-scrolling-down {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+
+    /* Include other CSS rules here */
+  </style>
   <script>
     const newYear = document.getElementById("year");
     newYear.innerHTML = new Date().getFullYear();
@@ -451,6 +534,7 @@
   <script src="js/contact.js"></script>
   <script src="js/scroll_effects.js"></script>
   <script src="js/computer.js"></script>
+  <script src="js/projects.js"></script>
 </body>
 
 </html>

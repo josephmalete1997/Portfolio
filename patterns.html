@@ -8,7 +8,51 @@
 </head>
 
 <body>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
+        .patterns {
+            width: 400px;
+            height: 500px;
+            border: 1px solid white;
+            position: relative;
+        }
+
+        .patterns .node {
+            width: 50px;
+            height: 1px;
+            background: white;
+            position: absolute;
+            transition: 1s;
+        }
+
+        .patterns .node:hover {
+            opacity: 0;
+        }
+
+        .patterns .node:nth-child(1) {
+            top: 80px;
+            left: 40px;
+            transform: rotate(0deg);
+        }
+
+        .patterns .node:nth-child(2) {
+            top: 104px;
+            transform: rotate(120deg);
+        }
+    </style>
+    <div class="patterns">
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+        <div class="node"></div>
+    </div>
 </body>
 
 </html>

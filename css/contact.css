@@ -39,24 +39,24 @@ input {
 #email,
 #subject {
   margin-left: 0%;
-  border: 1px solid;
+  border: 2px solid;
   font-size: 20px;
-  background: rgb(255, 255, 255, 0.3);
+  background: rgb(255, 255, 255, 0.5);
   color: white;
 }
 
 input:focus-visible {
-  border: 1px solid white;
+  border: 2px solid transparent;background: none;
 }
 
 textarea {
   height: 100px;
   font-size: 20px;
-  border: 1px solid;
+  border: 2px solid;
   resize: none;
   border-radius: 5px;
   padding: 5px 10px;
-  background: rgb(255, 255, 255, 0.3);
+  background: rgb(255, 255, 255, 0.5);
   color: white;
 }
 
