@@ -26,7 +26,6 @@
   height: 50px;
   /* background: rgb(255, 255, 255, 0.5); */
   border-radius: 50%;
-  border: 6px dashed white;
   position: absolute;
   display: flex;
   align-items: center;
@@ -52,23 +51,12 @@
   }
 }
 
-.gear::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background: rgb(255, 255, 255);
-  border-radius: 50%;
-  /* border: 5px dotted white; */
-  position: absolute;
-}
-
 .gear-small {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 5px dashed white;
-  left: 96px;
-  top: -2px;
+  left: 50px;
+  top: 0px;
   position: absolute;
   display: flex;
   align-items: center;
@@ -77,13 +65,14 @@
   transition: 0.3s;
 }
 
-.gear-small::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background: rgb(255, 255, 255);
-  border-radius: 50%;
-  position: absolute;
+.gear-small .fa-solid {
+  color: rgb(255, 255, 255);
+  font-size: 32px;
+}
+
+.gear .fa-solid {
+  color: rgb(255, 255, 255);
+  font-size: 42px;
 }
 
 .gear-belt {
