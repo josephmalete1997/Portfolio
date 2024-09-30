@@ -146,25 +146,6 @@
   position: absolute;
 }
 
-.type-writer::before {
-  content: "";
-  display: block;
-  height: 185px;
-  width: 380px;
-  margin-top: 200px;
-  transform: skewX(0deg) skewY(0deg) rotate(0deg);
-  position: relative;
-  border-radius: 20px;
-  position: absolute;
-  left: 50px;
-  top: -160px;
-  z-index: -1;
-  border: 2px solid rgb(255, 255, 255, 0.5);
-  border-left: none;
-  border-top: none;
-  display: none;
-}
-
 .output-text-panel {
   position: absolute;
   width: 400px;
@@ -217,7 +198,7 @@
   height: 20px;
   top: -22px;
   display: block;
-  background: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 0.3));
+  background: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 0.4));
   display: flex;
   position: absolute;
 }
@@ -235,7 +216,7 @@
 .hobby-section {
   overflow: hidden;
   position: relative;
-  height: 60vh;
+  height: 65vh;
   display: flex;
   align-items: center;
   justify-content: center;

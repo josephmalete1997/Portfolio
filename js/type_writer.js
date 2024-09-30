@@ -10,7 +10,7 @@ const enterKey = document.querySelector(".enter");
 
 const hobbyArray = `     Playing_Soccer.  +  Listening_To_Music.  +  Reading_Books.  +   Writing_Code.  +   Making_Art. +
  ...............++
-  Thanks_You
+  Thank_You
     `;
 
 const splitArray = hobbyArray.split("");
