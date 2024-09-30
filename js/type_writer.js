@@ -5,10 +5,12 @@ const outputTextInput = document.querySelector(".output-text-input");
 const displayLetter = document.querySelector(".display-letter");
 const bigGear = document.querySelector(".gear");
 const smallGear = document.querySelector(".gear-small");
+const spaceKey = document.querySelector(".space-type");
+const enterKey = document.querySelector(".enter");
 
-const hobbyArray = `     Playing Soccer.  +  Listening To Music.  +  Reading Books.  +   Writing Code.  +   Making Art. +
+const hobbyArray = `     Playing_Soccer.  +  Listening_To_Music.  +  Reading_Books.  +   Writing_Code.  +   Making_Art. +
  ...............++
-  Thanks You :-)!
+  Thanks_You
     `;
 
 const splitArray = hobbyArray.split("");
@@ -38,10 +40,18 @@ function typeWriting() {
 
   if (splitArray[clickCount] == "_") {
     outputTextInput.innerHTML += " ";
+    spaceKey.classList.add("typed");
+    setTimeout(() => {
+      spaceKey.classList.remove("typed");
+    }, 100);
   } else if (splitArray[clickCount] == "+") {
     leftScrollIndex = 140;
     outputTextPanel.style.left = `${leftScrollIndex}px`;
     bigGear.style.transform = `rotate(${scrollIndex * 3}deg)`;
+    enterKey.classList.add("typed");
+    setTimeout(() => {
+      enterKey.classList.remove("typed");
+    }, 100);
     setTimeout(() => {
       scrollIndex += 32;
       outputTextInput.innerHTML += `<br>`;
