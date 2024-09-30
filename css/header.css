@@ -80,7 +80,6 @@
   width: 100%;
 }
 
-
 .scrolled {
   color: rgb(255, 15, 15);
 }
@@ -229,14 +228,8 @@
   margin-right: 10px;
 }
 
-.interest-and-hobbies {
-  height: 40vh;
-}
-
 .hobbies {
   width: 80%;
-  height: 18em;
-  padding: 10px;
   transition: 0.2s;
   border-radius: 10px;
   overflow: hidden;
@@ -245,33 +238,6 @@
 
 .hobbies:hover {
   transform: scale(1.1);
-}
-
-.hobbies:nth-child(1) {
-  background-image: url(../images/a2.jpg);
-}
-
-.hobbies:nth-child(2) {
-  background-image: url(../images/a4.webp);
-}
-
-.hobbies:nth-child(3) {
-  background-image: url(../images/music.jpeg);
-}
-
-.hobbies:nth-child(4) {
-  background-image: url(../images/art.jpg);
-  background-size: cover;
-}
-
-#details {
-  background: rgb(255, 255, 255);
-  width: 100vw;
-  height: 100vh;
-  position: sticky;
-  z-index: 310;
-  margin-top: 0px;
-  display: none;
 }
 
 /* Update History */

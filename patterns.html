@@ -22,6 +22,7 @@
             height: 500px;
             border: 1px solid white;
             position: relative;
+            display: none;
         }
 
         .patterns .node {
@@ -46,12 +47,143 @@
             top: 104px;
             transform: rotate(120deg);
         }
+
+        .type-writer {
+            background: white;
+            height: 200px;
+            width: 400px;
+            margin-top: 200px;
+            transform: skewX(-30deg) skewY(0deg) rotate(15deg);
+            position: relative;
+            border-radius: 20px;
+            z-index: 10;
+        }
+
+        .type-writer .keys {
+            display: flex;
+            flex-wrap: wrap;
+            position: absolute;
+            bottom: 0px;
+            padding: 1px;
+        }
+
+        .type-writer .keys .key {
+            color: white;
+            font-size: 16px;
+            background: rgb(0, 0, 0);
+            width: 10px;
+            height: 10px;
+            padding: 10px;
+            margin: 7px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* border: 1px solid; */
+            box-shadow: 8px 2px 0px rgb(163, 163, 163);
+            /* z-index: 10; */
+            position: relative;
+            overflow: hidden;
+            transition: .2s;
+        }
+
+        .type-writer .keys .key:hover {
+            transform: scale(.8);
+        }
+
+        .type-writer .keys .key::before {
+            content: "";
+            width: 90%;
+            height: 90%;
+            background: linear-gradient(rgb(255, 255, 255, .5), rgb(255, 255, 255, 0), rgb(255, 255, 255, 0));
+            border-radius: 50%;
+            position: absolute;
+            /* opacity: 0.3; */
+            /* top: 0px; */
+            /* left: 0px; */
+        }
+
+        .type-writer::before {
+            content: "";
+            display: block;
+            height: 185px;
+            width: 380px;
+            margin-top: 200px;
+            transform: skewX(0deg) skewY(0deg) rotate(0deg);
+            position: relative;
+            border-radius: 20px;
+            position: absolute;
+            left: 50px;
+            top: -160px;
+            z-index: -1;
+            border: 2px solid white;
+            border-left: none;
+            border-top: none;
+        }
+
+
+        /* .type-writer::before {
+            content: "";
+            display: block;
+            background: rgb(218, 218, 218);
+            height: 65px;
+            width: 245px;
+            margin-top: 200px;
+            transform: skewX(50deg) skewY(-30.5deg) rotate(-14deg);
+            position: absolute;
+            left: 314.5px;
+            top: -107px;
+            z-index: 2;
+        }
+
+        .type-writer::after {
+            content: "";
+            display: block;
+            background: rgb(88, 88, 88);
+            height: 50px;
+            width: 415px;
+            margin-top: 200px;
+            transform: skewX(60deg) skewY(-15deg) rotate(15deg);
+            position: absolute;
+            left: 30px;
+            top: 0px;
+        } */
     </style>
     <div class="patterns">
         <div class="node"></div>
         <div class="node"></div>
         <div class="node"></div>
         <div class="node"></div>
+    </div>
+
+    <div class="type-writer">
+        <div class="keys">
+            <div class="key">Q</div>
+            <div class="key">W</div>
+            <div class="key">E</div>
+            <div class="key">R</div>
+            <div class="key">T</div>
+            <div class="key">Y</div>
+            <div class="key">U</div>
+            <div class="key">O</div>
+            <div class="key">P</div>
+            <div class="key">A</div>
+            <div class="key">S</div>
+            <div class="key">D</div>
+            <div class="key">F</div>
+            <div class="key">G</div>
+            <div class="key">H</div>
+            <div class="key">J</div>
+            <div class="key">K</div>
+            <div class="key">L</div>
+            <div class="key">Z</div>
+            <div class="key">X</div>
+            <div class="key">C</div>
+            <div class="key">V</div>
+            <div class="key">B</div>
+            <div class="key">N</div>
+            <div class="key">M</div>
+        </div>
     </div>
 </body>
 
