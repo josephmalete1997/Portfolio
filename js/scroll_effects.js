@@ -1,6 +1,5 @@
 const title = document.querySelectorAll(".section");
 const links = document.querySelectorAll(".link");
-const bars = document.querySelector(".fa-bars");
 const sideNavigation = document.querySelector(".side-nav");
 const logo = document.querySelector(".side-nav h1");
 
@@ -13,16 +12,10 @@ links.forEach((link, i) => {
   });
 });
 
-bars.addEventListener("click", () => {
-  sideNavigation.classList.toggle("show");
-  bars.classList.toggle("fa-times");
-});
-
 if (window.innerWidth >= 298 && window.innerWidth <= 600) {
   document.querySelectorAll(".link").forEach((link) => {
     link.addEventListener("click", () => {
       sideNavigation.classList.toggle("show");
-      bars.classList.toggle("fa-times");
     });
   });
 }
@@ -46,14 +39,12 @@ function showAlert() {
       sideNavigation.style.background = "transparent";
       sideNavigation.style.backdropFilter = "blur(20px)";
       // changeLinkColor("white", "black", "white", "white", "transparent");
-      bars.style.top = "-100px";
       logo.style.color = "white";
     } else {
       sideNavigation.style.background = "rgb(255,255,255,0.1)";
       sideNavigation.style.backdropFilter = "blur(20px)";
       // changeLinkColor("black", "white", "black", "black", "transparent");
       sideNavigation.style.top = "0px";
-      bars.style.top = "0px";
       logo.style.color = "white";
     }
   });
@@ -81,6 +72,7 @@ window.addEventListener("scroll", showAlert);
 downloadButton = document.querySelector("#download");
 
 downloadButton.addEventListener("mouseover", () => {
+  // alert("Yes");
   downloadButton.style.setProperty("--before-left", "0%");
   downloadButton.style.setProperty("--opacity", "1");
 });

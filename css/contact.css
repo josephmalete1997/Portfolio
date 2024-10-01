@@ -25,30 +25,31 @@
 }
 
 label {
-  font-size: 24px;
-  margin: 5px 0px 10px 0px;
+  font-size: 20px;
+  margin: 10px 0px 5px 0px;
   color: white;
 }
 
 input {
-  padding: 10px 10px;
+  padding: 8px 10px;
   color: rgb(255, 255, 255);
   border-color: white;
   border-radius: 10px;
   background: rgba(255, 255, 255, 0);
+  border: 1px solid;
 }
 
 #name,
 #email,
 #subject {
   margin-left: 0%;
-  font-size: 20px;
+  font-size: 16px;
   color: rgb(255, 255, 255);
 }
 
 textarea {
   height: 100px;
-  border: 2px solid;
+  border: 1px solid;
   resize: none;
   font-size: 20px;
   padding: 5px 10px;
@@ -60,15 +61,10 @@ textarea {
 
 input:focus-visible,
 textarea:focus-visible {
-  border: 2px solid rgb(255, 255, 255); /* White border */
-  background: rgba(255, 255, 255, 0.5); /* Transparent background */
-  border-top: none; /* No top border */
-  border-left: none; /* No left border */
-  border-right: none; /* No right border */
+  background: rgba(255, 255, 255, 0.1); /* Transparent background */
   outline: none; /* Remove default outline */
   transition: border-color 0.3s ease, background 0.5s ease; /* Smooth transition */
   color: white; /* Text color */
-  border-radius: 0px;
 }
 
 form {

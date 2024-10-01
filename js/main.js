@@ -15,31 +15,10 @@ const hobbies = document.querySelectorAll(".welcome");
 const linkNames = ["Home", "About", "Skills", "Work Experience", "Projects", "Contact"];
 const linkArray = ["#home", "#about", "#skills", "#work-experience", "#portfolio", "#contact"];
 
-const socialIcons = document.createElement("div");
-socialIcons.classList.add("socials-icons");
-socialIcons.innerHTML = `
-          <div class="socials-inner">
-            <div class="tool-tip">Facebook</div>
-            <a href="https://web.facebook.com/profile.php?id=61553547607080" target="_blank"> <i
-                class="fa-brands fa-facebook"></i></a>
-          </div>
-          <div class="socials-inner">
-            <div class="tool-tip">Github</div>
-            <a href="https://github.com/josephmalete1997" target="_blank"> <i class="fa-brands fa-github"></i></a>
-          </div>
-          <div class="socials-inner">
-            <div class="tool-tip">LinkedIn</div>
-            <a href="https://www.linkedin.com/in/joseph-jacob-malete-a5b263276/" target="_blank">
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-        </div>`;
-
-sideNav.append(socialIcons);
 
 for (let i = 0; i < linkNames.length; i++) {
   //scroll effect
   document.querySelector(linkArray[i]).className = "scroll-section hidden-when-scrolling-down";
-
   const link = document.createElement("a");
   const below = document.createElement("div");
   below.classList.add("below");
@@ -91,26 +70,5 @@ button.forEach((button) => {
     setTimeout(() => {
       button.style.transform = "scale(1)";
     }, 300);
-  });
-});
-
-const skillPanels = document.querySelectorAll(".skills-row");
-
-function changeOpacity(value) {
-  skillPanels.forEach((item) => {
-    item.style.opacity = value;
-  });
-}
-
-skillPanels.forEach((item) => {
-  item.classList.add("scroll-section");
-  item.classList.add("hidden-when-scrolling-down");
-  item.addEventListener("mouseover", () => {
-    changeOpacity("0.4");
-    item.style.opacity = "1";
-  });
-  item.addEventListener("mouseout", () => {
-    changeOpacity("1");
-    item.style.opacity = "1";
   });
 });

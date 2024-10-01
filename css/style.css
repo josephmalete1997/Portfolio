@@ -6,26 +6,29 @@
 
 body {
   margin: 0%;
-  width: 100vw;
-  background: rgb(55, 66, 110);
+  background: rgb(46, 46, 46);
+  background-size: cover;
+  background-position: center;
+  background-clip: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   user-select: none;
-  overflow-x: hidden;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: rgb(46, 46, 46);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(49, 69, 158);
+  background: rgb(0, 0, 0);
   height: 10px;
   cursor: all-scroll;
 }
@@ -53,25 +56,6 @@ body {
   font-family: "Montserrat-light";
 }
 
-.content {
-  width: 100vw;
-  position: relative;
-  z-index: 1;
-  transition: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  /* background-color: black; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.content p {
-  text-align: center;
-  font-size: 20px;
-  line-height: 1.4em;
-  margin-top: 50px;
-}
-
 .left-border {
   border-left: 4px solid rgb(93, 196, 110);
   border-radius: 4px;
@@ -83,11 +67,11 @@ body {
 .title {
   z-index: 10;
   font-size: 42px;
-  right: 0px;
+  margin: 10px 50px;
   font-weight: 300;
   position: relative;
-  font-family: "Montserrat-extra-bold";
-  color: white;
+  font-family: "Montserrat-bold";
+  color: rgb(0, 0, 0);
 }
 
 .fa {
@@ -111,10 +95,10 @@ body {
 /*Other pages*/
 
 #home {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: relative;
-  /* background: rgb(0, 0, 0, 0.2); */
+  background: rgb(0, 0, 0);
   /* overflow: hidden; */
 }
 
@@ -166,10 +150,23 @@ body {
 
 #home-text p:nth-child(1) {
   font-size: 46px;
-  font-family: "Montserrat-extra-bold";
   color: rgb(255, 255, 255);
   padding-bottom: 20px;
   margin-bottom: 20px;
+}
+
+.outline-text {
+  text-shadow: 1px 1px 1px white, -1px 1px 1px white, -1px -1px 1px white, 1px -1px 1px white;
+  font-family: "Montserrat-extra-bold";
+  letter-spacing: 2px;
+  color: black;
+  transition: 0.3s;
+}
+
+.outline-text:hover {
+  color: rgb(255, 255, 255, 0.2);
+  text-shadow: 1px 1px 1px white, -1px 1px 1px white, -1px -1px 1px white, 1px -1px 1px white;
+  transform: scale(0.5);
 }
 
 .normal-size {
@@ -178,8 +175,8 @@ body {
 
 .scroll-down {
   position: absolute;
-  bottom: 50px;
-  left: 350px;
+  bottom: 20px;
+  left: 50px;
   font-size: 16px;
   color: rgb(187, 187, 187);
   text-decoration: none;
@@ -207,24 +204,21 @@ body {
 
 /* Social icons */
 .socials-icons {
-  z-index: 200;
   display: flex;
   flex-direction: row;
-  /* position: absolute; */
-  right: 50px;
+  margin-bottom: 20px;
 }
 
 .socials-inner {
   position: relative;
   color: #ffffff;
-  /* border-bottom: 2px solid #ffffff; */
-  margin: 5px;
+  margin: 2px;
   cursor: pointer;
   transition: 0.2s;
   padding: 10px;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -235,7 +229,7 @@ body {
 }
 
 .socials-inner .fa-brands {
-  font-size: 30px;
+  font-size: 28px;
   color: #ffffff;
 }
 
@@ -279,21 +273,19 @@ body {
 #portfolio,
 #contact,
 #about {
-  top: 10px;
   display: block;
   width: 100%;
   position: relative;
 }
 
 #contact {
-  margin-bottom: 250px;
+  margin-bottom: 50px;
+  background: black;
 }
 
 #portfolio {
   display: flex;
-  width: 80vw;
-  padding: 0 10vw;
-  /* overflow-x: scroll; */
+  background: black;
   flex-direction: column;
   position: relative;
   align-items: center;
@@ -303,7 +295,9 @@ body {
   position: relative;
 }
 #portfolio h1 {
-  width: 100%;
+  width: 98%;
+  color: white;
+  padding-left: 2%;
 }
 
 #portfolio::before {
@@ -319,47 +313,46 @@ body {
 
 #work-experience {
   background: white;
-  width: 90vw;
-  padding: 0 5vw;
   z-index: 10;
 }
 
-#work-experience h1 {
-  color: rgb(55, 66, 110);
-}
-
-#work-experience table {
+table {
   color: black;
-  /* border: 1px solid black; */
 }
 
-#work-experience table tr:nth-child(1) {
- background:#68c4db;
- color:white;
+table tr:nth-child(1) {
+  background: #000000;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
 }
 
-#work-experience table th {
-  /* background: #68bfe7; */
+table th {
   border: none;
   text-align: center;
-  font-family: "Montserrat-light";
-  font-size: 30px;
-  /* border: 1px solid black; */
-
+  font-family: "Montserrat-lighter";
   padding-bottom: 20px;
+  font-weight: 100;
 }
 
-#work-experience table tr {
+table tr {
   border: none;
 }
-#work-experience table td {
+
+table td {
   border: none;
-  font-size: 18px;
+  font-size: 16px;
+  color: black;
+  font-family: "Montserrat-light";
+}
+
+table td:nth-child(1) {
+  border: none;
+  font-size: 16px;
+  width: 100px;
 }
 
 .odd-row {
-  background-color: rgb(241, 248, 255);
-  border-radius: 30px;
+  background-color: rgb(248, 249, 255);
 }
 
 /* #portfolio h1 {
@@ -368,7 +361,8 @@ body {
 
 .skills-grid {
   display: flex;
-  width: 100%;
+  width: 80%;
+  margin: 5% 10%;
   flex-wrap: wrap;
   /* flex-direction: column; */
 }
@@ -379,18 +373,15 @@ body {
   flex-direction: column;
   position: relative;
   background: #ffffff;
-  margin: 1.5%;
-  border-radius: 10px;
-  transition: 0.5s;
-}
-
-.skills-row:hover {
-  transform: scale(1.1);
+  margin: 1%;
 }
 
 .skills-row h2 {
-  margin: 10px;
-  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-family: "Montserrat-light";
+  text-align: center;
+  background: #f6f9ff;
+  padding: 5px 0;
 }
 
 .description {
@@ -448,47 +439,38 @@ hr {
   color: rgb(255, 255, 255);
 }
 
-footer {
-  width: 100%;
-  color: rgb(0, 59, 90);
-  text-align: center;
+.footer {
+  width: 90%;
+  padding: 5%;
   font-size: 20px;
-  position: relative;
-  bottom: 0px;
+  display: flex;
+}
+
+.footer .contact-details {
+  flex: 1;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  background: rgba(255, 255, 255);
-  padding: 50px 0;
+  margin-top: -50px;
+  position: relative;
 }
 
-footer p {
+.footer .contact-details p {
   margin: 5px;
-  font-family: "Montserrat-normal";
 }
 
-footer p:nth-child(2) {
-  margin: 5px;
-  font-size: 24px;
-  font-family: "Montserrat-bold";
+.footer a {
+  color: black;
+  left: 0;
 }
 
-footer p:nth-child(4) {
-  margin: 50px;
-  font-size: 16px;
-  font-family: "Montserrat-bold";
-  color: rgb(0, 0, 0);
-  padding: 10px 20px;
+.footer a .fa-solid{
+  transform: rotate(270deg);
 }
-
-footer p .fa-solid,
-footer p .fa-regular {
-  margin: 10px;
-  color: white;
-  background: rgb(0, 59, 90);
-  padding: 10px;
-  border-radius: 50%;
+.footer a:hover {
+  color: black;
 }
 
 html {

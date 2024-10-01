@@ -8,17 +8,14 @@ const smallGear = document.querySelector(".gear-small");
 const spaceKey = document.querySelector(".space-type");
 const enterKey = document.querySelector(".enter");
 
-const hobbyArray = `     Playing_Soccer.  +  Listening_To_Music.  +  Reading_Books.  +   Writing_Code.  +   Making_Art. +
- ...............++
-  Thank_You
-    `;
+const hobbyArray = `     Playing_Soccer.  +  Listening_To_Music.  +  Reading_Books.  +   Writing_Code.    `;
 
 const splitArray = hobbyArray.split("");
 
 let clickCount = -1;
 let rotateSmall = 0;
 let scrollIndex = -250;
-let leftScrollIndex = 160;
+let leftScrollIndex = 200;
 function typeWriting() {
   // Increment click count
   clickCount += 1;
@@ -28,7 +25,7 @@ function typeWriting() {
       outputTextPanel.style.left = `180px`;
       clickCount = -1;
       scrollIndex = -250;
-      leftScrollIndex = 140;
+      leftScrollIndex = 200;
       rotateSmall = 0;
       outputText.style.bottom = `${scrollIndex}px`;
       outputTextPanel.style.left = `${leftScrollIndex}px`;
@@ -45,7 +42,7 @@ function typeWriting() {
       spaceKey.classList.remove("typed");
     }, 100);
   } else if (splitArray[clickCount] == "+") {
-    leftScrollIndex = 140;
+    leftScrollIndex = 200;
     outputTextPanel.style.left = `${leftScrollIndex}px`;
     bigGear.style.transform = `rotate(${scrollIndex * 3}deg)`;
     enterKey.classList.add("typed");

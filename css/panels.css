@@ -1,43 +1,11 @@
-/* skills */
-
-.panel-one {
-  height: 200px;
-  position: relative;
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-column-gap: 1%;
-}
-
-.skills-main {
-  display: flex;
-  flex-direction: column;
-}
-
-.panel-skills {
-  position: relative;
-  padding: 20px;
-  margin: 10px;
-  background: rgb(255, 255, 255);
-  display: flex;
-  flex-direction: column;
-  flex: 0 0 33%;
-}
-
 .skillsPanel {
-  height: 50px;
   left: 0px;
   position: relative;
   display: flex;
   align-items: center;
   transition: 0.5s;
   color: rgb(0, 0, 0);
-  margin: 1%;
-}
-
-.skillsPanel:hover .fa-brands,
-z .skillsPanel:hover .fa-solid {
-  color: #b8b8b8;
-  transition: 1s;
+  margin: 2%;
 }
 
 .skillsPanel div {
@@ -45,24 +13,21 @@ z .skillsPanel:hover .fa-solid {
   padding-left: 5px;
 }
 
-/* skillsPanel */
-
 .sub-title {
   font-size: 32px;
   text-align: left;
-  padding: 20px 0px;
   position: relative;
   font-family: "Montserrat-normal";
-  color: white;
+  color: rgb(0, 0, 0);margin: 50px;
 }
 
 .skillsPanel img {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
 }
 
 .skillsPanel div {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 100;
 }
 
@@ -88,11 +53,10 @@ z .skillsPanel:hover .fa-solid {
   flex-direction: column;
 }
 
-.schools-items table,
 table {
-  width: 100%;
+  width: 90%;
+  margin: 0 5%;
   border-collapse: collapse;
-  color: rgb(255, 255, 255);
   font-family: "Montserrat-normal";
 }
 
@@ -102,9 +66,9 @@ li {
 
 .schools-items table th,
 table th {
-  padding: 10px;
-  /* border-collapse: collapse; */
-  font-size: 24px;
+  padding: 5px 10px;
+  padding-left: 10px;
+  font-size: 20px;
   text-align: start;
   font-family: "Montserrat-normal";
   border: 1px solid rgb(255, 255, 255);
@@ -128,42 +92,42 @@ td:nth-child(1) {
   margin-top: 20px;
 }
 
-.download-cv {
-  color: rgb(228, 228, 228);
+#download {
+  color: rgb(255, 255, 255);
   cursor: pointer;
-  border: 2px solid;
-  border-bottom: 5px solid;
+  border: 1px solid;
+  border-bottom: 5px solid #d1d1d1;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 18px;
   border-radius: 10px;
   margin-bottom: 10px;
   transition: 0.3s;
   font-family: "Montserrat-bold";
   overflow: hidden;
   transition-delay: 0.2s;
-  padding: 10px 0;
+  padding: 6px;
 }
 
 .button {
-  color: rgb(146, 146, 146);
+  color: rgb(0, 0, 0);
   cursor: pointer;
-  border: 2px solid #ececec;
-  border-bottom: 5px solid #ececec;
+  border: 1px solid #ececec;
+  border-bottom: 5px solid #d1d1d1;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 18px;
   border-radius: 10px;
   margin-bottom: 10px;
   transition: 0.3s;
   font-family: "Montserrat-bold";
   overflow: hidden;
   /* transition-delay: 0.2s; */
-  padding: 10px;
+  padding: 6px;
   z-index: 1;
 }
 
@@ -219,12 +183,20 @@ td:nth-child(1) {
   transition: 0.3s;
 }
 
-.download-cv:hover {
+#download:hover {
   transform: scale(1);
-  color: rgb(146, 146, 146);
+  color: rgb(0, 0, 0);
   border: 2px solid white;
   border-bottom: 5px solid rgb(228, 228, 228);
 }
+
+/* #download:hover::before {
+  left: 0%;
+}
+
+#download:hover::after {
+  left: 0%;
+} */
 
 .button:hover {
   transform: scale(1);

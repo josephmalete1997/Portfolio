@@ -2,12 +2,12 @@
   width: 450px;
   height: 430px;
   position: relative;
-  left: 100px;
+  left: 50px;
   top: 150px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  transform: skewY(-10deg);
+  transform: skewY(-10deg) scale(0.9);
   transition: 0.5s;
   z-index: 1;
 }
@@ -112,7 +112,6 @@
   border-top: 1px solid rgb(201, 201, 201);
   border-radius: 20px;
   transition: 0.5s;
-  background: rgb(55, 66, 110);
   z-index: 2;
 }
 
