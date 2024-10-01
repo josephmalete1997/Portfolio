@@ -101,7 +101,7 @@
   background: rgb(255, 255, 255);
   margin: 0 5%;
   font-family: "Montserrat-light";
-  font-size: 18px;
+  font-size: 18px;padding-bottom: 40px;
 }
 
 .updates {

@@ -16,12 +16,14 @@
   display: none;
 } */
 
-.project-scroll h1 {
-  color: white;
+.project-scroll {
+  color: rgb(0, 0, 0);
 }
+
 .project-scroll h2 {
   color: white;
 }
+
 .project-scroll .button {
   width: 15%;
 }

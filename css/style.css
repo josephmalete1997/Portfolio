@@ -293,10 +293,11 @@ body {
   z-index: 12;
   position: relative;
 }
-#portfolio h1 {
-  width: 98%;
+#portfolio .sub-title {
   color: white;
-  padding-left: 2%;
+  width: 90%;
+  margin: 0 50px;
+  margin-top: 10px;
 }
 
 #portfolio::before {
@@ -461,15 +462,23 @@ hr {
 }
 
 .footer a {
-  color: black;
+  color: rgb(255, 255, 255);
   left: 0;
+  background: #000000;
+  position: relative;
+  width: 20px;
+  height: 50px;
+  border-radius: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-90deg);
+  transition: 0.3s;
 }
 
-.footer a .fa-solid{
-  transform: rotate(270deg);
-}
 .footer a:hover {
-  color: black;
+  color: rgb(255, 255, 255);
+  transform: rotate(-90deg) scale(1.1);
 }
 
 html {
