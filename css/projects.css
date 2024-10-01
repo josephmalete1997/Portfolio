@@ -36,7 +36,7 @@
 }
 
 .stack .stack-item {
-  color: hsl(0, 0%, 45%);
+  color: hsl(0, 0%, 0%);
   margin: 10px;
   display: flex;
   align-items: center;
@@ -45,34 +45,9 @@
   padding: 5px 10px;
   font-family: "Montserrat-normal";
   background: white;
-  border: 3px solid #ececec;
-  border-bottom: 5px solid #c4c4c4;
-  border-right: 5px solid #e9e9e9;
   position: relative;
   transition: 0.3s ease;
   transform: scale(0.9);
-}
-
-.stack .stack-item::before {
-  content: "";
-  width: 100%;
-  height: 20px;
-  background: linear-gradient(180deg, rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0), rgb(0, 0, 0, 0));
-  position: absolute;
-  bottom: -25px;
-  left: 0px;
-  border-radius: 60px 60px 0 0;
-  z-index: -1;
-  transition: 0.5s;
-}
-
-.stack .stack-item:hover::before {
-  transform: scale(0.8);
-  border-radius: 50%;
-}
-
-.stack .stack-item:hover {
-  transform: scale(1.15);
 }
 
 #portfolio .scrollers {

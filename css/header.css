@@ -20,7 +20,7 @@
   top: 0;
   padding-top: 10px;
   padding-bottom: 10px;
-  background: transparent; /* Slightly transparent background */
+  background: rgb(0, 0, 0, 0.1); /* Slightly transparent background */
   backdrop-filter: blur(20px); /* Adjust the blur amount as needed */
   transition: 0.5s;
   color: black;
@@ -39,7 +39,6 @@
   text-align: center;
   position: relative;
   margin: 1px;
-  transition: 0.5s;
   color: white;
   padding: 5px 10px;
   display: flex;
@@ -98,13 +97,11 @@
 }
 
 .text-image {
+  width: 90%;
   background: rgb(255, 255, 255);
-  padding: 5%;
-}
-
-.text-image h1 {
-  color: rgb(0, 0, 0);
-  font-size: 30px;
+  margin: 0 5%;
+  font-family: "Montserrat-light";
+  font-size: 18px;
 }
 
 .updates {
