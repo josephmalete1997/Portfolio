@@ -38,3 +38,4 @@ downloadButton.addEventListener("mouseout", () => {
     downloadButton.style.setProperty("--before-left", "-100%");
   }, 300); // Match this to your CSS transition duration
 });
+
