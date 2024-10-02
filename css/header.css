@@ -101,7 +101,23 @@
   background: rgb(255, 255, 255);
   margin: 0 5%;
   font-family: "Montserrat-light";
-  font-size: 18px;padding-bottom: 40px;
+  font-size: 18px;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.text-image::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background: rgb(255, 255, 255);
+  transform: rotate(45deg);
+  left: 5%;
+  margin-left: -8px;
+  bottom: -20px;
+  z-index: -1;
 }
 
 .updates {
