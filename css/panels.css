@@ -228,6 +228,15 @@ td:nth-child(1) {
   visibility: hidden;
 }
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 #send {
   display: flex;
   justify-content: center;
