@@ -1,4 +1,4 @@
-import { taskObject, importanceElements } from "./elements_and_objects.js";
+import { taskObject, importanceElements, domElements } from "./elements_and_objects.js";
 import { makeVisible, makeInvisible } from "./functions.js";
 
 const listItem = document.querySelectorAll(".list-item");
@@ -59,6 +59,9 @@ function taskByImportance(status) {
       taskArray.push(item);
     }
   });
+  taskArray.length !== 0
+    ? (domElements.noTasks.style.display = "none")
+    : (domElements.noTasks.style.display = "block");
   return taskArray;
 }
 

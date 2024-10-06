@@ -11,6 +11,7 @@ const domElements = {
   addNote: document.querySelector(".add-note"),
   numberOfCharacters: document.querySelector(".number-of-characters"),
   noTasks: document.querySelector(".no-task"),
+  menu: document.querySelector(".fa-bars"),
 };
 
 domElements.backToForm.addEventListener("click", () => {
