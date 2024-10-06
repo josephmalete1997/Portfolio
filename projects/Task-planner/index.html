@@ -1,101 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Streamline and optimize your task management with our web application. Track, prioritize, and complete tasks effectively to boost productivity and achieve your goals."
-    />
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/task.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
-    <link rel="stylesheet" href="css/calendar.css" />
-    <link rel="stylesheet" href="css/task_header_panel.css" />
-    <link rel="stylesheet" href="css/filter.css" />
-    <link rel="stylesheet" href="assets/fontAwesome/css/all.min.css" />
-    <link rel="shortcut icon" href="calendar.svg" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/062d0051ac.js" crossorigin="anonymous"></script>
-    <title>Task Manager</title>
-  </head>
-  <body>
-    <div class="over-layer"></div>
-    <div class="header">
-      <p class="title-day">Today</p>
-      <button class="addNew">Add new task</button>
-      <div class="importance">
-        <h4>Importance:</h4>
-        <span>Low<i class="desc-imp">This task is of low importance</i></span>
-        <span>Medium <i class="desc-imp">This task is of medium importance</i></span>
-        <span>High <i class="desc-imp">This task is of high importance</i></span>
-      </div>
-      <i class="fa-solid fa-bell"></i>
-      <i class="fa-regular fa-lightbulb"></i>
-      <i class="fa-solid fa-bars"></i>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Streamline and optimize your task management with our web application. Track, prioritize, and complete tasks effectively to boost productivity and achieve your goals." />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/task.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/calendar.css" />
+  <link rel="stylesheet" href="css/task_header_panel.css" />
+  <link rel="stylesheet" href="css/filter.css" />
+  <link rel="stylesheet" href="assets/fontAwesome/css/all.min.css" />
+  <link rel="shortcut icon" href="calendar.svg" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/062d0051ac.js" crossorigin="anonymous"></script>
+  <title>Task Manager</title>
+</head>
+
+<body>
+  <div class="over-layer"></div>
+  <div class="header">
+    <p class="title-day">Today</p>
+    <button class="addNew">Add new task</button>
+    <div class="importance">
+      <h4>Importance:</h4>
+      <span>Low<i class="desc-imp">This task is of low importance</i></span>
+      <span>Medium <i class="desc-imp">This task is of medium importance</i></span>
+      <span>High <i class="desc-imp">This task is of high importance</i></span>
     </div>
-    <div class="content-grid">
-      <div class="left-items">
-        <div class="time-line"></div>
+    <i class="fa-solid fa-bell"></i>
+    <i class="fa-regular fa-lightbulb"></i>
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <div class="content-grid">
+    <div class="left-items">
+      <div class="time-line"></div>
 
-        <!-- <i class="fa-solid fa-zoom"></i> -->
+      <!-- <i class="fa-solid fa-zoom"></i> -->
+      <form>
+        <div class="add-note"><i class="fa-solid fa-file-lines"></i> Add Note</div>
+        <span id="cancel"><i class="fa-solid fa-times"></i></span>
+        <label>Task name:</label>
+        <input type="text" class="name" />
+        <label>Date:</label>
+        <input type="date" class="date" />
+        <label>From:</label>
+        <input type="time" class="start" />
+        <label>To:</label>
+        <input type="time" class="end" />
+        <label>Importance</label>
+        <select id="importance">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+        <!-- <button class="add-task">Add Note</button> -->
+        <button class="add-task">Add Task</button>
+        <button class="update-task">Update Task</button>
+      </form>
 
-        <form>
-          <div class="add-note"><i class="fa-solid fa-file-lines"></i> Add Note</div>
-          <span id="cancel"><i class="fa-solid fa-times"></i></span>
-          <label>Task name:</label>
-          <input type="text" class="name" />
-          <label>Date:</label>
-          <input type="date" class="date" />
-          <label>From:</label>
-          <input type="time" class="start" />
-          <label>To:</label>
-          <input type="time" class="end" />
-          <label>Importance</label>
-          <select id="importance">
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </select>
-          <!-- <button class="add-task">Add Note</button> -->
-          <button class="add-task">Add Task</button>
-          <button class="update-task">Update Task</button>
-        </form>
-
-        <div class="calendar"></div>
-        <div class="notes">
-          <div class="back-to-form"><i class="fa-solid fa-arrow-left"></i></div>
-          <textarea class="note-text"></textarea>
-          <span class="number-of-characters"></span>
-        </div>
+      <div class="calendar"></div>
+      <div class="notes">
+        <div class="back-to-form"><i class="fa-solid fa-arrow-left"></i></div>
+        <textarea class="note-text"></textarea>
+        <span class="number-of-characters"></span>
       </div>
-      <div class="right-items">
-        <p class="title-h1">
-          Your tasks <i class="tasks-number">(<span id="tasks-number">0</span>) :</i>
-        </p>
-        <div class="task-panel-header">
-          <div class="list-item">All</div>
-          <div class="list-item">Today</div>
-          <div class="list-item" id="list-by-importance">
-            By importance<span id="importance-status"></span>
-            <div class="by-importance">
-              <span class="importance-low i">Low</span>
-              <span class="importance-medium i">Medium</span>
-              <span class="importance-high i">High</span>
-            </div>
+    </div>
+    <div class="right-items">
+      <p class="title-h1">
+        Your tasks <i class="tasks-number">(<span id="tasks-number">0</span>) :</i>
+      </p>
+      <div class="task-panel-header">
+        <div class="list-item">All</div>
+        <div class="list-item">Today</div>
+        <div class="list-item" id="list-by-importance">
+          By importance<span id="importance-status"></span>
+          <div class="by-importance">
+            <span class="importance-low i">Low</span>
+            <span class="importance-medium i">Medium</span>
+            <span class="importance-high i">High</span>
           </div>
         </div>
-        <div class="task-panel"></div>
+      </div>
+      <div class="task-panel">
+        <h3 class="no-task">No tasks</h3>
       </div>
     </div>
-    <script type="module" src="js/main.js"></script>
-    <script type="module" src="js/elements_and_objects.js"></script>
-    <script type="module" src="js/tasks.js"></script>
-    <script type="module" src="js/calendar.js"></script>
-    <script type="module" src="js/update_task.js"></script>
-    <script type="module" src="js/task_ordering.js"></script>
-    <script type="module" src="js/theme.js"></script>
-    <script type="module" src="js/view_task.js"></script>
-  </body>
+  </div>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/elements_and_objects.js"></script>
+  <script type="module" src="js/tasks.js"></script>
+  <script type="module" src="js/calendar.js"></script>
+  <script type="module" src="js/update_task.js"></script>
+  <script type="module" src="js/task_ordering.js"></script>
+  <script type="module" src="js/theme.js"></script>
+  <script type="module" src="js/view_task.js"></script>
+</body>
+
 </html>

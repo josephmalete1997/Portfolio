@@ -10,6 +10,7 @@ const domElements = {
   notes: document.querySelector(".notes"),
   addNote: document.querySelector(".add-note"),
   numberOfCharacters: document.querySelector(".number-of-characters"),
+  noTasks: document.querySelector(".no-task"),
 };
 
 domElements.backToForm.addEventListener("click", () => {
@@ -43,6 +44,11 @@ const importanceElements = {
 const taskObject = JSON.parse(localStorage.getItem("task")) || [];
 
 domElements.taskNumber.textContent = taskObject.length;
+if (taskObject.length === 0) {
+  domElements.noTasks.style.display = "block";
+} else {
+  domElements.noTasks.style.display = "none";
+}
 
 const colorObject = {
   low: "rgb(122, 189, 22)",
