@@ -41,37 +41,52 @@ body {
   align-items: center;
 }
 
-.fa-bell,
+.user-panel {
+  margin-left: 3em;
+  display: flex;
+  align-items: center;
+  /* background: #e0ffe4; */
+  font-weight: 600;
+  height: 15px;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.logout {
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+
+.logout:hover {
+  color: black;
+  background: rgb(255, 255, 255);
+}
+.user-panel p {
+  padding-left: 10px;
+}
+
+.fa-user,
 .fa-lightbulb,
 .fa-bars {
-  position: absolute;
   right: 10rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: black;
   cursor: pointer;
 }
 
 .fa-lightbulb {
   right: 7rem;
+  display: none;
 }
 
 .fa-bars {
   right: 2rem;
+  position: absolute;
 }
 
 .fa-lightbulb:hover {
   color: #9e9e9e;
-}
-
-.fa-bell::after {
-  content: "0";
-  position: absolute;
-  font-size: 0.9rem;
-  color: rgb(255, 255, 255);
-  background: red;
-  left: -0.7rem;
-  top: -0.5rem;
-  padding: 0.2rem;
 }
 
 .btn {
@@ -242,11 +257,18 @@ option {
   flex: 2;
   margin-top: 0rem;
   position: sticky;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1%;
 }
 
 .task-panel {
   height: 75vh;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title-h1 {

@@ -32,6 +32,12 @@
   display: none;
 }
 
+.importance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .importance-low,
 .importance-medium,
 .importance-high {
