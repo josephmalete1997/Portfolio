@@ -44,28 +44,29 @@ function progressLine() {
 progressLine();
 
 function addToTimeline(taskObject) {
-  for (let i = 0; i < taskObject.length; i++) {
-    const newTask = document.createElement("div");
-    newTask.classList.add("task-on-timeline");
-    newTask.setAttribute("draggable", true);
-    newTask.style.transition = "1s";
-    const time = taskObject[i].from.slice(0, 2);
-    const timeFromHalf = parseInt(taskObject[i].from.slice(3, 5)) / 60;
-    const timeToHalf = parseInt(taskObject[i].to.slice(3, 5)) / 60;
-    const heightFrom = parseInt(taskObject[i].from) + timeFromHalf;
-    const heightTo = parseInt(taskObject[i].to) + timeToHalf;
-    const height = heightTo - heightFrom;
+  if (taskObject.length > 0) {
+    for (let i = 0; i < taskObject.length; i++) {
+      const newTask = document.createElement("div");
+      newTask.classList.add("task-on-timeline");
+      newTask.setAttribute("draggable", true);
+      newTask.style.transition = "1s";
+      const time = taskObject[i].from.slice(0, 2);
+      const timeFromHalf = parseInt(taskObject[i].from.slice(3, 5)) / 60;
+      const timeToHalf = parseInt(taskObject[i].to.slice(3, 5)) / 60;
+      const heightFrom = parseInt(taskObject[i].from) + timeFromHalf;
+      const heightTo = parseInt(taskObject[i].to) + timeToHalf;
+      const height = heightTo - heightFrom;
 
-    newTask.style.top = `${heightFrom * 30 + 50}px`;
-    newTask.style.height = `${height * 30}px`;
-    newTask.style.background = taskObject[i].color;
-    newTask.innerHTML = `${taskObject[i].name} <i class='text-time'><span class="space"></span>(${taskObject[i].from}-${taskObject[i].to})</i>`;
+      newTask.style.top = `${heightFrom * 30 + 50}px`;
+      newTask.style.height = `${height * 30}px`;
+      newTask.style.background = taskObject[i].color;
+      newTask.innerHTML = `${taskObject[i].name} <i class='text-time'><span class="space"></span>(${taskObject[i].from}-${taskObject[i].to})</i>`;
 
-    for (let color in colorObject) {
-      if (color === taskObject[i].importance) newTask.style.background = `${colorObject[color]}`;
+      for (let color in colorObject) {
+        if (color === taskObject[i].importance) newTask.style.background = `${colorObject[color]}`;
+      }
+      timeline.append(newTask);
     }
-
-    timeline.append(newTask);
   }
 }
 

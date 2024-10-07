@@ -40,7 +40,7 @@ listItem.forEach((item, index) => {
 
 function todayTask() {
   const taskArray = [];
-  const item = taskObject.filter((item) => {
+  taskObject.filter((item) => {
     if (
       item.date.slice(0, 4) == new Date().getFullYear() &&
       item.date.slice(5, 7) == new Date().getMonth() + 1 &&
@@ -73,6 +73,9 @@ const filterObject = {
 
 if (filterVar === "Today") {
   filterObject.value = todayTask();
+  todayTask().length === 0
+    ? (domElements.noTasks.style.display = "block")
+    : (domElements.noTasks.style.display = "none");
 } else if (filterVar === "All") {
   filterObject.value = taskObject.sort((a, b) => {
     return a.date - b.date;

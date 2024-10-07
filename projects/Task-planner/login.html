@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <h2>Sign Up</h2>
+    <form method="POST" enctype="multipart/form-data" id="users-form">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Create Account">
+    </form>
+    <script>
+        const form = document.getElementById("users-form");
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            postForm();
+        });
+
+        function postForm() {
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const data = { username, email, password };
+
+            fetch("http://intli.rf.gd/add_users.php", {
+                method: "POST",
+                mode: "no-cors", // This mode prevents reading the response
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+                .then(() => {
+                    // You won't be able to check the response here
+                    console.log('Request sent, but no response can be processed.');
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+    </script>
+</body>
+</html>
