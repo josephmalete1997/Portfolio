@@ -37,16 +37,10 @@
   height: 80vh;
   overflow-y: auto;
   padding: 50px 2.5%;
-  padding-top: 0px;
   position: relative;
 }
 
-.time-line h1 {
-  margin: 0px;
-  font-weight: 100;
-  margin-bottom: 20px;
-  margin-left: 5%;
-}
+
 
 .hours {
   height: 29px;
@@ -77,6 +71,7 @@
   position: absolute;
   z-index: 20;
   left: 11.5%;
+  /* margin-top: 30px; */
 }
 
 .line::before {
