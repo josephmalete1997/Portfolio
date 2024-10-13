@@ -55,6 +55,7 @@ fetch("http://intli.rf.gd/get_tasks.php", {
   .then((response) => response.json())
   .then((data) => {
     taskObject = data;
+    console.log(data);
   })
   .catch((error) => {
     console.error("There was a problem fetching tasks:", error);
