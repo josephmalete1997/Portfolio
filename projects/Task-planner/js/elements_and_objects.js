@@ -42,7 +42,23 @@ const importanceElements = {
   importanceStatus: document.querySelector("#importance-status"),
 };
 
-const taskObject = JSON.parse(localStorage.getItem("task")) || [];
+// const taskObject = JSON.parse(localStorage.getItem("task")) || [];
+let taskObject = [];
+
+fetch("http://intli.rf.gd/get_tasks.php", {
+  method: "GET",
+  mode: "no-cors",
+  headers: {
+    "Content-Type": "application/json",
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+    taskObject = data;
+  })
+  .catch((error) => {
+    console.error("There was a problem fetching tasks:", error);
+  });
 
 domElements.taskNumber.textContent = taskObject.length;
 if (taskObject.length === 0) {
