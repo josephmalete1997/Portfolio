@@ -16,6 +16,13 @@
   padding: 0% 5%;
 }
 
+.contact-me .sub-title {
+  color: white;
+  right: 50px;
+  top: 20px;
+  position: absolute;
+}
+
 /*  */
 
 .Personal-details {
@@ -74,7 +81,7 @@ form {
   padding: 20px;
   border-radius: 20px;
   left: 5%;
-  top:15%;
+  top: 15%;
 }
 
 ::placeholder {
@@ -85,6 +92,7 @@ form {
   background: none;
   width: 30%;
   margin-top: 20px;
+  color: red;
 }
 
 .mail {
