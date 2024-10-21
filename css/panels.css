@@ -89,9 +89,11 @@ td:nth-child(1) {
 .download-section {
   width: 50%;
   display: flex;
-  margin-top: 20px;
-  margin-left: 50%;
-  /* background: RED ; */
+  top: 80%;
+  left: 25%;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
 }
 
 #download {
@@ -123,6 +125,7 @@ td:nth-child(1) {
   font-size: 18px;
   border-radius: 30px;
   margin-bottom: 10px;
+  margin-left: 20px;
   transition: 0.3s;
   font-family: "Montserrat-bold";
   overflow: hidden;
