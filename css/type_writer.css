@@ -150,14 +150,12 @@
 
 .output-text {
   font-size: 24px;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   position: absolute;
-  background: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
   width: 350px;
   margin-left: 15px;
   height: 300px;
-  border: 1px solid rgb(255, 255, 255);
-  border-top: 3px dotted rgb(255, 255, 255);
   transition: 0.3s;
   bottom: -250px;
 }
@@ -170,7 +168,7 @@
   font-size: 30px;
   color: rgb(0, 0, 0);
   position: absolute;
-  background: rgb(0, 0, 0);
+  background: linear-gradient(120deg, rgb(5, 17, 70), rgb(0, 115, 192));
   width: 396px;
   height: 20px;
   bottom: 0px;
@@ -207,15 +205,40 @@
   overflow: hidden;
   position: relative;
   height: 70vh;
-  padding-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: black;
+  padding-bottom: 50px;
+  background-image: url("/images/hobby.gif");
+  background-size: cover;
+  background-position: center;
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  margin: 0;
+  width: 70%;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .hobby-section .sub-title {
   color: white;
+  margin-left: -100px;
+}
+
+.hobby-section .images {
+  flex: 1;
+  background: red;
+}
+
+.hobby-section .text {
+  width: 50%;
+  margin-top: 200px;
+  margin-left: 35%;
+}
+
+.hobby-section .text .text-item {
+  background: rgb(255, 255, 255);
+  font-size: 26px;
+  padding: 5px 20px;
+  margin: 10px;
+  border-radius: 50px;
 }
 
 .interest-and-hobbies {

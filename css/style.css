@@ -6,7 +6,7 @@
 
 body {
   margin: 0%;
-  background: rgb(46, 46, 46);
+  background: rgb(255, 255, 255);
   background-size: cover;
   background-position: center;
   background-clip: border-box;
@@ -17,39 +17,6 @@ body {
   user-select: none;
   overflow: hidden;
   overflow-y: auto;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgb(46, 46, 46);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgb(0, 0, 0);
-  height: 10px;
-  cursor: all-scroll;
-}
-
-@media screen and (max-width: 600px) {
-  ::-webkit-scrollbar {
-    width: 10px;
-    display: none;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: #ffffff;
-    border-radius: 20px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: rgb(49, 69, 158);
-    height: 10px;
-    cursor: all-scroll;
-    border-radius: 20px;
-  }
 }
 
 * {
@@ -94,26 +61,24 @@ body {
 /*Other pages*/
 
 #home {
-  width: 100%;
+  width: 80%;
+  padding: 0 10%;
   height: 100vh;
   position: relative;
-  background: rgb(0, 0, 0);
-  /* overflow: hidden; */
+  background-image: url("/images/home.gif");
+  background-position-y: 60%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #home-inner {
   width: 100%;
-  height: 100%;
-
+  height: 100vh;
   background-size: 40px 60px;
   position: absolute;
-  /* background:rgb(77, 77, 77); */
-
-  /* background-image: url("../BG2.png"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* background: rgb(53, 53, 53); */
 }
 
 @keyframes cubes {
@@ -130,58 +95,54 @@ body {
 #home-text {
   position: absolute;
   text-align: left;
-  height: 90vh;
-  top: 10vh;
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-left: 5vw;
-  right: 5vw;
-  border-radius: 200px;
-  color: #ffffff;
+  width: 100%;
+  height: 100vh;
+  bottom: 0;
+  left: 0vw;
 }
 
 #home-text p {
   margin: 0px;
 }
 
-#home-text p:nth-child(1) {
+#home-text .description {
   font-size: 46px;
-  color: rgb(255, 255, 255);
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  color: #15a3cd;
+  padding: 50px 10px;
+  top: 120px;
+  margin-left: 50px;
+  width: 40%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: 50%;
 }
 
 .outline-text {
   text-shadow: 1px 1px 1px white, -1px 1px 1px white, -1px -1px 1px white, 1px -1px 1px white;
-  font-family: "Montserrat-extra-bold";
+  font-family: "candy";
   letter-spacing: 2px;
-  color: black;
+  color: #15a3cd;
   transition: 0.3s;
-}
-
-.outline-text:hover {
-  color: rgb(255, 255, 255, 0.2);
-  text-shadow: 1px 1px 1px white, -1px 1px 1px white, -1px -1px 1px white, 1px -1px 1px white;
-  transform: scale(0.5);
+  font-size: 100px;
 }
 
 .normal-size {
   font-family: "Montserrat-light";
+  color: #15a3cd;
 }
 
 .scroll-down {
   position: absolute;
-  bottom: 20px;
+  bottom: 50px;
   left: 50px;
-  font-size: 16px;
-  color: rgb(187, 187, 187);
+  font-size: 20px;
+  color: #15a3cd;
   text-decoration: none;
   transition: 0.2s;
   display: flex;
-  /* border: 1px solid; */
   padding: 0px 10px;
   border-radius: 20px;
   overflow: hidden;
@@ -194,7 +155,7 @@ body {
 
 .scroll-down:hover {
   transform: scale(1.2);
-  color: rgb(255, 255, 255);
+  color: #15a3cd;
 }
 
 .scroll-down:hover::before {
@@ -205,7 +166,9 @@ body {
 .socials-icons {
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
+  bottom: 30%;
+  left: 10%;
+  position: absolute;
 }
 
 .socials-inner {
@@ -279,25 +242,17 @@ body {
 
 #contact {
   margin-bottom: 50px;
-  background: black;
-}
-
-#contact::before {
-  content: "";
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  background: rgb(255, 255, 255);
-  transform: rotate(45deg);
-  left: 50%;
-  margin-left: -8px;
-  bottom: -20px;
-  z-index: -1;
+  background-image: url("/images/contact.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 80%;
+  background-clip: border-box;
+  height: 100vh;
 }
 
 #portfolio {
   display: flex;
-  background: black;
+  background: linear-gradient(120deg, rgb(5, 17, 70), rgb(0, 115, 192));
   flex-direction: column;
   position: relative;
   align-items: center;
@@ -311,6 +266,8 @@ body {
   width: 90%;
   margin: 0 50px;
   margin-top: 10px;
+  font-family: "candy";
+  font-size: 100px;
 }
 
 #portfolio::before {
@@ -334,9 +291,10 @@ table {
 }
 
 table tr:nth-child(1) {
-  background: #000000;
+  background: rgb(0, 115, 192);
   color: rgb(255, 255, 255);
   font-size: 20px;
+  border: none;
 }
 
 table th {
@@ -374,27 +332,37 @@ table td:nth-child(1) {
 
 .skills-grid {
   display: flex;
-  width: 80%;
-  margin: 5% 10%;
+  width: 90%;
+  margin: 5% 5%;
   flex-wrap: wrap;
   /* flex-direction: column; */
 }
 
 .skills-row {
-  flex: 0 0 30%;
+  flex: 0 0 28.9%;
   display: flex;
   flex-direction: column;
   position: relative;
   background: #ffffff;
   margin: 1%;
+  padding: 1%;
+  box-shadow: 1px 1px 10px rgb(0, 0, 0, 0.1);
+  border-radius: 25px;
 }
 
 .skills-row h2 {
-  font-size: 20px;
-  font-family: "Montserrat-light";
+  font-size: 26px;
+  font-family: "arial";
   text-align: center;
-  background: #f6f9ff;
-  padding: 5px 0;
+  padding: 0px 0;
+  margin: 5px;
+  border-radius: 30px;
+  color: #000000;
+  font-weight: 100;
+}
+
+.skills-row:hover {
+  box-shadow: 1px 1px 10px rgb(0, 0, 0, 0.2);
 }
 
 .description {

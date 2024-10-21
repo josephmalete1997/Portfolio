@@ -48,7 +48,7 @@ input {
 }
 
 textarea {
-  height: 100px;
+  height: 70px;
   border: 1px solid;
   resize: none;
   font-size: 20px;
@@ -68,11 +68,13 @@ textarea:focus-visible {
 }
 
 form {
-  width: 60%;
+  width: 40%;
   margin: auto;
-  position: relative;
-  padding: 50px;
+  position: absolute;
+  padding: 20px;
   border-radius: 20px;
+  left: 5%;
+  top:15%;
 }
 
 ::placeholder {

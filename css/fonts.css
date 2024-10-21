@@ -35,3 +35,21 @@
 * {
   /* font-family: "Montserrat-light"; */
 }
+
+@font-face {
+  font-family: "street";
+  font-style: normal;
+  src: local("street"), url("../fonts/Streetwear.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "ginga";
+  font-style: normal;
+  src: local("street"), url("../fonts/Ginga.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "candy";
+  font-style: normal;
+  src: local("street"), url("../fonts/CANDY___.otf") format("truetype");
+}

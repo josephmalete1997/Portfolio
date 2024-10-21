@@ -14,10 +14,10 @@
 }
 
 .sub-title {
-  font-size: 32px;
+  font-size: 100px;
   text-align: left;
   position: relative;
-  font-family: "Montserrat-normal";
+  font-family: "candy";
   color: rgb(0, 0, 0);
   margin: 50px;
 }
@@ -87,23 +87,23 @@ td:nth-child(1) {
 }
 
 .download-section {
-  width: 40%;
+  width: 50%;
   display: flex;
-  flex-direction: column;
   margin-top: 20px;
+  margin-left: 50%;
+  /* background: RED ; */
 }
 
 #download {
   color: rgb(255, 255, 255);
   cursor: pointer;
   border: 1px solid;
-  border-bottom: 5px solid #d1d1d1;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  border-radius: 10px;
+  border-radius: 30px;
   margin-bottom: 10px;
   transition: 0.3s;
   font-family: "Montserrat-bold";
@@ -116,24 +116,22 @@ td:nth-child(1) {
   color: rgb(0, 0, 0);
   cursor: pointer;
   border: 1px solid #ececec;
-  border-bottom: 5px solid #d1d1d1;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  border-radius: 10px;
+  border-radius: 30px;
   margin-bottom: 10px;
   transition: 0.3s;
   font-family: "Montserrat-bold";
   overflow: hidden;
-  /* transition-delay: 0.2s; */
   padding: 6px;
   z-index: 1;
 }
 
 .download-cv:nth-child(2) {
-  margin-top: 10px;
+  margin-left: 10px;
 }
 
 #download:hover::before {
@@ -166,7 +164,6 @@ td:nth-child(1) {
   position: absolute;
   left: 0%;
   background: rgb(255, 255, 255);
-  color: rgb(146, 146, 146);
   z-index: -1;
   transition: 0.3s;
 }
@@ -179,7 +176,6 @@ td:nth-child(1) {
   position: absolute;
   left: 50%;
   background: rgb(255, 255, 255);
-  color: rgb(146, 146, 146);
   z-index: -1;
   transition: 0.3s;
 }
@@ -188,7 +184,6 @@ td:nth-child(1) {
   transform: scale(1);
   color: rgb(0, 0, 0);
   border: 1px solid white;
-  border-bottom: 5px solid rgb(228, 228, 228);
 }
 
 /* #download:hover::before {
@@ -245,17 +240,23 @@ td:nth-child(1) {
 
 .Education {
   position: relative;
+  background: #ffd332;
+  margin-top: 0;
+  padding-top: 10px;
+  padding-bottom: 50px;
 }
+/* .Education .sub-title{
+ color: whitel
+} */
 
 .Education::before {
   content: "";
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   position: absolute;
-  background: rgb(0, 0, 0);
   transform: rotate(45deg);
   right: 10%;
   margin-right: -8px;
-  top: -70px;
+  top: -60px;
   z-index: -1;
 }
