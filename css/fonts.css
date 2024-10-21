@@ -48,8 +48,9 @@
   src: local("street"), url("../fonts/Ginga.ttf") format("truetype");
 }
 
-@font-face {
+/* @font-face {
   font-family: "candy";
+  font-family: "arial";
   font-style: normal;
   src: local("street"), url("../fonts/CANDY___.otf") format("truetype");
-}
+} */

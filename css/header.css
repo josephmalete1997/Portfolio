@@ -98,26 +98,26 @@
 
 .text-image {
   width: 90%;
-  background: rgb(255, 255, 255);
   margin: 0 5%;
   font-family: "Montserrat-light";
   font-size: 18px;
   padding-bottom: 40px;
   position: relative;
   z-index: 10;
+  display: flex;
+  margin-top: -10px;
 }
 
-.text-image::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  background: rgb(255, 255, 255);
-  transform: rotate(45deg);
-  left: 5%;
-  margin-left: -8px;
-  bottom: -10px;
-  z-index: -1;
+.text-image img {
+  width: 350px;
+  height: 350px;
+  margin-top: -15%;
+  margin-left: 5%;
+}
+
+.text-image div {
+  text-align: left;
+  flex: 2;
 }
 
 .updates {

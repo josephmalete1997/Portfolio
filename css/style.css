@@ -126,7 +126,8 @@ body {
   letter-spacing: 2px;
   color: #15a3cd;
   transition: 0.3s;
-  font-size: 100px;
+  font-size: 80px;
+  font-weight: 800px;
 }
 
 .normal-size {
@@ -136,8 +137,8 @@ body {
 
 .scroll-down {
   position: absolute;
-  bottom: 50px;
-  left: 50px;
+  bottom: 100px;
+  left: 100px;
   font-size: 20px;
   color: #15a3cd;
   text-decoration: none;
@@ -173,7 +174,7 @@ body {
 .socials-inner {
   position: relative;
   color: #ffffff;
-  margin: 2px;
+  margin: 5px;
   cursor: pointer;
   transition: 0.2s;
   padding: 10px;
@@ -190,7 +191,7 @@ body {
 }
 
 .socials-inner .fa-brands {
-  font-size: 28px;
+  font-size: 38px;
   color: #ffffff;
 }
 
@@ -239,6 +240,12 @@ body {
   position: relative;
 }
 
+#about .sub-title {
+  margin-top: -50px;
+  font-family: "candy";
+  font-size: 80px;
+}
+
 #contact {
   margin-bottom: 50px;
   background-image: url("../images/contact.gif");
@@ -266,7 +273,7 @@ body {
   margin: 0 50px;
   margin-top: 10px;
   font-family: "candy";
-  font-size: 100px;
+  font-size: 80px;
 }
 
 #portfolio::before {
@@ -291,7 +298,7 @@ table {
 }
 
 table tr:nth-child(1) {
-  background: rgb(0, 115, 192);
+  background: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   font-size: 20px;
   border: none;
