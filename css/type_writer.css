@@ -206,7 +206,7 @@
   position: relative;
   height: 70vh;
   padding-bottom: 50px;
-  background-image: url("/images/hobby.gif");
+  background-image: url("../images/hobby.gif");
   background-size: cover;
   background-position: center;
   background-clip: border-box;
