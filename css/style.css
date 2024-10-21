@@ -240,6 +240,13 @@ body {
   position: relative;
 }
 
+#skills {
+  background-image: url("../images/skills.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+}
+
 #about .sub-title {
   margin-top: -50px;
   font-family: "candy";
@@ -267,6 +274,7 @@ body {
   z-index: 12;
   position: relative;
 }
+
 #portfolio .sub-title {
   color: white;
   width: 90%;
@@ -343,7 +351,6 @@ table td:nth-child(1) {
   width: 90%;
   margin: 5% 5%;
   flex-wrap: wrap;
-  /* flex-direction: column; */
 }
 
 .skills-row {
