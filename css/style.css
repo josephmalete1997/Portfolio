@@ -65,7 +65,7 @@ body {
   padding: 0 10%;
   height: 100vh;
   position: relative;
-  background-image: url("/images/home.gif");
+  background-image: url("./images/home.gif");
   background-position-y: 60%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -242,7 +242,7 @@ body {
 
 #contact {
   margin-bottom: 50px;
-  background-image: url("/images/contact.gif");
+  background-image: url("./images/contact.gif");
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: 80%;
