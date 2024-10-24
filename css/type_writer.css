@@ -242,6 +242,7 @@
   margin: 10px;
   border-radius: 50px;
   transition: 0.5s;
+  backdrop-filter: blur(20px);
 }
 
 .hobby-section .text .text-item:hover {

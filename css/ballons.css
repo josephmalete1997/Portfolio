@@ -7,12 +7,21 @@
   z-index: -1;
 }
 
+.hob {
+  left: 50%;
+  height: 100%;
+}
+.hob .ballon .fa-solid,
+.hob .ballon .fa-regular {
+  color: white;
+}
+
 .ballon {
   position: absolute;
   width: 40px;
   height: 40px;
   background: linear-gradient(
-    rgb(255, 255, 255, 0.4),
+    rgb(255, 255, 255, 0.5),
     rgb(255, 255, 255, 0.1),
     rgb(255, 255, 255, 0)
   );
@@ -24,6 +33,10 @@
   align-items: center;
   justify-content: center;
   transition: 0.5s;
+}
+
+.hob .ballon {
+  background: none;
 }
 
 .ballon:nth-child(1) {

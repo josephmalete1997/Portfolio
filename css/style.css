@@ -63,7 +63,7 @@ body {
 #home {
   width: 80%;
   padding: 0 10%;
-  height: 100vh;
+  height: 110vh;
   /* height: 650px; */
   position: relative;
   background-image: url("../images/home.gif");
@@ -108,7 +108,7 @@ body {
 
 #home-text .description {
   font-size: 46px;
-  color: #15a3cd;
+  color: #ffffff;
   padding: 50px 10px;
   top: 120px;
   margin-left: 50px;
@@ -117,23 +117,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: white;
   border-radius: 50%;
 }
 
 .outline-text {
-  text-shadow: 1px 1px 1px white, -1px 1px 1px white, -1px -1px 1px white, 1px -1px 1px white;
-  font-family: "candy";
   letter-spacing: 2px;
-  color: #15a3cd;
+  color: #ffffff;
   transition: 0.3s;
-  font-size: 80px;
-  font-weight: 800px;
+  font-size: 50px;
+  font-weight: 100;
 }
 
 .normal-size {
-  font-family: "Montserrat-light";
-  color: #15a3cd;
+  font-family: "Montserrat-bold";
+  color: #ffffff;
 }
 
 .scroll-down {
@@ -167,8 +164,8 @@ body {
 .socials-icons {
   display: flex;
   flex-direction: row;
-  bottom: 30%;
-  left: 10%;
+  bottom: 20%;
+  left: 45%;
   position: absolute;
 }
 
@@ -188,7 +185,11 @@ body {
 }
 
 .socials-inner:hover {
-  transform: scale(1.4);
+  transform: scale(1.01);
+}
+
+.socials-inner:hover .tool-tip {
+  visibility: visible;
 }
 
 .socials-inner .fa-brands {
@@ -201,14 +202,13 @@ body {
 } */
 
 .tool-tip {
-  background: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
   padding: 5px;
-  color: rgb(255, 255, 255);
+  color: rgb(133, 133, 133);
   position: absolute;
   display: flex;
   border-radius: 5px;
-  left: -20%;
-  top: -50px;
+  top: -40px;
   animation: tip;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -217,7 +217,7 @@ body {
   justify-content: center;
   visibility: hidden;
   transition: 0.2s;
-  transition-delay: 0.5s;
+  font-size: 14px;
 }
 
 .tool-tip::before {
@@ -227,8 +227,8 @@ body {
   height: 10;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 10px solid rgb(0, 0, 0);
-  bottom: -10px;
+  border-bottom: 10px solid rgb(255, 255, 255);
+  bottom: -6px;
   transform: rotate(180deg);
 }
 
@@ -237,7 +237,8 @@ body {
 #contact,
 #about {
   display: block;
-  width: 100%;
+  width: 95%;
+  margin-left: 5%;
   position: relative;
 }
 
@@ -252,6 +253,7 @@ body {
   margin-top: -50px;
   font-family: "candy";
   font-size: 80px;
+  /* margin-left: 0%; */
 }
 
 #contact {
@@ -396,23 +398,7 @@ table td:nth-child(1) {
   padding: 50px 50px 200px 50px;
 }
 
-.socials {
-  width: 80%;
-  display: flex;
-  flex-direction: row;
-  margin-left: 10%;
-}
 
-.socials a {
-  color: rgb(64, 83, 136);
-  font-size: 50px;
-  margin: auto;
-}
-
-.socials a .fa {
-  color: rgb(64, 83, 136);
-  font-size: 40px;
-}
 
 .contact-me {
   display: flex;

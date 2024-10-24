@@ -12,9 +12,16 @@ const textImage = document.querySelector(".text-image");
 const body = document.querySelector("body");
 const hobbies = document.querySelectorAll(".welcome");
 
-const linkNames = ["Home", "About", "Skills", "Work Experience", "Projects", "Contact"];
+const toolTip = ["Home", "About", "Skills", "Experience", "Projects", "Contact"];
+const linkNames = [
+  `<i class="fa-solid fa-home"></i>`,
+  `<i class="fa-solid fa-user"></i>`,
+  `<i class="fa-solid fa-gear"></i>`,
+  `<i class="fa-solid fa-hand"></i>`,
+  `<i class="fa-solid fa-folder"></i>`,
+  `<i class="fa-solid fa-envelope"></i>`,
+];
 const linkArray = ["#home", "#about", "#skills", "#work-experience", "#portfolio", "#contact"];
-
 
 for (let i = 0; i < linkNames.length; i++) {
   //scroll effect
@@ -22,6 +29,7 @@ for (let i = 0; i < linkNames.length; i++) {
   const link = document.createElement("a");
   const below = document.createElement("div");
   below.classList.add("below");
+  below.innerHTML = toolTip[i];
   link.innerHTML = linkNames[i];
   link.classList.add("link");
   link.append(below);
