@@ -256,6 +256,10 @@ body {
   /* margin-left: 0%; */
 }
 
+#about .about-me {
+  margin-left: 15%;
+}
+
 #contact {
   margin-bottom: 50px;
   background-image: url("../images/contact.gif");
@@ -398,8 +402,6 @@ table td:nth-child(1) {
   padding: 50px 50px 200px 50px;
 }
 
-
-
 .contact-me {
   display: flex;
   flex-direction: row;
@@ -423,8 +425,8 @@ hr {
 }
 
 .footer {
-  width: 90%;
-  padding: 5%;
+  width: 80%;
+  padding: 10%;
   font-size: 20px;
   display: flex;
 }
