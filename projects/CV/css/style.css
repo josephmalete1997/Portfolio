@@ -12,7 +12,8 @@
   --spacing-sm: 1rem;
   --spacing-md: 2.5rem;
   --spacing-lg: 2rem;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  --box-shadow:none;
   --transition: all 0.3s ease;
 }
 
@@ -26,7 +27,8 @@ body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   color: var(--text-primary);
-  background-color: var(--background-color);
+  background-color: white;
+  /* background-color: var(--background-color); */
   padding: var(--spacing-md);
 }
 
