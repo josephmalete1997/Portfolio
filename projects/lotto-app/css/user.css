@@ -38,15 +38,14 @@
   position: absolute;
   z-index: 100;
   width: 30%;
-  border-radius: 10px;
   top: 10%;
+  border-radius: 30px;
 }
 
 .deposit-panel button {
   padding: 2%;
   margin: 1%;
   font-size: 24px;
-  border-radius: 10px;
   border: none;
   color: white;
   width: 50%;
@@ -66,20 +65,30 @@
 }
 
 .deposit-panel button:nth-child(2) {
-  background: var(--gradient-blue);
+  background: black;
 }
 
 .deposit-panel button:nth-child(3) {
   border: 2px solid;
-  color: rgb(0, 44, 241);
   background: white;
+  color: black;
+}
+.deposit-panel button:nth-child(2):hover {
+  border: 2px solid;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+.deposit-panel button:nth-child(3):hover {
+  background: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .over-layer {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.7);
   filter: blur(10px);
   z-index: 10;
 }

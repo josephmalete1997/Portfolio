@@ -8,21 +8,94 @@ i<!DOCTYPE html>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/user.css" />
     <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/deposit.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="../../fontAwesome/css/all.min.css" />
-    <script src="https://kit.fontawesome.com/062d0051ac.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/062d0051ac.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Instant lotto</title>
   </head>
   <body>
     <div class="deposit-panel">
       <div class="close-deposit-panel"><i class="fa-solid fa-times"></i></div>
-      <button class="deposit">Deposit</button>
-      <button class="withdraw">Withdraw</button>
+      <button class="deposit">
+        <i class="fa-solid fa-money-check-dollar"></i> Deposit
+      </button>
+      <button class="withdraw">
+        <i class="fa-solid fa-dollar-sign"></i> Withdraw
+      </button>
     </div>
     <div class="deposit-options">
-      <div class="close-deposit-panel"><i class="fa-solid fa-times"></i></div>
-      <button class="deposit">Deposit</button>
-      <button class="withdraw">Withdraw</button>
+      <div class=""><i class="fa-solid fa-times"></i></div>
+      <form>
+        <label>Amount</label>
+        <input type="number" id="deposit-amount" />
+        <div class="amounts">
+          <div class="amount" data-id="5">R5</div>
+          <div class="amount" data-id="10">R10</div>
+          <div class="amount" data-id="20">R20</div>
+          <div class="amount" data-id="50">R50</div>
+          <div class="amount" data-id="100">R100</div>
+          <div class="amount" data-id="200">R200</div>
+        </div>
+      </form>
+      <h2>Select Deposit Method below:</h2>
+      <div class="payment-methods">
+        <div class="method">
+          <img
+            src="https://i.pcmag.com/imagery/reviews/068BjcjwBw0snwHIq0KNo5m-15..v1602794215.png"
+            width="15%"
+          />
+        </div>
+        <div class="method">
+          <img
+            src="https://financialit.net/sites/default/files/1609314895logo-mastercard-mobile_0.png"
+            width="15%"
+          />
+        </div>
+        <div class="method">
+          <img
+            src="https://d24ndt2yiijez0.cloudfront.net/uploads/image/asset/22768/Ozow-Logo.png"
+            width="15%"
+          />
+        </div>
+        <div class="method">
+          <img
+            src="https://netcash.co.za/wp-content/uploads/2024/03/1Voucher-logo-1.png"
+            width="15%"
+          />
+        </div>
+        <div class="method">
+          <img
+            src="https://payfast.io/wp-content/uploads/2024/12/Payfast-logo.svg"
+            width="15%"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="current-payment-method">
+      <div class="" style="display:flex;align-items: center;">
+        <img
+          src="https://i.pcmag.com/imagery/reviews/068BjcjwBw0snwHIq0KNo5m-15..v1602794215.png"
+          width="15%"
+        />
+        <h1 class="deposit-amount-display">R<span class="get-deposit-amount"></span></h1>
+      </div>
+      <div class="paypal-form">
+        <div class="input-item">
+          <label>Paypal email address</label>
+          <input type="email" />
+        </div>
+        <div class="input-item">
+          <label>password</label>
+          <input type="password" />
+        </div>
+        <button class="deposit-now">Pay</button>
+        <button class="cancel-deposit">Cancel</button>
+      </div>
+      <div class="loader"></div>
     </div>
     <div class="over-layer"></div>
     <div class="container">
@@ -72,7 +145,11 @@ i<!DOCTYPE html>
               <div class="img"><i class="fa-solid fa-user"></i></div>
               <div class="name"></div>
               <div class="id">@6769008765</div>
-              <div class="balance">Balance : R<span id="balance"></span></div>
+              <div class="balance">
+                <i class="fa-solid fa-wallet"></i> Balance : R<span
+                  id="balance"
+                ></span>
+              </div>
             </div>
           </div>
           <div class="panels">
@@ -97,7 +174,9 @@ i<!DOCTYPE html>
             </div>
             <h1>
               Results history
-              <span id="clear-history"><i class="fa-solid fa-history"></i> Clear history</span>
+              <span id="clear-history"
+                ><i class="fa-solid fa-history"></i> Clear history</span
+              >
             </h1>
             <div class="history-results"></div>
           </div>
@@ -128,5 +207,6 @@ i<!DOCTYPE html>
     <script src="js/app.js"></script>
     <script src="js/options.js"></script>
     <script src="js/account.js"></script>
+    <script src="js/deposit.js"></script>
   </body>
 </html>

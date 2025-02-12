@@ -1,0 +1,176 @@
+.deposit-options {
+  background: white;
+  position: absolute;
+  z-index: 100;
+  padding: 50px 100px;
+  width: 400px;
+  display: none;
+  border-radius: 30px;
+}
+
+.deposit-options form label {
+  font-size: 18px;
+  background: black;
+  color: white;
+  margin: 0px;
+  padding: 10px 20px;
+}
+.deposit-options form input {
+  font-size: 18px;
+  margin: 0px;
+  padding: 8px 20px;
+}
+
+.deposit-options .fa-times {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
+  font-size: 19px;
+}
+
+.deposit-options .fa-times:hover {
+  color: red;
+}
+
+.payment-methods {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.payment-methods .method img {
+  width: 100%;
+}
+
+.payment-methods .method {
+  border: 2px solid;
+  width: 30%;
+  margin: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.payment-methods .method:hover img {
+  filter: grayscale(100%);
+}
+
+.amounts {
+  display: flex;
+  margin-top: 20px;
+}
+
+.amounts .amount {
+  border: 1px solid;
+  margin: 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.amounts .amount:hover {
+  background: black;
+  color: white;
+}
+
+.active-deposit-amount {
+  background: black;
+  color: white;
+}
+
+/* Current deposit method panel */
+.current-payment-method {
+  position: absolute;
+  z-index: 100;
+  width: 500px;
+  height: 400px;
+  background: white;
+  border-radius: 30px;
+  padding: 10px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+
+.current-payment-method img{ 
+    width: 50%;
+}
+
+
+/* Paypal form */
+.paypal-form{
+    width: 80%;
+    background: #d9f4ff;
+    padding: 2% 10%;
+    border-radius: 30px;
+}
+.paypal-form .input-item {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px;
+
+}
+
+.paypal-form .input-item label{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.paypal-form .input-item input{
+    font-size: 18px;
+    margin-bottom: 5px;
+    padding: 5px 20px;
+}
+
+.paypal-form .deposit-now,
+.paypal-form .cancel-deposit{
+    border-radius: 10px;
+    background: rgb(40, 133, 255);
+    color: white;
+    font-size: 24px;
+    padding: 5px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.paypal-form .cancel-deposit{
+    background: red;
+}
+
+.deposit-amount-display{
+    background: rgb(47, 231, 255);
+    padding: 10px 20px;
+    position: relative;
+}
+
+.deposit-amount-display::before{
+    content: "Change";
+    font-size: 16px;
+    background: rgb(187, 187, 187);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 30px;
+    position: absolute;
+    bottom:-15px;
+    cursor: pointer;
+}
+
+.loader{
+    width: 100px;
+    height: 100px;
+    border: 10px solid #e2e2e2;
+    border-top: 10px solid rgb(44, 178, 255);
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
+    display: none;
+}
+
+@keyframes loading {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

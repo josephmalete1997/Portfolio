@@ -20,6 +20,12 @@ const domElements = {
   trash: document.querySelectorAll(".deleteItem"),
   clearHistory: document.querySelector("#clear-history"),
   historyIcon: document.querySelector("#clear-history .fa-solid"),
+  depositAmountOptions: document.querySelectorAll(".amounts .amount"),
+  depositAmount: document.getElementById("deposit-amount"),
+  closeDepositPanel: document.querySelector(".deposit-options .fa-times"),
+  depositMethodsPanel: document.querySelector(".deposit-options"),
+  depositButton: document.querySelector(".deposit"),
+  currentPaymentMethodPanel: document.querySelector(".current-payment-method"),
 };
 
 const light = 70;
@@ -42,7 +48,9 @@ const userObject = {
 };
 
 const getBalance = Math.round((localStorage.getItem("balance") * 100) / 100.0);
-getBalance ? (userObject.balance = getBalance) : localStorage.setItem("balance", 50);
+getBalance
+  ? (userObject.balance = getBalance)
+  : localStorage.setItem("balance", 50);
 
 const betObject = {
   stake: null,
@@ -66,6 +74,10 @@ const globals = {
   randomPicked: [],
   randomPickedFinal: [],
   resultsArray: JSON.parse(localStorage.getItem("results")) || [],
+};
+
+const depositAmount = {
+  value: 100,
 };
 
 const stringsObject = {

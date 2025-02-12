@@ -388,9 +388,7 @@ setInterval(() => {
       item.style.display = "block";
     });
     globals.numberCounter = 0;
-    document.querySelector(".slip").innerHTML = `
-    <p id="empty">Your slip is empty</p>
-    <span class="deleted">Deleted successfully!</span>`;
+    domElements.emptySlip.style.display='block'
     domElements.results.innerHTML = "";
     globals.textArray = [];
     globals.numBalls = -1;
