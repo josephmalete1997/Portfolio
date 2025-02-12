@@ -22,7 +22,10 @@ const addNumbers = () => {
   }
 
   domElements.add.addEventListener("click", () => {
-    if (domElements.stake.value === "" || parseInt(domElements.stake.value) === 0) {
+    if (
+      domElements.stake.value === "" ||
+      parseInt(domElements.stake.value) === 0
+    ) {
       alert("Your minimum stake should be at least R1 per bet!");
     } else {
       if (userObject.balance < domElements.stake.value) {
@@ -61,10 +64,14 @@ const addNumbers = () => {
 
     if (betObject.numbers.length === 1) betObject.payout = betObject.stake * 5;
     if (betObject.numbers.length === 2) betObject.payout = betObject.stake * 55;
-    if (betObject.numbers.length === 3) betObject.payout = betObject.stake * 550;
-    if (betObject.numbers.length === 4) betObject.payout = betObject.stake * 5500;
-    if (betObject.numbers.length === 5) betObject.payout = betObject.stake * 55000;
-    if (betObject.numbers.length === 6) betObject.payout = betObject.stake * 550000;
+    if (betObject.numbers.length === 3)
+      betObject.payout = betObject.stake * 550;
+    if (betObject.numbers.length === 4)
+      betObject.payout = betObject.stake * 5500;
+    if (betObject.numbers.length === 5)
+      betObject.payout = betObject.stake * 55000;
+    if (betObject.numbers.length === 6)
+      betObject.payout = betObject.stake * 550000;
 
     const deleteItem = document.createElement("i");
     const stakePayout = document.createElement("span");
@@ -95,13 +102,16 @@ const addNumbers = () => {
 
     // console.log(betObject);
 
-    domElements.slip.insertBefore(row, domElements.slip.children[0]);
+    domElements.slipItems.insertBefore(row, domElements.slipItems.children[0]);
 
     deleteItem.addEventListener("click", () => {
-      domElements.slip.removeChild(row);
+      domElements.slipItems.removeChild(row);
 
       const returnedStake = parseInt(
-        row.children[row.children.length - 1].innerHTML.toString().split("|")[0].replace("R", "")
+        row.children[row.children.length - 1].innerHTML
+          .toString()
+          .split("|")[0]
+          .replace("R", "")
       );
 
       globals.numberCounter--;
@@ -144,7 +154,8 @@ const randomizeNumbers = () => {
   let count = 0;
 
   while (count < 6) {
-    const text = globals.numArray[Math.floor(Math.random() * globals.numArray.length)];
+    const text =
+      globals.numArray[Math.floor(Math.random() * globals.numArray.length)];
     if (!globals.textArray.includes(text)) {
       globals.textArray.push(text);
       count++;
@@ -213,7 +224,8 @@ const createBall = (textArray) => {
   domElements.results.appendChild(ball);
 
   setTimeout(() => {
-    domElements.resultsNumbers[globals.numBalls].innerHTML = textArray[globals.numBalls];
+    domElements.resultsNumbers[globals.numBalls].innerHTML =
+      textArray[globals.numBalls];
     domElements.resultsNumbers[globals.numBalls].style.transform = "scale(0)";
     domElements.resultsNumbers[globals.numBalls].style.borderRadius = "0%";
   }, 1200);
@@ -284,7 +296,8 @@ domElements.randomPick.addEventListener("click", () => {
   });
 
   while (randomCount < 6) {
-    const text = globals.numArray[Math.floor(Math.random() * globals.numArray.length)];
+    const text =
+      globals.numArray[Math.floor(Math.random() * globals.numArray.length)];
     if (!globals.randomPicked.includes(text)) {
       globals.randomPicked.push(text);
       randomCount++;
@@ -314,13 +327,19 @@ numbers.forEach((num) => {
       } else {
         globals.min--;
         num.classList.remove(stringsObject.selected);
-        globals.currentNumbers.splice(globals.currentNumbers.indexOf(num.innerHTML), 1);
+        globals.currentNumbers.splice(
+          globals.currentNumbers.indexOf(num.innerHTML),
+          1
+        );
       }
     } else {
       if (num.classList.contains(stringsObject.selected)) {
         globals.min--;
         num.classList.remove(stringsObject.selected);
-        globals.currentNumbers.splice(globals.currentNumbers.indexOf(num.innerHTML), 1);
+        globals.currentNumbers.splice(
+          globals.currentNumbers.indexOf(num.innerHTML),
+          1
+        );
       }
     }
     globals.min === parseInt(domElements.selectedOption)
@@ -350,7 +369,10 @@ function restoreHistory() {
     timeStamp.classList.add("time-stamp");
     timeStamp.innerHTML = `${item.time}`;
     historicResults.append(timeStamp);
-    domElements.history.insertBefore(historicResults, domElements.history.children[0]);
+    domElements.history.insertBefore(
+      historicResults,
+      domElements.history.children[0]
+    );
   });
 }
 
@@ -388,7 +410,8 @@ setInterval(() => {
       item.style.display = "block";
     });
     globals.numberCounter = 0;
-    domElements.emptySlip.style.display='block'
+    domElements.slipItems.innerHTML = "";
+    domElements.emptySlip.style.display = "block";
     domElements.results.innerHTML = "";
     globals.textArray = [];
     globals.numBalls = -1;
@@ -416,7 +439,10 @@ setInterval(() => {
     });
     newArray = [];
     historicResults.append(timeStamp);
-    domElements.history.insertBefore(historicResults, domElements.history.children[0]);
+    domElements.history.insertBefore(
+      historicResults,
+      domElements.history.children[0]
+    );
   }
 }, 1000);
 

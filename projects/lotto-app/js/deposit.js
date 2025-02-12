@@ -9,6 +9,10 @@ domElements.depositAmountOptions.forEach((item) => {
     clearActiveSelectedAmount();
     item.classList.add("active-deposit-amount");
     domElements.depositAmount.value = parseInt(item.getAttribute("data-id"));
+    localStorage.setItem(
+      "deposit-amount",
+      Number(domElements.depositAmount.value)
+    );
   });
 });
 
@@ -28,6 +32,13 @@ domElements.depositAmount.addEventListener("input", () => {
   }
 });
 
+domElements.depositAmount.addEventListener("change", () => {
+  localStorage.setItem(
+    "deposit-amount",
+    Number(domElements.depositAmount.value)
+  );
+});
+
 domElements.closeDepositPanel.addEventListener("click", () => {
   overLayer.style.display = "none";
   domElements.depositMethodsPanel.style.display = "none";
@@ -35,7 +46,7 @@ domElements.closeDepositPanel.addEventListener("click", () => {
 
 domElements.depositButton.addEventListener("click", () => {
   depositPanel.style.display = "none";
-  domElements.depositMethodsPanel.style.display = "block";
+  domElements.depositMethodsPanel.style.display = "flex";
 });
 
 //Methods
@@ -45,6 +56,8 @@ document
   .addEventListener("click", () => {
     domElements.depositMethodsPanel.style.display = "none";
     domElements.currentPaymentMethodPanel.style.display = "flex";
+    document.querySelector(".get-deposit-amount").innerHTML =
+      localStorage.getItem("deposit-amount");
   });
 
 // Paypal
@@ -56,10 +69,22 @@ const Loader = document.querySelector(".loader");
 paypalPay.addEventListener("click", () => {
   document.querySelector(".paypal-form").style.display = "none";
   Loader.style.display = "block";
-  userObject.balance += 100;
+  userObject.balance += Number(localStorage.getItem("deposit-amount"));
   localStorage.setItem("balance", userObject.balance);
+  setTimeout(() => {
+    Loader.style.display = "none";
+    document.querySelector("#paid").innerHTML = Number(localStorage.getItem("deposit-amount"));
+    document.querySelector(".successful-deposit").style.display = "flex";
+    userObject.balancePanel.innerHTML = userObject.balance;
+  }, 5000);
 });
 
 cancelDeposit.addEventListener("click", () => {
   domElements.currentPaymentMethodPanel.style.display = "none";
+  overLayer.style.display = "none";
+});
+
+document.querySelector(".close-paypal-panel").addEventListener("click", () => {
+  domElements.currentPaymentMethodPanel.style.display = "none";
+  overLayer.style.display = "none";
 });

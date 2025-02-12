@@ -4,8 +4,12 @@
   z-index: 100;
   padding: 50px 100px;
   width: 400px;
+  display: flex;
   display: none;
   border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .deposit-options form label {
@@ -36,6 +40,7 @@
 .payment-methods {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .payment-methods .method img {
@@ -43,11 +48,19 @@
 }
 
 .payment-methods .method {
-  border: 2px solid;
-  width: 30%;
+  overflow: hidden;
+  width: 33%;
   margin: 10px;
   padding: 10px 20px;
   cursor: pointer;
+  box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.1), -5px -5px 10px rgb(0, 0, 0, 0.05);
+  border-radius: 30px;
+  transition: 0.5s;
+}
+
+.payment-methods .method:hover {
+  transform: translateY(-10px);
+  box-shadow: 1px 1px 10px rgb(0, 0, 0, 0.1), -5px -5px 10px rgb(0, 0, 0, 0.05);
 }
 
 .payment-methods .method:hover img {
@@ -63,9 +76,9 @@
   border: 1px solid;
   margin: 5px;
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .amounts .amount:hover {
@@ -93,84 +106,131 @@
   display: none;
 }
 
-.current-payment-method img{ 
-    width: 50%;
+.current-payment-method img {
+  width: 50%;
 }
-
 
 /* Paypal form */
-.paypal-form{
-    width: 80%;
-    background: #d9f4ff;
-    padding: 2% 10%;
-    border-radius: 30px;
+.paypal-form {
+  width: 80%;
+  /* background: #d9f4ff; */
+  padding: 2% 10%;
+  border-radius: 30px;
 }
 .paypal-form .input-item {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0px;
-
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px;
 }
 
-.paypal-form .input-item label{
-    font-size: 18px;
-    margin-bottom: 5px;
+.paypal-form .input-item label {
+  font-size: 18px;
+  margin-bottom: 5px;
 }
 
-.paypal-form .input-item input{
-    font-size: 18px;
-    margin-bottom: 5px;
-    padding: 5px 20px;
+.paypal-form .input-item input {
+  font-size: 18px;
+  margin-bottom: 5px;
+  padding: 5px 20px;
 }
 
 .paypal-form .deposit-now,
-.paypal-form .cancel-deposit{
-    border-radius: 10px;
-    background: rgb(40, 133, 255);
-    color: white;
-    font-size: 24px;
-    padding: 5px 20px;
-    border: none;
-    cursor: pointer;
+.paypal-form .cancel-deposit {
+  border-radius: 10px;
+  background: rgb(40, 133, 255);
+  color: white;
+  font-size: 24px;
+  padding: 5px 20px;
+  border: none;
+  cursor: pointer;
 }
 
-.paypal-form .cancel-deposit{
-    background: red;
+.paypal-form .cancel-deposit {
+  background: red;
 }
 
-.deposit-amount-display{
-    background: rgb(47, 231, 255);
-    padding: 10px 20px;
-    position: relative;
+.deposit-amount-display {
+  background: rgb(0, 0, 0);
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+  border-radius: 10px;
 }
 
-.deposit-amount-display::before{
-    content: "Change";
-    font-size: 16px;
-    background: rgb(187, 187, 187);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 30px;
-    position: absolute;
-    bottom:-15px;
-    cursor: pointer;
+.deposit-amount-display::before {
+  content: "Change";
+  font-size: 16px;
+  background: rgb(187, 187, 187);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 30px;
+  position: absolute;
+  bottom: -15px;
+  cursor: pointer;
 }
 
-.loader{
-    width: 100px;
-    height: 100px;
-    border: 10px solid #e2e2e2;
-    border-top: 10px solid rgb(44, 178, 255);
-    border-radius: 50%;
-    animation: loading 1s linear infinite;
-    display: none;
+.loader {
+  width: 100px;
+  height: 100px;
+  border: 10px solid #e2e2e2;
+  border-top: 10px solid rgb(44, 178, 255);
+  border-radius: 50%;
+  animation: loading 1s linear infinite;
+  display: none;
 }
 
 @keyframes loading {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Receipt */
+
+.successful-deposit {
+  background: #e6ffe6;
+  width: 80%;
+  padding: 5% 10%;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+
+.successful-deposit .fa-check {
+  color: white;
+  font-size: 40px;
+  background: rgb(0, 211, 0);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+
+.successful-deposit h1{
+    color:rgb(0, 211, 0);
+    margin: 5px;
+}
+
+.successful-deposit p {
+    font-size: 24px;
+}
+
+.close-paypal-panel{
+    font-size: 24px;
+    position: absolute;
+    right: 20px;
+    top:20px;
+    cursor: pointer;
+}
+
+.close-paypal-panel:hover{
+    color:red;
 }

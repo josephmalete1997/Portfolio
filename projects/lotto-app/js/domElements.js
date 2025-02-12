@@ -14,6 +14,7 @@ const domElements = {
   add: document.querySelector("#add"),
   playButton: document.querySelector("#play"),
   slip: document.querySelector(".slip"),
+  slipItems: document.querySelector(".slip-items"),
   history: document.querySelector(".history-results"),
   timeLeft: document.querySelector("#seconds"),
   stake: document.querySelector("#stake"),
@@ -50,7 +51,7 @@ const userObject = {
 const getBalance = Math.round((localStorage.getItem("balance") * 100) / 100.0);
 getBalance
   ? (userObject.balance = getBalance)
-  : localStorage.setItem("balance", 50);
+  : localStorage.setItem("balance", 0);
 
 const betObject = {
   stake: null,

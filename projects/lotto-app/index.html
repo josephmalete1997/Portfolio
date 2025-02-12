@@ -45,13 +45,13 @@ i<!DOCTYPE html>
       <div class="payment-methods">
         <div class="method">
           <img
-            src="https://i.pcmag.com/imagery/reviews/068BjcjwBw0snwHIq0KNo5m-15..v1602794215.png"
+            src="https://thechocolateworkshop.co.uk/wp-content/uploads/2017/04/Paypal-Logo-PNG.png"
             width="15%"
           />
         </div>
         <div class="method">
           <img
-            src="https://financialit.net/sites/default/files/1609314895logo-mastercard-mobile_0.png"
+            src="https://developers.moralis.com/wp-content/uploads/2022/12/Ethereum-What-are-Logs-and-Events-on-Ethereum-1024x257.png"
             width="15%"
           />
         </div>
@@ -73,10 +73,17 @@ i<!DOCTYPE html>
             width="15%"
           />
         </div>
+        <div class="method">
+          <img
+            src="https://www.freefx.com/img/Funding%20Icons/Neteller-2.png"
+            width="15%"
+          />
+        </div>
       </div>
     </div>
     <div class="current-payment-method">
-      <div class="" style="display:flex;align-items: center;">
+      <div class="close-paypal-panel"><i class="fa-solid fa-times"></i></div>
+      <div class="" style="display:flex;align-items: center;justify-content: space-between;">
         <img
           src="https://i.pcmag.com/imagery/reviews/068BjcjwBw0snwHIq0KNo5m-15..v1602794215.png"
           width="15%"
@@ -95,7 +102,13 @@ i<!DOCTYPE html>
         <button class="deposit-now">Pay</button>
         <button class="cancel-deposit">Cancel</button>
       </div>
-      <div class="loader"></div>
+      <div class="loader"></div> 
+      <div class="successful-deposit">
+        <i class="fa-solid fa-check"></i>
+        <h1>Payment Successful</h1>
+        <p>You paid <b>R<span id="paid"></span></b></p>
+        <a href="#">View Details</a>
+      </div>
     </div>
     <div class="over-layer"></div>
     <div class="container">
@@ -188,6 +201,7 @@ i<!DOCTYPE html>
           <span id="count">0</span>
         </div>
         <div class="slip">
+          <div class="slip-items"></div>
           <!-- <div class="cancel"><i class="fa-solid fa-times"></i></div> -->
           <p class="empty">Your slip is empty</p>
           <span class="deleted">Deleted successfully!</span>
