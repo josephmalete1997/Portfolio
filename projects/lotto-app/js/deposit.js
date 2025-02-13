@@ -58,7 +58,7 @@ document
     domElements.currentPaymentMethodPanel.style.display = "flex";
     document.querySelector(".get-deposit-amount").innerHTML =
       localStorage.getItem("deposit-amount");
-      document.querySelector(".amount").value = localStorage.getItem("deposit-amount");
+      document.querySelector("#amount").value = localStorage.getItem("deposit-amount");
   });
 
 // Paypal
