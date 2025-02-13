@@ -71,8 +71,39 @@ document.querySelector(".close-paypal-panel").addEventListener("click", () => {
   overLayer.style.display = "none";
 });
 
+// Function to fetch exchange rate and update the converted amount
+function updateExchangeRate() {
+  // Fetch the latest ZAR to USD exchange rate
+  fetch("https://api.exchangerate-api.com/v4/latest/ZAR")
+    .then((response) => response.json())
+    .then((data) => {
+      const exchangeRate = data.rates.USD;
+
+      // Get the current ZAR amount from the input field
+      const zarAmount = Number(localStorage.getItem("deposit-amount")) || 0;
+
+      // Calculate the USD amount
+      const usdAmount = (zarAmount * exchangeRate).toFixed(2);
+
+      // Update the converted amount display
+      localStorage.setItem("dollar-amount", usdAmount);
+    })
+    .catch((error) => {
+      console.error("Error fetching exchange rate:", error);
+      // document.getElementById("converted-amount").textContent = "Error";
+    });
+}
+
+// Update the amount field every second with the value from localStorage
+
+// Update the exchange rate every 5 minutes (300000 ms)
+setInterval(updateExchangeRate, 1000);
+
+updateExchangeRate();
+
 setInterval(() => {
-  document.getElementById("amount").value = Number(
-    localStorage.getItem("deposit-amount")
-  );
+  if (document.getElementById("amount")) {
+    document.getElementById("amount").value =
+      Number(localStorage.getItem("dollar-amount")) || 0;
+  }
 }, 1000);
