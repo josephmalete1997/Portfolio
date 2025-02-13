@@ -96,7 +96,6 @@
   position: absolute;
   z-index: 100;
   width: 500px;
-  height: 400px;
   background: white;
   border-radius: 30px;
   padding: 10px 40px;
@@ -233,4 +232,8 @@
 
 .close-paypal-panel:hover{
     color:red;
+}
+
+.amount-container input{
+    margin: 0px;
 }

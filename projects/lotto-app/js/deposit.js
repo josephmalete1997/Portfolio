@@ -58,6 +58,7 @@ document
     domElements.currentPaymentMethodPanel.style.display = "flex";
     document.querySelector(".get-deposit-amount").innerHTML =
       localStorage.getItem("deposit-amount");
+      document.querySelector(".amount").value = localStorage.getItem("deposit-amount");
   });
 
 // Paypal
@@ -66,25 +67,9 @@ const paypalPay = document.querySelector(".paypal-form .deposit-now");
 const cancelDeposit = document.querySelector(".paypal-form .cancel-deposit");
 const Loader = document.querySelector(".loader");
 
-paypalPay.addEventListener("click", () => {
-  document.querySelector(".paypal-form").style.display = "none";
-  Loader.style.display = "block";
-  userObject.balance += Number(localStorage.getItem("deposit-amount"));
-  localStorage.setItem("balance", userObject.balance);
-  setTimeout(() => {
-    Loader.style.display = "none";
-    document.querySelector("#paid").innerHTML = Number(localStorage.getItem("deposit-amount"));
-    document.querySelector(".successful-deposit").style.display = "flex";
-    userObject.balancePanel.innerHTML = userObject.balance;
-  }, 5000);
-});
-
-cancelDeposit.addEventListener("click", () => {
-  domElements.currentPaymentMethodPanel.style.display = "none";
-  overLayer.style.display = "none";
-});
-
 document.querySelector(".close-paypal-panel").addEventListener("click", () => {
   domElements.currentPaymentMethodPanel.style.display = "none";
   overLayer.style.display = "none";
 });
+
+

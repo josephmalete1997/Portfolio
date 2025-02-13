@@ -96,3 +96,5 @@ domElements.clearHistory.addEventListener("click", () => {
     domElements.history.innerHTML = "";
   }, 1000);
 });
+
+document.querySelector("#amount").value = 100;
