@@ -58,9 +58,6 @@ document
     domElements.currentPaymentMethodPanel.style.display = "flex";
     document.querySelector(".get-deposit-amount").innerHTML =
       localStorage.getItem("deposit-amount");
-    document.getElementById("amount").value = Number(
-      localStorage.getItem("deposit-amount")
-    );
   });
 
 // Paypal
@@ -73,3 +70,9 @@ document.querySelector(".close-paypal-panel").addEventListener("click", () => {
   domElements.currentPaymentMethodPanel.style.display = "none";
   overLayer.style.display = "none";
 });
+
+setInterval(() => {
+  document.getElementById("amount").value = Number(
+    localStorage.getItem("deposit-amount")
+  );
+}, 1000);
