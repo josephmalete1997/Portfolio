@@ -1,0 +1,40 @@
+.bet-search{
+    display: flex;
+    margin-left: 10px;
+}
+
+.bet-search input{
+    display: flex;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid white;
+    width: 100px;
+}
+
+.bet-search-button{
+    padding: 2px 5px;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(249, 249, 255);
+    border: 1px solid;
+    background:linear-gradient(90deg, rgb(48, 48, 134),rgb(83, 83, 255));
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+}
+
+.historical-slips{
+    background: white;
+    padding: 10px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table tr{
+    border: 1px solid;
+}
+
+table tr.odd{
+    background: rgb(222, 245, 255);
+}

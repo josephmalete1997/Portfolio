@@ -54,6 +54,7 @@ getBalance
   : localStorage.setItem("balance", 0);
 
 const betObject = {
+  id: null,
   stake: null,
   numbers: null,
   payout: null,

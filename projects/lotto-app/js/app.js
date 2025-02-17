@@ -59,6 +59,7 @@ const addNumbers = () => {
       return a - b;
     });
 
+    betObject.id = Math.floor(Math.random() * 100000);
     betObject.numbers = newRandomPicked;
     betObject.stake = parseInt(domElements.stake.value);
 
@@ -69,9 +70,9 @@ const addNumbers = () => {
     if (betObject.numbers.length === 4)
       betObject.payout = betObject.stake * 5500;
     if (betObject.numbers.length === 5)
-      betObject.payout = betObject.stake * 55000;
+      betObject.payout = betObject.stake * 25000;
     if (betObject.numbers.length === 6)
-      betObject.payout = betObject.stake * 550000;
+      betObject.payout = betObject.stake * 50000;
 
     const deleteItem = document.createElement("i");
     const stakePayout = document.createElement("span");
@@ -100,7 +101,10 @@ const addNumbers = () => {
       row.appendChild(stakePayout);
     }
 
-    // console.log(betObject);
+    //console.log(betObject);
+    const betArray = JSON.parse(localStorage.getItem("bet-slip")) || [];
+    betArray.push(betObject);
+    localStorage.setItem("bet-slip", JSON.stringify(betArray));
 
     domElements.slipItems.insertBefore(row, domElements.slipItems.children[0]);
 

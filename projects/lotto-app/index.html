@@ -10,6 +10,7 @@ i<!DOCTYPE html>
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/deposit.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/bet_search.css" />
     <link rel="stylesheet" href="../../fontAwesome/css/all.min.css" />
     <script
       src="https://kit.fontawesome.com/062d0051ac.js"
@@ -209,8 +210,31 @@ i<!DOCTYPE html>
         <div class="pick-number-heading view-slip">
           <i class="fa-solid fa-receipt"></i> <span>Bet slip</span>
           <span id="count">0</span>
+          <div class="bet-search">
+            <input type="text" id="slip-id" placeholder="Enter slip id">
+            <div class="bet-search-button"><i class="fa-solid fa-search"></i> Search</div>
+          </div>
         </div>
         <div class="slip">
+          <div class="historical-slips">
+            <div class="close-deposit-panel"><i class="fa-solid fa-times"></i></div>
+            <h1>Search Results for: <span id="resulting-slip-id"></span></h1>
+            <table class="slip-table">
+                <tr style="background: black;color:white;border: 1px solid black;">
+                <td>Bet ID</td>
+                <td>Stake</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Payout</td>
+                <td>Status</td>
+              </tr>
+              </th>
+            </table>
+          </div>
           <div class="slip-items"></div>
           <!-- <div class="cancel"><i class="fa-solid fa-times"></i></div> -->
           <p class="empty">Your slip is empty</p>
@@ -232,5 +256,6 @@ i<!DOCTYPE html>
     <script src="js/options.js"></script>
     <script src="js/account.js"></script>
     <script src="js/deposit.js"></script>
+    <script src="js/bet_search.js"></script>
   </body>
 </html>
