@@ -80,3 +80,36 @@ button.forEach((button) => {
     }, 300);
   });
 });
+
+// Your existing code...
+
+// Add this after your existing code
+const aboutSection = document.querySelector('#about');
+const sideNavLinks = document.querySelectorAll('.side-nav .link');
+
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.5
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.target === aboutSection) {  // Only react to the About section
+      sideNavLinks.forEach(link => {
+        if (entry.isIntersecting) {
+          // When scrolling into About section
+          link.style.color = 'yellow';
+          link.querySelector('.below').style.color = 'yellow';
+        } else {
+          // When scrolling away from About section
+          link.style.color = ''; // Reset to default color
+          link.querySelector('.below').style.color = ''; // Reset to default color
+        }
+      });
+    }
+  });
+}, observerOptions);
+
+// Only observe the About section
+observer.observe(aboutSection);

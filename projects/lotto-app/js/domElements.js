@@ -51,7 +51,7 @@ const userObject = {
 const getBalance = Math.round((localStorage.getItem("balance") * 100) / 100.0);
 getBalance
   ? (userObject.balance = getBalance)
-  : localStorage.setItem("balance", 0);
+  : localStorage.setItem("balance", 50);
 
 const betObject = {
   id: null,
