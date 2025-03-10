@@ -398,7 +398,6 @@ table td:nth-child(1) {
   margin-top: -10px;
   display: flex;
   flex-direction: row;
-
   padding: 50px 50px 200px 50px;
 }
 
@@ -407,6 +406,8 @@ table td:nth-child(1) {
   flex-direction: row;
   margin: auto;
   width: 100%;
+  /* position: relative; */
+  z-index: 100;
 }
 
 .contact-me .fa {
