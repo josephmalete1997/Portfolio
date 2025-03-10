@@ -5,11 +5,35 @@ const projects = [
     image: "./projects/marketing.png",
     stack: [
       "UI/UX Design",
-      "Front-End Development", 
+      "Front-End Development",
       "Back-End development",
       "PHP",
-      "SQL Database"
-    ]
+      "SQL Database",
+    ],
+  },
+  {
+    title: "014 Database",
+    link: "404.html",
+    image: "./projects/014database.png",
+    stack: [
+      "UI/UX Design",
+      "Front-End Development",
+      "Back-End development",
+      "PHP",
+      "SQL Database",
+    ],
+  },
+  {
+    title: "Bela-Bela Guesthouse Website",
+    link: "https://www.belabelaguesthouse.co.za",
+    image: "./projects/belabela.png",
+    stack: [
+      "UI/UX Design",
+      "Front-End Development",
+      "Back-End development",
+      "PHP",
+      "SQL Database",
+    ],
   },
   {
     title: "Helgeo Guesthouse Website",
@@ -17,11 +41,11 @@ const projects = [
     image: "./projects/helgeo.png",
     stack: [
       "UI/UX Design",
-      "Front-End Development", 
+      "Front-End Development",
       "Back-End development",
       "PHP",
-      "SQL Database"
-    ]
+      "SQL Database",
+    ],
   },
   {
     title: "Task Management Web App",
@@ -32,9 +56,9 @@ const projects = [
       "HTML",
       "CSS",
       "Javascript",
-      "Local Storage"
-    ]
-  }
+      "Local Storage",
+    ],
+  },
 ];
 
 function initProjectCarousel() {
@@ -44,24 +68,33 @@ function initProjectCarousel() {
   let currentIndex = 0;
 
   function renderProjects() {
-    projectContainer.innerHTML = projects.map((project, index) => `
-      <div class="scroll-item ${index === 0 ? 'active' : ''}">
+    projectContainer.innerHTML = projects
+      .map(
+        (project, index) => `
+      <div class="scroll-item ${index === 0 ? "active" : ""}">
         <h2>${project.title}</h2>
-        <a href="${project.link}" style="text-decoration: none;" target="_blank" class="button">Live site</a>
+        <a href="${
+          project.link
+        }" style="text-decoration: none;" target="_blank" class="button">Live site</a>
         <img src="${project.image}" width="70%" alt="${project.title} photo" 
              />
         <div class="stack">
-          ${project.stack.map(tech => `<div class="stack-item">${tech}</div>`).join('')}
+          ${project.stack
+            .map((tech) => `<div class="stack-item">${tech}</div>`)
+            .join("")}
         </div>
       </div>
-    `).join('');
+    `
+      )
+      .join("");
   }
 
   function updateScroll() {
     projectContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    
+
     leftScroll.style.display = currentIndex === 0 ? "none" : "flex";
-    rightScroll.style.display = currentIndex === projects.length - 1 ? "none" : "flex";
+    rightScroll.style.display =
+      currentIndex === projects.length - 1 ? "none" : "flex";
   }
 
   function scrollRight() {
@@ -85,4 +118,4 @@ function initProjectCarousel() {
   renderProjects();
 }
 
-document.addEventListener('DOMContentLoaded', initProjectCarousel);
+document.addEventListener("DOMContentLoaded", initProjectCarousel);
