@@ -44,12 +44,13 @@
   align-items: center;
   justify-content: center;
   border-radius: 30px;
-  padding: 5px 10px;
+  padding: 10px 20px;
   font-family: "Montserrat-normal";
   background: white;
   position: relative;
   transition: 0.3s ease;
   transform: scale(0.9);
+  border: 1px solid #ccc;
 }
 
 #portfolio .scrollers {
