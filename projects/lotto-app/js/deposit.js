@@ -71,6 +71,12 @@ document.querySelector(".close-paypal-panel").addEventListener("click", () => {
   overLayer.style.display = "none";
 });
 
+//New changes still have to maintain the deposit amount
+overLayer.addEventListener("click", () => {
+  domElements.currentPaymentMethodPanel.style.display = "none";
+  overLayer.style.display = "none";
+});
+
 // Function to fetch exchange rate and update the converted amount
 function updateExchangeRate() {
   // Fetch the latest ZAR to USD exchange rate
